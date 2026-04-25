@@ -616,13 +616,16 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
 .flip-card-inner{position:relative;width:100%;height:100%;transition:transform 0.7s cubic-bezier(0.4,0.2,0.2,1);transform-style:preserve-3d;}
 .flip-card:hover .flip-card-inner{transform:rotateY(180deg);}
 .flip-card-front,.flip-card-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:20px;padding:32px;display:flex;flex-direction:column;box-sizing:border-box;}
-.flip-card-front{background:#fff;border:1px solid rgba(0,0,0,0.07);box-shadow:0 4px 24px rgba(0,0,0,0.07);justify-content:space-between;}
+.flip-card-front{background:#1B3A5C;border:none;box-shadow:0 4px 24px rgba(0,0,0,0.15);justify-content:space-between;overflow:hidden;padding:0;}
+.fc-front-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+.fc-front-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(10,20,40,0.22) 0%,rgba(10,20,40,0.68) 100%);z-index:1;}
+.fc-front-content{position:relative;z-index:2;padding:28px;height:100%;display:flex;flex-direction:column;justify-content:space-between;}
 .flip-card-back{transform:rotateY(180deg);justify-content:center;gap:16px;}
-.fc-num{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--text-muted);opacity:0.6;}
-.fc-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:4px;}
-.fc-icon svg{width:26px;height:26px;}
-.fc-title{font-size:19px;font-weight:800;color:var(--navy);line-height:1.25;margin-top:auto;}
-.fc-hint{font-size:11px;color:var(--text-muted);display:flex;align-items:center;gap:4px;margin-top:12px;opacity:0.55;}
+.fc-num{font-size:11px;font-weight:700;letter-spacing:2px;color:rgba(255,255,255,0.65);}
+.fc-icon{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:4px;background:rgba(255,255,255,0.18);backdrop-filter:blur(4px);}
+.fc-icon svg{width:22px;height:22px;}
+.fc-title{font-size:19px;font-weight:800;color:#fff;line-height:1.25;margin-top:auto;}
+.fc-hint{font-size:11px;color:rgba(255,255,255,0.65);display:flex;align-items:center;gap:4px;margin-top:10px;}
 .fc-hint-dot{width:6px;height:6px;border-radius:50%;background:currentColor;animation:fc-pulse 2s infinite;}
 @keyframes fc-pulse{0%,100%{opacity:0.4}50%{opacity:1}}
 .fc-back-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:0.55;}
@@ -865,18 +868,18 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
         <div class="split-visual">
           <div class="about-gallery-grid">
             <div class="gallery-cell" data-gdelay="0">
-              <img src="1.JPG" alt="Team collaboration" loading="lazy">
+              <img src="images/1.JPG" alt="Team collaboration" loading="lazy">
               <div class="gallery-badge"><div class="gallery-badge-dot" style="background:#2874A6;"></div><span>50+ Projects</span></div>
             </div>
             <div class="gallery-cell" data-gdelay="200">
-              <img src="2.JPG" alt="Field work" loading="lazy">
+              <img src="images/2.JPG" alt="Field work" loading="lazy">
               <div class="gallery-badge"><div class="gallery-badge-dot" style="background:#1A9E8F;"></div><span>34 Client Organisations</span></div>
             </div>
             <div class="gallery-cell" data-gdelay="400">
-              <img src="3.JPG" alt="Data analysis" loading="lazy">
+              <img src="images/3.JPG" alt="Data analysis" loading="lazy">
             </div>
             <div class="gallery-cell" data-gdelay="600">
-              <img src="4.JPG" alt="Team meeting" loading="lazy">
+              <img src="images/4.JPG" alt="Team meeting" loading="lazy">
               <div class="gallery-badge"><div class="gallery-badge-dot" style="background:#C9882A;"></div><span>6+ Countries</span></div>
             </div>
           </div>
@@ -898,9 +901,12 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
         <div class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front">
-              <div><div class="fc-num">01</div><div class="fc-icon" style="background:#DBEAFE;"><svg viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div></div>
-              <div class="fc-title">Research Excellence</div>
-              <div class="fc-hint"><span class="fc-hint-dot"></span> Hover to learn more</div>
+              <img class="fc-front-img" src="card-images/card1.jpg" alt="Research Excellence" loading="lazy">
+              <div class="fc-front-overlay"></div>
+              <div class="fc-front-content">
+                <div><div class="fc-num">01</div><div class="fc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div></div>
+                <div><div class="fc-title">Research Excellence</div><div class="fc-hint"><span class="fc-hint-dot"></span> Hover to learn more</div></div>
+              </div>
             </div>
             <div class="flip-card-back" style="background:#EFF6FF;border:1px solid #BFDBFE;">
               <div class="fc-back-label" style="color:#2563EB;">Research Excellence</div>
@@ -913,13 +919,16 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
         <div class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front">
-              <div><div class="fc-num">02</div><div class="fc-icon" style="background:#CCFBF1;"><svg viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg></div></div>
-              <div class="fc-title">Deep Local Knowledge</div>
-              <div class="fc-hint"><span class="fc-hint-dot"></span> Hover to learn more</div>
+              <img class="fc-front-img" src="card-images/card2.jpg" alt="Deep Local Knowledge" loading="lazy">
+              <div class="fc-front-overlay"></div>
+              <div class="fc-front-content">
+                <div><div class="fc-num">02</div><div class="fc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg></div></div>
+                <div><div class="fc-title">Deep Local Knowledge</div><div class="fc-hint"><span class="fc-hint-dot"></span> Hover to learn more</div></div>
+              </div>
             </div>
             <div class="flip-card-back" style="background:#F0FDFA;border:1px solid #99F6E4;">
               <div class="fc-back-label" style="color:#0D9488;">Deep Local Knowledge</div>
-              <div class="fc-back-text">Our Palestinian roots give us contextual understanding that visiting teams cannot replicate. We maintain access in challenging settings, navigate complex stakeholder environments, and build the trust that makes quality data collection possible.</div>
+              <div class="fc-back-text">Our field workers are on the ground every day — not as outsiders, but as community members and subject-matter experts embedded in the contexts they serve. This direct presence is how we access the relationships, trust, and lived knowledge that no visiting team can replicate.</div>
             </div>
           </div>
         </div>
@@ -928,9 +937,12 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
         <div class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front">
-              <div><div class="fc-num">03</div><div class="fc-icon" style="background:#EDE9FE;"><svg viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div></div>
-              <div class="fc-title">Sector Specialisation</div>
-              <div class="fc-hint"><span class="fc-hint-dot"></span> Hover to learn more</div>
+              <img class="fc-front-img" src="card-images/card3.jpg" alt="Sector Specialisation" loading="lazy">
+              <div class="fc-front-overlay"></div>
+              <div class="fc-front-content">
+                <div><div class="fc-num">03</div><div class="fc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div></div>
+                <div><div class="fc-title">Sector Specialisation</div><div class="fc-hint"><span class="fc-hint-dot"></span> Hover to learn more</div></div>
+              </div>
             </div>
             <div class="flip-card-back" style="background:#F5F3FF;border:1px solid #DDD6FE;">
               <div class="fc-back-label" style="color:#7C3AED;">Sector Specialisation</div>
@@ -943,9 +955,12 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
         <div class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front">
-              <div><div class="fc-num">04</div><div class="fc-icon" style="background:#DCFCE7;"><svg viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><polyline points="7 10 10 13 14 9 17 12"/></svg></div></div>
-              <div class="fc-title">Digital MEAL Systems</div>
-              <div class="fc-hint"><span class="fc-hint-dot"></span> Hover to learn more</div>
+              <img class="fc-front-img" src="card-images/card4.jpg" alt="Digital MEAL Systems" loading="lazy">
+              <div class="fc-front-overlay"></div>
+              <div class="fc-front-content">
+                <div><div class="fc-num">04</div><div class="fc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><polyline points="7 10 10 13 14 9 17 12"/></svg></div></div>
+                <div><div class="fc-title">Digital MEAL Systems</div><div class="fc-hint"><span class="fc-hint-dot"></span> Hover to learn more</div></div>
+              </div>
             </div>
             <div class="flip-card-back" style="background:#F0FDF4;border:1px solid #BBF7D0;">
               <div class="fc-back-label" style="color:#16A34A;">Digital MEAL Systems</div>
@@ -958,9 +973,12 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
         <div class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front">
-              <div><div class="fc-num">05</div><div class="fc-icon" style="background:#FEF3C7;"><svg viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/><polyline points="13 2 13 9 20 9"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg></div></div>
-              <div class="fc-title">Findings That Get Used</div>
-              <div class="fc-hint"><span class="fc-hint-dot"></span> Hover to learn more</div>
+              <img class="fc-front-img" src="card-images/card5.jpg" alt="Findings That Get Used" loading="lazy">
+              <div class="fc-front-overlay"></div>
+              <div class="fc-front-content">
+                <div><div class="fc-num">05</div><div class="fc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/><polyline points="13 2 13 9 20 9"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg></div></div>
+                <div><div class="fc-title">Findings That Get Used</div><div class="fc-hint"><span class="fc-hint-dot"></span> Hover to learn more</div></div>
+              </div>
             </div>
             <div class="flip-card-back" style="background:#FFFBEB;border:1px solid #FDE68A;">
               <div class="fc-back-label" style="color:#D97706;">Findings That Get Used</div>
@@ -973,9 +991,12 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
         <div class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front">
-              <div><div class="fc-num">06</div><div class="fc-icon" style="background:#FFE4E6;"><svg viewBox="0 0 24 24" fill="none" stroke="#E11D48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div></div>
-              <div class="fc-title">Ethical Practice</div>
-              <div class="fc-hint"><span class="fc-hint-dot"></span> Hover to learn more</div>
+              <img class="fc-front-img" src="card-images/card6.jpg" alt="Ethical Practice" loading="lazy">
+              <div class="fc-front-overlay"></div>
+              <div class="fc-front-content">
+                <div><div class="fc-num">06</div><div class="fc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div></div>
+                <div><div class="fc-title">Ethical Practice</div><div class="fc-hint"><span class="fc-hint-dot"></span> Hover to learn more</div></div>
+              </div>
             </div>
             <div class="flip-card-back" style="background:#FFF1F2;border:1px solid #FECDD3;">
               <div class="fc-back-label" style="color:#E11D48;">Ethical Practice</div>
