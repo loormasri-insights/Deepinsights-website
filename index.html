@@ -622,10 +622,15 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
 .sc-mini-node{position:absolute;width:8px;height:8px;border-radius:50%;background:var(--blue);opacity:0.6;}
 .sc-mini-conn{position:absolute;background:var(--blue);opacity:0.15;height:1.5px;transform-origin:left center;}
 
-/* ── SECTOR GLOW TAGS ───────────────────────────────────── */
-.exp-tags-glow{display:flex;flex-wrap:wrap;gap:14px;}
-.exp-tag-glow{display:inline-flex;align-items:center;justify-content:center;padding:16px 28px;border-radius:50px;font-size:17px;font-weight:700;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;position:relative;border:2px solid transparent;letter-spacing:0.01em;}
-.exp-tag-glow:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.1);}
+/* ── SECTOR TAGS ─────────────────────────────────────────── */
+.exp-tags-clean{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.exp-tag-clean{display:flex;align-items:center;gap:14px;padding:20px 0;border-bottom:1px solid #E8EDF2;cursor:pointer;transition:all 0.2s;text-decoration:none;}
+.exp-tag-clean:last-child,.exp-tag-clean:nth-last-child(2):nth-child(odd){border-bottom:none;}
+.exp-tag-clean-dot{width:8px;height:8px;border-radius:50%;background:var(--blue);flex-shrink:0;transition:transform 0.2s;}
+.exp-tag-clean-text{font-size:16px;font-weight:600;color:var(--navy);letter-spacing:-0.01em;transition:color 0.2s;}
+.exp-tag-clean:hover .exp-tag-clean-text{color:var(--blue);}
+.exp-tag-clean:hover .exp-tag-clean-dot{transform:scale(1.5);}
+.exp-tag-clean:hover{padding-left:6px;}
 
 /* ── SPOTLIGHT GLOW CARDS ───────────────────────────────── */
 [data-glow]{
@@ -943,23 +948,23 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
   <!-- EXPERTISE TAGS -->
   <section class="section" style="background:#fff;padding-top:80px;padding-bottom:80px;">
     <div class="section-inner">
-      <div class="split-grid" style="align-items:center;gap:60px;">
+      <div class="split-grid" style="align-items:center;gap:80px;">
         <div>
           <div class="badge"><div class="badge-icon"><svg class="icon-svg"><use href="#ico-layers"/></svg></div><span class="badge-text">Thematic Expertise</span></div>
           <h2 class="section-title">Sector Specialisations</h2>
-          <p style="font-size:15px;color:var(--text-muted);line-height:1.8;font-weight:300;margin-bottom:32px;">Good M&amp;E goes beyond methodology. Our work is strengthened by real sector knowledge across the areas our clients work in — held by our core team and specialist Advisory Network.</p>
+          <p style="font-size:15px;color:var(--text-muted);line-height:1.8;font-weight:300;margin-bottom:32px;">Our work is strengthened by real sector knowledge across the areas our clients work in — held by our core team and specialist Advisory Network.</p>
           <button class="btn-pill btn-pill-dark" onclick="showPage('expertise')">Explore Our Expertise <span class="pill-arrow">→</span></button>
         </div>
         <div>
-          <div class="exp-tags-glow">
-            <span class="exp-tag-glow" data-glow onclick="showPage('expertise')" style="--base:220;--spread:60;background:#EFF6FF;color:#1D4ED8;">MHPSS</span>
-            <span class="exp-tag-glow" data-glow onclick="showPage('expertise')" style="--base:330;--spread:60;background:#FFF1F2;color:#BE123C;">Gender &amp; GBV</span>
-            <span class="exp-tag-glow" data-glow onclick="showPage('expertise')" style="--base:270;--spread:60;background:#F5F3FF;color:#6D28D9;">Child Protection</span>
-            <span class="exp-tag-glow" data-glow onclick="showPage('expertise')" style="--base:170;--spread:60;background:#F0FDFA;color:#0F766E;">Health &amp; SRHR</span>
-            <span class="exp-tag-glow" data-glow onclick="showPage('expertise')" style="--base:35;--spread:60;background:#FFFBEB;color:#B45309;">Education &amp; ECD</span>
-            <span class="exp-tag-glow" data-glow onclick="showPage('expertise')" style="--base:130;--spread:60;background:#F0FDF4;color:#15803D;">Food Security</span>
-            <span class="exp-tag-glow" data-glow onclick="showPage('expertise')" style="--base:200;--spread:60;background:#F0F9FF;color:#0369A1;">Climate</span>
-            <span class="exp-tag-glow" data-glow onclick="showPage('expertise')" style="--base:290;--spread:60;background:#FAF5FF;color:#7E22CE;">Disability Inclusion</span>
+          <div class="exp-tags-clean">
+            <div class="exp-tag-clean" onclick="showPage('expertise')"><span class="exp-tag-clean-dot"></span><span class="exp-tag-clean-text">MHPSS</span></div>
+            <div class="exp-tag-clean" onclick="showPage('expertise')"><span class="exp-tag-clean-dot"></span><span class="exp-tag-clean-text">Gender &amp; GBV</span></div>
+            <div class="exp-tag-clean" onclick="showPage('expertise')"><span class="exp-tag-clean-dot"></span><span class="exp-tag-clean-text">Child Protection</span></div>
+            <div class="exp-tag-clean" onclick="showPage('expertise')"><span class="exp-tag-clean-dot"></span><span class="exp-tag-clean-text">Health &amp; SRHR</span></div>
+            <div class="exp-tag-clean" onclick="showPage('expertise')"><span class="exp-tag-clean-dot"></span><span class="exp-tag-clean-text">Education &amp; ECD</span></div>
+            <div class="exp-tag-clean" onclick="showPage('expertise')"><span class="exp-tag-clean-dot"></span><span class="exp-tag-clean-text">Food Security</span></div>
+            <div class="exp-tag-clean" onclick="showPage('expertise')"><span class="exp-tag-clean-dot"></span><span class="exp-tag-clean-text">Climate</span></div>
+            <div class="exp-tag-clean" onclick="showPage('expertise')"><span class="exp-tag-clean-dot"></span><span class="exp-tag-clean-text">Disability Inclusion</span></div>
           </div>
         </div>
       </div>
