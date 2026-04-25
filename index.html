@@ -219,28 +219,29 @@ nav{
 /* ── STRENGTH CARDS ── */
 .cards-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--gray2);}
 .cards-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
-/* ── SERVICES SHOWCASE ── */
-.svc-showcase{display:grid;grid-template-columns:1fr 360px;border-radius:20px;overflow:hidden;min-height:500px;box-shadow:0 8px 48px rgba(0,0,0,0.10);}
-.svc-feature{padding:56px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;transition:background 0.5s ease;background:linear-gradient(135deg,#1B3A5C 0%,#2563EB 100%);}
-.svc-feat-num{font-size:72px;font-weight:900;color:rgba(255,255,255,0.08);line-height:1;position:absolute;top:36px;right:44px;font-family:inherit;}
-.svc-feat-icon{width:56px;height:56px;background:rgba(255,255,255,0.15);border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:24px;backdrop-filter:blur(4px);}
-.svc-feat-icon svg{width:28px;height:28px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
-.svc-feat-tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
-.svc-feat-tag{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.9);padding:5px 12px;border-radius:20px;}
-.svc-feat-title{font-size:30px;font-weight:800;color:#fff;line-height:1.2;margin-bottom:16px;}
-.svc-feat-desc{font-size:15px;color:rgba(255,255,255,0.82);line-height:1.75;margin-bottom:32px;max-width:480px;}
-.svc-feat-btn{display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--navy);font-size:13px;font-weight:700;letter-spacing:0.5px;padding:13px 24px;border-radius:50px;border:none;cursor:pointer;transition:all 0.2s;width:fit-content;}
-.svc-feat-btn:hover{transform:translateX(4px);}
-.svc-list{background:#F8FAFB;border-left:1px solid #E2E8F0;display:flex;flex-direction:column;}
-.svc-list-item{padding:22px 24px;border-bottom:1px solid #E2E8F0;cursor:pointer;display:flex;align-items:center;gap:14px;transition:all 0.2s;position:relative;border-left:3px solid transparent;}
-.svc-list-item:last-child{border-bottom:none;}
-.svc-list-item:hover{background:#fff;padding-left:28px;}
-.svc-list-item.svc-active{background:#fff;border-left-color:var(--blue);}
-.svc-list-num{font-size:11px;font-weight:700;color:var(--text-muted);letter-spacing:1px;min-width:22px;}
-.svc-list-title{font-size:14px;font-weight:600;color:var(--navy);flex:1;line-height:1.3;}
-.svc-list-arrow{font-size:14px;color:var(--text-muted);transition:transform 0.2s;}
-.svc-list-item.svc-active .svc-list-arrow{color:var(--blue);transform:translateX(3px);}
-@media(max-width:860px){.svc-showcase{grid-template-columns:1fr;}.svc-list{display:grid;grid-template-columns:1fr 1fr;}.svc-feat-num{font-size:48px;}}
+/* ── SERVICES ALTERNATING ROWS ── */
+.svc-rows{display:flex;flex-direction:column;}
+.svc-row{display:grid;grid-template-columns:1fr 1fr;gap:80px;padding:52px 0;border-bottom:1px solid #E8EDF2;align-items:center;cursor:pointer;transition:all 0.25s;text-decoration:none;}
+.svc-row:first-child{border-top:1px solid #E8EDF2;}
+.svc-row:hover{padding-left:12px;padding-right:12px;}
+.svc-row-meta{display:flex;flex-direction:column;gap:20px;}
+.svc-row-meta.flip{text-align:right;align-items:flex-end;order:2;}
+.svc-row-body{order:1;}
+.svc-row-body.flip{order:0;text-align:right;}
+.svc-row-num{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--text-muted);}
+.svc-row-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;transition:transform 0.25s;}
+.svc-row-icon svg{width:24px;height:24px;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.svc-row:hover .svc-row-icon{transform:scale(1.08);}
+.svc-row-title{font-size:22px;font-weight:800;color:var(--navy);line-height:1.25;margin-bottom:12px;transition:color 0.2s;}
+.svc-row:hover .svc-row-title{color:var(--blue);}
+.svc-row-desc{font-size:15px;color:var(--text-muted);line-height:1.75;font-weight:300;margin-bottom:16px;}
+.svc-row-tags{display:flex;flex-wrap:wrap;gap:8px;}
+.svc-row-body.flip .svc-row-tags{justify-content:flex-end;}
+.svc-row-tag{font-size:11px;font-weight:600;letter-spacing:0.8px;text-transform:uppercase;padding:4px 12px;border-radius:20px;background:var(--gray);color:var(--text-muted);}
+.svc-row-link{font-size:13px;font-weight:700;color:var(--blue);display:flex;align-items:center;gap:6px;transition:gap 0.2s;}
+.svc-row-body.flip .svc-row-link{justify-content:flex-end;}
+.svc-row:hover .svc-row-link{gap:10px;}
+@media(max-width:700px){.svc-row{grid-template-columns:1fr;gap:24px;}.svc-row-meta.flip,.svc-row-body.flip{order:unset;text-align:left;align-items:flex-start;}.svc-row-body.flip .svc-row-tags,.svc-row-body.flip .svc-row-link{justify-content:flex-start;}}
 .strength-card{background:#fff;padding:44px 36px;transition:all 0.3s;position:relative;overflow:hidden;}
 .strength-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--blue-light));transform:scaleX(0);transform-origin:left;transition:transform 0.3s;}
 .strength-card:hover::after{transform:scaleX(1);}
@@ -1108,55 +1109,94 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
       <div class="badge"><div class="badge-icon"><svg class="icon-svg"><use href="#ico-tool"/></svg></div><span class="badge-text">Advisory Services</span></div>
       <h2 class="section-title">What We Do</h2>
       <p class="section-intro">From independent evaluation to adaptive MEAL systems, strategic planning, and organisational strengthening — we support the full spectrum of evidence and learning needs.</p>
-      <div class="svc-showcase">
-        <!-- Featured Panel -->
-        <div class="svc-feature" id="svcFeature">
-          <div class="svc-feat-num" id="svcFeatNum">01</div>
-          <div class="svc-feat-icon" id="svcFeatIcon">
-            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <div class="svc-rows">
+
+        <!-- Row 1: normal -->
+        <div class="svc-row" onclick="showPage('services');showTab('eval')">
+          <div class="svc-row-meta">
+            <div class="svc-row-num">01</div>
+            <div class="svc-row-icon" style="background:#EFF6FF;"><svg viewBox="0 0 24 24" stroke="#2563EB"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
           </div>
-          <div class="svc-feat-tag-row" id="svcFeatTags">
-            <span class="svc-feat-tag">OECD-DAC</span><span class="svc-feat-tag">UNEG</span><span class="svc-feat-tag">IASC</span>
-          </div>
-          <div class="svc-feat-title" id="svcFeatTitle">Evaluations &amp; Research</div>
-          <div class="svc-feat-desc" id="svcFeatDesc">Independent OECD-DAC evaluations, impact assessments, and mixed-methods research across humanitarian and development contexts. Baseline through final evaluation — designed to generate evidence that is credible, usable, and owned by the teams that need it.</div>
-          <button class="svc-feat-btn" id="svcFeatBtn" onclick="showPage('services');showTab('eval')">Explore this service →</button>
-        </div>
-        <!-- Service List -->
-        <div class="svc-list">
-          <div class="svc-list-item svc-active" data-idx="0" onclick="switchService(0)">
-            <span class="svc-list-num">01</span>
-            <span class="svc-list-title">Evaluations &amp; Research</span>
-            <span class="svc-list-arrow">→</span>
-          </div>
-          <div class="svc-list-item" data-idx="1" onclick="switchService(1)">
-            <span class="svc-list-num">02</span>
-            <span class="svc-list-title">MEAL Systems &amp; Digital</span>
-            <span class="svc-list-arrow">→</span>
-          </div>
-          <div class="svc-list-item" data-idx="2" onclick="switchService(2)">
-            <span class="svc-list-num">03</span>
-            <span class="svc-list-title">Strategy &amp; Risk Management</span>
-            <span class="svc-list-arrow">→</span>
-          </div>
-          <div class="svc-list-item" data-idx="3" onclick="switchService(3)">
-            <span class="svc-list-num">04</span>
-            <span class="svc-list-title">Organisational Development</span>
-            <span class="svc-list-arrow">→</span>
-          </div>
-          <div class="svc-list-item" data-idx="4" onclick="switchService(4)">
-            <span class="svc-list-num">05</span>
-            <span class="svc-list-title">Capacity Building &amp; Training</span>
-            <span class="svc-list-arrow">→</span>
-          </div>
-          <div class="svc-list-item" data-idx="5" onclick="switchService(5)">
-            <span class="svc-list-num">06</span>
-            <span class="svc-list-title">Resource Mobilisation</span>
-            <span class="svc-list-arrow">→</span>
+          <div class="svc-row-body">
+            <div class="svc-row-title">Evaluations &amp; Research</div>
+            <div class="svc-row-desc">Independent OECD-DAC evaluations, impact assessments, and mixed-methods research across humanitarian and development contexts. Baseline through final evaluation.</div>
+            <div class="svc-row-tags"><span class="svc-row-tag">OECD-DAC</span><span class="svc-row-tag">UNEG</span><span class="svc-row-tag">IASC</span></div>
+            <div class="svc-row-link" style="margin-top:16px;">Explore <span>→</span></div>
           </div>
         </div>
+
+        <!-- Row 2: flipped -->
+        <div class="svc-row" onclick="showPage('services');showTab('meal')">
+          <div class="svc-row-body flip">
+            <div class="svc-row-title">MEAL Systems &amp; Digital</div>
+            <div class="svc-row-desc">Adaptive monitoring systems built on leading digital platforms. MEL framework design, ActivityInfo implementation, Power BI dashboards, and custom MIS architecture.</div>
+            <div class="svc-row-tags"><span class="svc-row-tag">ActivityInfo</span><span class="svc-row-tag">Power BI</span><span class="svc-row-tag">Comcare</span></div>
+            <div class="svc-row-link" style="margin-top:16px;">Explore <span>→</span></div>
+          </div>
+          <div class="svc-row-meta flip">
+            <div class="svc-row-num">02</div>
+            <div class="svc-row-icon" style="background:#F0FDFA;"><svg viewBox="0 0 24 24" stroke="#0D9488"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><polyline points="7 10 10 13 14 9 17 12"/></svg></div>
+          </div>
+        </div>
+
+        <!-- Row 3: normal -->
+        <div class="svc-row" onclick="showPage('services');showTab('strategy')">
+          <div class="svc-row-meta">
+            <div class="svc-row-num">03</div>
+            <div class="svc-row-icon" style="background:#F5F3FF;"><svg viewBox="0 0 24 24" stroke="#7C3AED"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+          </div>
+          <div class="svc-row-body">
+            <div class="svc-row-title">Strategy &amp; Risk Management</div>
+            <div class="svc-row-desc">Evidence-based strategic planning, Theory of Change development, contingency frameworks, and risk analysis for complex MENA operating environments.</div>
+            <div class="svc-row-tags"><span class="svc-row-tag">Theory of Change</span><span class="svc-row-tag">Risk Frameworks</span></div>
+            <div class="svc-row-link" style="margin-top:16px;">Explore <span>→</span></div>
+          </div>
+        </div>
+
+        <!-- Row 4: flipped -->
+        <div class="svc-row" onclick="showPage('services');showTab('orgdev')">
+          <div class="svc-row-body flip">
+            <div class="svc-row-title">Organisational Development</div>
+            <div class="svc-row-desc">Governance, finance, HR, and safeguarding frameworks aligned with UNICEF, EU, and USAID requirements. OCA, HACT support, and compliance strengthening.</div>
+            <div class="svc-row-tags"><span class="svc-row-tag">Governance</span><span class="svc-row-tag">HACT</span><span class="svc-row-tag">Compliance</span></div>
+            <div class="svc-row-link" style="margin-top:16px;">Explore <span>→</span></div>
+          </div>
+          <div class="svc-row-meta flip">
+            <div class="svc-row-num">04</div>
+            <div class="svc-row-icon" style="background:#FFFBEB;"><svg viewBox="0 0 24 24" stroke="#D97706"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          </div>
+        </div>
+
+        <!-- Row 5: normal -->
+        <div class="svc-row" onclick="showPage('services');showTab('capacity')">
+          <div class="svc-row-meta">
+            <div class="svc-row-num">05</div>
+            <div class="svc-row-icon" style="background:#F0FDF4;"><svg viewBox="0 0 24 24" stroke="#16A34A"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+          </div>
+          <div class="svc-row-body">
+            <div class="svc-row-title">Capacity Building &amp; Training</div>
+            <div class="svc-row-desc">Customised training in MEL, GBV, protection, and safeguarding — combining structured learning, hands-on application, and on-the-job mentoring.</div>
+            <div class="svc-row-tags"><span class="svc-row-tag">MEL Training</span><span class="svc-row-tag">GBV</span><span class="svc-row-tag">Protection</span></div>
+            <div class="svc-row-link" style="margin-top:16px;">Explore <span>→</span></div>
+          </div>
+        </div>
+
+        <!-- Row 6: flipped -->
+        <div class="svc-row" onclick="showPage('services');showTab('resource')">
+          <div class="svc-row-body flip">
+            <div class="svc-row-title">Resource Mobilisation</div>
+            <div class="svc-row-desc">Competitive proposal development, donor landscape analysis, and fundraising strategy. Results frameworks that resonate with major institutional funders.</div>
+            <div class="svc-row-tags"><span class="svc-row-tag">Donor Strategy</span><span class="svc-row-tag">Proposals</span></div>
+            <div class="svc-row-link" style="margin-top:16px;">Explore <span>→</span></div>
+          </div>
+          <div class="svc-row-meta flip">
+            <div class="svc-row-num">06</div>
+            <div class="svc-row-icon" style="background:#FFF1F2;"><svg viewBox="0 0 24 24" stroke="#E11D48"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+          </div>
+        </div>
+
       </div>
-      <div style="text-align:center;margin-top:36px;"><button class="btn-pill btn-pill-dark" onclick="showPage('services')">View All Services <span class="pill-arrow">→</span></button></div>
+      <div style="text-align:center;margin-top:48px;"><button class="btn-pill btn-pill-dark" onclick="showPage('services')">View All Services <span class="pill-arrow">→</span></button></div>
     </div>
   </section>
 
