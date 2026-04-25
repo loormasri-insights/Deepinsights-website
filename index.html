@@ -2104,14 +2104,28 @@ function initFlipCardDemo(){
       if(entry.isIntersecting && !played){
         played = true;
         const card = grid.querySelector('.flip-card');
-        if(!card) return;
+        const inner = card && card.querySelector('.flip-card-inner');
+        if(!inner) return;
+        // Disable hover during demo
+        card.style.pointerEvents = 'none';
+        // Flip forward after short delay
         setTimeout(()=>{
-          card.classList.add('demo-flip');
-          setTimeout(()=>{ card.classList.remove('demo-flip'); }, 1400);
-        }, 600);
+          inner.style.transition = 'transform 0.8s cubic-bezier(0.4,0.2,0.2,1)';
+          inner.style.transform = 'rotateY(180deg)';
+          // Hold flipped, then flip back
+          setTimeout(()=>{
+            inner.style.transform = 'rotateY(0deg)';
+            // Re-enable hover after animation completes
+            setTimeout(()=>{
+              inner.style.transform = '';
+              inner.style.transition = '';
+              card.style.pointerEvents = '';
+            }, 900);
+          }, 1600);
+        }, 700);
       }
     });
-  },{threshold:0.3});
+  },{threshold:0.25});
   obs.observe(grid);
 }
 
