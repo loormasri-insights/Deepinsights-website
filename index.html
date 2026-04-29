@@ -265,9 +265,10 @@ nav{
 .proj-card{flex:0 0 340px;scroll-snap-align:start;border-radius:16px;overflow:hidden;position:relative;min-height:420px;cursor:pointer;text-decoration:none;display:block;}
 .proj-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform 0.4s ease;}
 .proj-card:hover img{transform:scale(1.05);}
-.proj-card-gradient{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(27,58,92,0) 20%,rgba(27,58,92,0.45) 55%,rgba(27,58,92,0.92) 100%);}
+.proj-card-gradient{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,25,47,0) 15%,rgba(10,25,47,0.35) 45%,rgba(10,25,47,0.82) 70%,rgba(10,25,47,0.97) 100%);}
 .proj-card-body{position:absolute;bottom:0;left:0;right:0;padding:28px 26px;color:#fff;}
-.proj-card-tag{font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#93C5FD;margin-bottom:10px;font-family:'Poppins',sans-serif;}
+.proj-card-tag{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#fff;margin-bottom:12px;font-family:'Poppins',sans-serif;background:rgba(255,255,255,0.18);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.28);border-radius:100px;padding:4px 12px 4px 8px;}
+.proj-card-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:#93C5FD;flex-shrink:0;}
 .proj-card-title{font-family:'Poppins',sans-serif;font-size:18px;font-weight:700;line-height:1.3;margin-bottom:10px;}
 .proj-card-desc{font-size:13px;line-height:1.65;color:rgba(255,255,255,0.82);font-weight:300;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:18px;}
 .proj-card-link{font-size:12.5px;font-weight:600;color:#fff;display:flex;align-items:center;gap:6px;font-family:'Poppins',sans-serif;letter-spacing:0.3px;}
@@ -1420,7 +1421,19 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
             </div>
           </a>
 
-          <!-- 2. MAP - SRH -->
+          <!-- 2. Humanity & Inclusion - ECD Strategy -->
+          <a class="proj-card" onclick="showPage('impact');return false;" href="#">
+            <img src="project-images/p3.jpg" alt="National ECD Strategy" loading="lazy"/>
+            <div class="proj-card-gradient"></div>
+            <div class="proj-card-body">
+              <div class="proj-card-tag">Strategy · ECD</div>
+              <div class="proj-card-title">National ECD Strategy 2025–2030</div>
+              <div class="proj-card-desc">Led national review and redesign of Palestine's Early Childhood Development Strategy, engaging six government ministries in a comprehensive participatory process.</div>
+              <div class="proj-card-link">View Details <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+            </div>
+          </a>
+
+          <!-- 3. MAP - SRH -->
           <a class="proj-card" onclick="showPage('impact');return false;" href="#">
             <img src="project-images/p2.jpg" alt="SRH Services Evaluation" loading="lazy"/>
             <div class="proj-card-gradient"></div>
@@ -1432,7 +1445,7 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
             </div>
           </a>
 
-          <!-- 3. Save the Children -->
+          <!-- 4. Save the Children -->
           <a class="proj-card" onclick="showPage('impact');return false;" href="#">
             <img src="project-images/p6.jpg" alt="Child Protection Emergency Response" loading="lazy"/>
             <div class="proj-card-gradient"></div>
@@ -1444,7 +1457,7 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
             </div>
           </a>
 
-          <!-- 4. UPA MEAL System -->
+          <!-- 5. UPA MEAL System -->
           <a class="proj-card" onclick="showPage('impact');return false;" href="#">
             <img src="project-images/p4.jpg" alt="Regional Cloud-Based MIS" loading="lazy"/>
             <div class="proj-card-gradient"></div>
@@ -1456,7 +1469,7 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
             </div>
           </a>
 
-          <!-- 5. Caritas -->
+          <!-- 6. Caritas -->
           <a class="proj-card" onclick="showPage('impact');return false;" href="#">
             <img src="project-images/p5.jpg" alt="Agro-Ecology and Food Security Evaluation" loading="lazy"/>
             <div class="proj-card-gradient"></div>
@@ -1464,18 +1477,6 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
               <div class="proj-card-tag">Evaluation · Food Security</div>
               <div class="proj-card-title">Agro-Ecology &amp; Food Security Evaluation</div>
               <div class="proj-card-desc">Final evaluation of a community food sovereignty programme engaging 1,495 beneficiaries. Mixed-methods design with ATLAS.ti qualitative analysis.</div>
-              <div class="proj-card-link">View Details <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-            </div>
-          </a>
-
-          <!-- 6. Humanity & Inclusion -->
-          <a class="proj-card" onclick="showPage('impact');return false;" href="#">
-            <img src="project-images/p3.jpg" alt="National ECD Strategy" loading="lazy"/>
-            <div class="proj-card-gradient"></div>
-            <div class="proj-card-body">
-              <div class="proj-card-tag">Strategy · ECD</div>
-              <div class="proj-card-title">National ECD Strategy 2025–2030</div>
-              <div class="proj-card-desc">Led national review and redesign of Palestine's Early Childhood Development Strategy, engaging six government ministries in a comprehensive participatory process.</div>
               <div class="proj-card-link">View Details <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
             </div>
           </a>
@@ -1494,29 +1495,9 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
     </div>
   </section>
 
-  <!-- INSIGHTS PREVIEW -->
-  <section class="section dots-bg" style="background:var(--gray);">
-    <div class="section-inner">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:44px;">
-        <div>
-          <div class="badge"><div class="badge-icon"><svg class="icon-svg"><use href="#ico-book"/></svg></div><span class="badge-text">Knowledge &amp; Learning</span></div>
-          <h2 class="section-title">From the Field</h2>
-        </div>
-        <p style="font-size:15px;color:var(--text-muted);line-height:1.8;font-weight:300;">Publications, methodology notes, and lessons drawn from our advisory work across Palestine and the region.</p>
-      </div>
-      <div class="insights-grid-new">
-        <div class="insight-card-new fade-up"><div class="insight-top insight-top-1"><div class="insight-type-tag">Publication</div><div class="insight-card-title">Youth Mental Health in Palestine: Lessons from the Enabel Programme</div></div><div class="insight-body"><div class="insight-meta">January 2025 · 12 min read</div><div class="insight-excerpt">Synthesising good practices from multi-year youth MHPSS interventions — community-based approaches, family engagement, and integration with education and livelihoods programming.</div><div class="insight-cta-link">Read More →</div></div></div>
-        <div class="insight-card-new fade-up"><div class="insight-top insight-top-2"><div class="insight-type-tag">Methodology Note</div><div class="insight-card-title">Building Adaptive MEAL Systems: A Practical Framework</div></div><div class="insight-body"><div class="insight-meta">January 2025 · 15 min read</div><div class="insight-excerpt">A practitioner's guide to designing monitoring systems organisations actually use — balancing donor requirements with field-level practicality and genuine feedback loops.</div><div class="insight-cta-link">Read More →</div></div></div>
-      </div>
-      <div style="text-align:center;margin-top:36px;"><button class="btn-pill btn-pill-dark" onclick="showPage('insights')">View All Publications <span class="pill-arrow">→</span></button></div>
-    </div>
-  </section>
-
-
-
   <!-- CTA -->
   <section class="cta-section">
-    <h2>Let's Turn Your Data Into Decisions.</h2>
+    <h2>Ready When You Are.</h2>
     <p>Whether you need an independent evaluation, a MEAL system, a strategic review, or bespoke research — let's discuss your requirements.</p>
     <div class="cta-btns">
       <button class="btn-pill btn-pill-primary" onclick="showPage('contact')">Request a Proposal <span class="pill-arrow">→</span></button>
