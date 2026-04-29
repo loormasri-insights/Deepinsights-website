@@ -258,9 +258,29 @@ nav{
 .sc-service-link{font-family:'Poppins',sans-serif;font-size:11px;color:var(--blue);letter-spacing:1.5px;text-transform:uppercase;display:inline-flex;align-items:center;gap:6px;}
 
 /* ── PROJECT CARDS ── */
-.projects-grid-new{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-.project-card-new{background:#fff;border-radius:var(--radius);overflow:hidden;border:1.5px solid var(--gray2);transition:all 0.25s;cursor:pointer;}
-.project-card-new:hover{box-shadow:0 12px 40px rgba(27,58,92,0.1);transform:translateY(-4px);}
+.proj-carousel-wrap{position:relative;margin:0 -24px;}
+.proj-scroll{display:flex;gap:20px;overflow-x:auto;padding:8px 24px 28px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;cursor:grab;}
+.proj-scroll:active{cursor:grabbing;}
+.proj-scroll::-webkit-scrollbar{display:none;}
+.proj-card{flex:0 0 340px;scroll-snap-align:start;border-radius:16px;overflow:hidden;position:relative;min-height:420px;cursor:pointer;text-decoration:none;display:block;}
+.proj-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform 0.4s ease;}
+.proj-card:hover img{transform:scale(1.05);}
+.proj-card-gradient{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(27,58,92,0) 20%,rgba(27,58,92,0.45) 55%,rgba(27,58,92,0.92) 100%);}
+.proj-card-body{position:absolute;bottom:0;left:0;right:0;padding:28px 26px;color:#fff;}
+.proj-card-tag{font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#93C5FD;margin-bottom:10px;font-family:'Poppins',sans-serif;}
+.proj-card-title{font-family:'Poppins',sans-serif;font-size:18px;font-weight:700;line-height:1.3;margin-bottom:10px;}
+.proj-card-desc{font-size:13px;line-height:1.65;color:rgba(255,255,255,0.82);font-weight:300;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:18px;}
+.proj-card-link{font-size:12.5px;font-weight:600;color:#fff;display:flex;align-items:center;gap:6px;font-family:'Poppins',sans-serif;letter-spacing:0.3px;}
+.proj-card-link svg{transition:transform 0.2s;}
+.proj-card:hover .proj-card-link svg{transform:translateX(4px);}
+.proj-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;}
+.proj-nav-arrows{display:flex;gap:10px;}
+.proj-arrow{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--gray2);background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s;color:var(--navy);}
+.proj-arrow:hover:not(:disabled){border-color:var(--blue);color:var(--blue);}
+.proj-arrow:disabled{opacity:0.35;cursor:not-allowed;}
+.proj-dots{display:flex;gap:6px;align-items:center;margin-top:20px;justify-content:center;}
+.proj-dot{width:6px;height:6px;border-radius:50%;background:var(--gray2);transition:all 0.2s;cursor:pointer;border:none;padding:0;}
+.proj-dot.active{background:var(--navy);width:20px;border-radius:3px;}
 .project-card-top{background:linear-gradient(145deg,var(--navy),#234B72);padding:32px 28px 28px;min-height:140px;display:flex;flex-direction:column;justify-content:flex-end;}
 .pc-tag{font-family:'Poppins',sans-serif;font-size:10px;letter-spacing:2.5px;color:var(--blue-light);text-transform:uppercase;margin-bottom:10px;}
 .pc-title{font-family:'Poppins',sans-serif;font-size:20px;color:#fff;line-height:1.2;}
@@ -987,7 +1007,7 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
     <div class="section-inner">
       <div style="text-align:center;margin-bottom:52px;">
         <div class="badge" style="justify-content:center;display:inline-flex;"><div class="badge-icon"><svg class="icon-svg"><use href="#ico-star"/></svg></div><span class="badge-text">What Sets Us Apart</span></div>
-        <h2 class="section-title" style="text-align:center;">Why Organisations Choose Deep Insights</h2>
+        <h2 class="section-title" style="text-align:center;">Why Partner With Us</h2>
       </div>
       <div class="flip-grid">
 
@@ -1370,36 +1390,107 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
   <!-- FEATURED PROJECTS -->
   <section class="section" style="background:var(--gray);">
     <div class="section-inner">
-      <div class="badge"><div class="badge-icon"><svg class="icon-svg"><use href="#ico-folder"/></svg></div><span class="badge-text">Selected Work</span></div>
-      <h2 class="section-title">Selected Projects</h2>
-      <p class="section-intro">A cross-section of selected evaluation, advisory, and systems work across Palestine and the region.</p>
-      <div class="projects-grid-new">
-        <div class="project-card-new fade-up">
-          <div class="project-card-top"><div class="pc-tag">Evaluation · MHPSS</div><div class="pc-title">Integrated MHPSS Programme Evaluation</div></div>
-          <div class="project-card-body"><div class="pc-client">Médecins du Monde | BMZ · Gaza, East Jerusalem &amp; West Bank</div><div class="pc-desc">Multi-site OECD-DAC evaluation of integrated mental health and psychosocial support services. Rights-based methodology assessing service quality, referral pathways, staff wellbeing, and crisis adaptations.</div><div class="pc-link" onclick="event.stopPropagation();showPage('impact')" style="cursor:pointer;">View Details →</div></div>
+      <div class="proj-nav">
+        <div>
+          <div class="badge" style="margin-bottom:12px;"><div class="badge-icon"><svg class="icon-svg"><use href="#ico-folder"/></svg></div><span class="badge-text">Selected Work</span></div>
+          <h2 class="section-title" style="margin-bottom:6px;">Selected Projects</h2>
+          <p style="font-size:15px;color:var(--text-muted);font-weight:300;max-width:480px;">Real work, across Palestine and the region — evaluation, strategy, and systems that held up under pressure.</p>
         </div>
-        <div class="project-card-new fade-up">
-          <div class="project-card-top"><div class="pc-tag">Evaluation · SRH</div><div class="pc-title">Integrated SRH Services Evaluation</div></div>
-          <div class="project-card-body"><div class="pc-client">Medical Aid for Palestinians | UNFPA · Gaza</div><div class="pc-desc">Independent evaluation of sexual and reproductive health services for conflict-affected women and girls. Feminist evaluation lens with survivor-centred methodology.</div><div class="pc-link" onclick="event.stopPropagation();showPage('impact')" style="cursor:pointer;">View Details →</div></div>
-        </div>
-        <div class="project-card-new fade-up">
-          <div class="project-card-top"><div class="pc-tag">Strategy · ECD</div><div class="pc-title">National ECD Strategy 2025–2030</div></div>
-          <div class="project-card-body"><div class="pc-client">Humanity &amp; Inclusion | Government of Palestine</div><div class="pc-desc">Led national review and redesign of Palestine's Early Childhood Development Strategy, engaging six government ministries in a comprehensive participatory process.</div><div class="pc-link" onclick="event.stopPropagation();showPage('impact')" style="cursor:pointer;">View Details →</div></div>
-        </div>
-        <div class="project-card-new fade-up">
-          <div class="project-card-top"><div class="pc-tag">MEAL Systems · MIS</div><div class="pc-title">Regional Cloud-Based MIS</div></div>
-          <div class="project-card-body"><div class="pc-client">United Palestinian Appeal · Palestine, Jordan &amp; Lebanon</div><div class="pc-desc">Nine-phase design and implementation of a regional Management Information System connecting operations across three countries with ActivityInfo and Power BI.</div><div class="pc-link" onclick="event.stopPropagation();showPage('impact')" style="cursor:pointer;">View Details →</div></div>
-        </div>
-        <div class="project-card-new fade-up">
-          <div class="project-card-top"><div class="pc-tag">Evaluation · Food Security</div><div class="pc-title">Agro-Ecology &amp; Food Security Evaluation</div></div>
-          <div class="project-card-body"><div class="pc-client">Caritas Jerusalem | Generalitat Valenciana · Beit Jala</div><div class="pc-desc">Final evaluation of a community food sovereignty programme engaging 1,495 beneficiaries. Mixed-methods design with ATLAS.ti qualitative analysis.</div><div class="pc-link" onclick="event.stopPropagation();showPage('impact')" style="cursor:pointer;">View Details →</div></div>
-        </div>
-        <div class="project-card-new fade-up">
-          <div class="project-card-top"><div class="pc-tag">Evaluation · Child Protection</div><div class="pc-title">Child Protection &amp; MHPSS Emergency Response</div></div>
-          <div class="project-card-body"><div class="pc-client">Save the Children | YMCA · Gaza &amp; West Bank</div><div class="pc-desc">Endline evaluation of a three-year emergency response reaching 4,200 crisis-affected beneficiaries. Validated 12-session resilience model effectiveness.</div><div class="pc-link" onclick="event.stopPropagation();showPage('impact')" style="cursor:pointer;">View Details →</div></div>
+        <div class="proj-nav-arrows">
+          <button class="proj-arrow" id="projPrev" aria-label="Previous" onclick="scrollProj(-1)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button class="proj-arrow" id="projNext" aria-label="Next" onclick="scrollProj(1)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
         </div>
       </div>
-      <div style="text-align:center;margin-top:44px;"><button class="btn-pill btn-pill-outline-navy" onclick="showPage('impact')">View Selected Projects <span class="pill-arrow" style="background:var(--gray2);">→</span></button></div>
+      <div class="proj-carousel-wrap">
+        <div id="projScroll" class="proj-scroll">
+
+          <!-- 1. MDM - MHPSS -->
+          <a class="proj-card" onclick="showPage('impact');return false;" href="#">
+            <img src="project-images/p1.jpg" alt="MHPSS Programme Evaluation" loading="lazy"/>
+            <div class="proj-card-gradient"></div>
+            <div class="proj-card-body">
+              <div class="proj-card-tag">Evaluation · MHPSS</div>
+              <div class="proj-card-title">Integrated MHPSS Programme Evaluation</div>
+              <div class="proj-card-desc">Multi-site OECD-DAC evaluation of integrated mental health and psychosocial support services. Rights-based methodology across Gaza, East Jerusalem &amp; West Bank.</div>
+              <div class="proj-card-link">View Details <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+            </div>
+          </a>
+
+          <!-- 2. MAP - SRH -->
+          <a class="proj-card" onclick="showPage('impact');return false;" href="#">
+            <img src="project-images/p2.jpg" alt="SRH Services Evaluation" loading="lazy"/>
+            <div class="proj-card-gradient"></div>
+            <div class="proj-card-body">
+              <div class="proj-card-tag">Evaluation · SRH</div>
+              <div class="proj-card-title">Integrated SRH Services Evaluation</div>
+              <div class="proj-card-desc">Independent evaluation of sexual and reproductive health services for conflict-affected women and girls. Feminist evaluation lens with survivor-centred methodology.</div>
+              <div class="proj-card-link">View Details <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+            </div>
+          </a>
+
+          <!-- 3. Save the Children -->
+          <a class="proj-card" onclick="showPage('impact');return false;" href="#">
+            <img src="project-images/p6.jpg" alt="Child Protection Emergency Response" loading="lazy"/>
+            <div class="proj-card-gradient"></div>
+            <div class="proj-card-body">
+              <div class="proj-card-tag">Evaluation · Child Protection</div>
+              <div class="proj-card-title">Child Protection &amp; MHPSS Emergency Response</div>
+              <div class="proj-card-desc">Endline evaluation of a three-year emergency response reaching 4,200 crisis-affected beneficiaries. Validated 12-session resilience model effectiveness.</div>
+              <div class="proj-card-link">View Details <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+            </div>
+          </a>
+
+          <!-- 4. UPA MEAL System -->
+          <a class="proj-card" onclick="showPage('impact');return false;" href="#">
+            <img src="project-images/p4.jpg" alt="Regional Cloud-Based MIS" loading="lazy"/>
+            <div class="proj-card-gradient"></div>
+            <div class="proj-card-body">
+              <div class="proj-card-tag">MEAL Systems · MIS</div>
+              <div class="proj-card-title">Regional Cloud-Based MIS</div>
+              <div class="proj-card-desc">Nine-phase design and implementation of a regional Management Information System connecting operations across Palestine, Jordan &amp; Lebanon with ActivityInfo and Power BI.</div>
+              <div class="proj-card-link">View Details <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+            </div>
+          </a>
+
+          <!-- 5. Caritas -->
+          <a class="proj-card" onclick="showPage('impact');return false;" href="#">
+            <img src="project-images/p5.jpg" alt="Agro-Ecology and Food Security Evaluation" loading="lazy"/>
+            <div class="proj-card-gradient"></div>
+            <div class="proj-card-body">
+              <div class="proj-card-tag">Evaluation · Food Security</div>
+              <div class="proj-card-title">Agro-Ecology &amp; Food Security Evaluation</div>
+              <div class="proj-card-desc">Final evaluation of a community food sovereignty programme engaging 1,495 beneficiaries. Mixed-methods design with ATLAS.ti qualitative analysis.</div>
+              <div class="proj-card-link">View Details <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+            </div>
+          </a>
+
+          <!-- 6. Humanity & Inclusion -->
+          <a class="proj-card" onclick="showPage('impact');return false;" href="#">
+            <img src="project-images/p3.jpg" alt="National ECD Strategy" loading="lazy"/>
+            <div class="proj-card-gradient"></div>
+            <div class="proj-card-body">
+              <div class="proj-card-tag">Strategy · ECD</div>
+              <div class="proj-card-title">National ECD Strategy 2025–2030</div>
+              <div class="proj-card-desc">Led national review and redesign of Palestine's Early Childhood Development Strategy, engaging six government ministries in a comprehensive participatory process.</div>
+              <div class="proj-card-link">View Details <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+      <div id="projDots" class="proj-dots">
+        <button class="proj-dot active" onclick="scrollProjTo(0)"></button>
+        <button class="proj-dot" onclick="scrollProjTo(1)"></button>
+        <button class="proj-dot" onclick="scrollProjTo(2)"></button>
+        <button class="proj-dot" onclick="scrollProjTo(3)"></button>
+        <button class="proj-dot" onclick="scrollProjTo(4)"></button>
+        <button class="proj-dot" onclick="scrollProjTo(5)"></button>
+      </div>
+      <div style="text-align:center;margin-top:32px;"><button class="btn-pill btn-pill-outline-navy" onclick="showPage('impact')">View All Projects <span class="pill-arrow" style="background:var(--gray2);">→</span></button></div>
     </div>
   </section>
 
@@ -2461,6 +2552,49 @@ function initServiceCarousel(){
   resetProgress();
 }
 document.addEventListener('DOMContentLoaded', initServiceCarousel);
+
+/* ── PROJECTS CAROUSEL ── */
+(function(){
+  const CARD_WIDTH = 360; // 340px card + 20px gap
+  function getScroll(){ return document.getElementById('projScroll'); }
+  function getDots(){ return document.querySelectorAll('#projDots .proj-dot'); }
+  function updateDots(idx){
+    getDots().forEach((d,i)=> d.classList.toggle('active', i===idx));
+  }
+  function updateArrows(scroll){
+    const prev = document.getElementById('projPrev');
+    const next = document.getElementById('projNext');
+    if(prev) prev.disabled = scroll.scrollLeft < 10;
+    if(next) next.disabled = scroll.scrollLeft >= scroll.scrollWidth - scroll.clientWidth - 10;
+  }
+  function currentIdx(scroll){
+    return Math.round(scroll.scrollLeft / CARD_WIDTH);
+  }
+  window.scrollProj = function(dir){
+    const s = getScroll(); if(!s) return;
+    s.scrollBy({ left: dir * CARD_WIDTH, behavior:'smooth' });
+    setTimeout(()=>{ updateDots(currentIdx(s)); updateArrows(s); }, 350);
+  };
+  window.scrollProjTo = function(idx){
+    const s = getScroll(); if(!s) return;
+    s.scrollTo({ left: idx * CARD_WIDTH, behavior:'smooth' });
+    updateDots(idx);
+    setTimeout(()=> updateArrows(s), 350);
+  };
+  document.addEventListener('DOMContentLoaded', function(){
+    const s = getScroll(); if(!s) return;
+    updateArrows(s);
+    s.addEventListener('scroll', function(){
+      updateDots(currentIdx(s));
+      updateArrows(s);
+    }, { passive:true });
+    // drag-to-scroll
+    let isDown=false, startX=0, scrollStart=0;
+    s.addEventListener('mousedown', e=>{ isDown=true; startX=e.pageX; scrollStart=s.scrollLeft; s.style.cursor='grabbing'; });
+    document.addEventListener('mouseup', ()=>{ isDown=false; if(getScroll()) getScroll().style.cursor='grab'; });
+    s.addEventListener('mousemove', e=>{ if(!isDown) return; e.preventDefault(); s.scrollLeft = scrollStart - (e.pageX - startX); });
+  });
+})();
 
 function initFlipCardDemo(){
   const grid = document.querySelector('.flip-grid');
