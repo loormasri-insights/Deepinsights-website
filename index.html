@@ -342,9 +342,9 @@ nav{
 .tab-btn-new.active{color:var(--navy);}
 .tab-btn-new:hover{color:var(--navy);}
 /* hover pill */
-.tab-hover-bg{position:absolute;top:50%;transform:translateY(-50%);height:30px;background:rgba(27,58,92,0.07);border-radius:6px;pointer-events:none;transition:left 0.28s cubic-bezier(0.4,0,0.2,1),width 0.28s cubic-bezier(0.4,0,0.2,1),opacity 0.18s;opacity:0;z-index:0;}
+.tab-hover-bg{position:absolute;top:0;left:0;height:30px;background:rgba(27,58,92,0.07);border-radius:6px;pointer-events:none;transition:left 0.28s cubic-bezier(0.4,0,0.2,1),top 0.28s cubic-bezier(0.4,0,0.2,1),width 0.28s cubic-bezier(0.4,0,0.2,1),opacity 0.18s;opacity:0;z-index:0;}
 /* active sliding underline */
-.tab-active-line{position:absolute;bottom:-1.5px;height:2.5px;background:var(--blue);border-radius:2px;pointer-events:none;transition:left 0.28s cubic-bezier(0.4,0,0.2,1),width 0.28s cubic-bezier(0.4,0,0.2,1);z-index:2;}
+.tab-active-line{position:absolute;top:0;left:0;height:2.5px;background:var(--blue);border-radius:2px;pointer-events:none;transition:left 0.28s cubic-bezier(0.4,0,0.2,1),top 0.28s cubic-bezier(0.4,0,0.2,1),width 0.28s cubic-bezier(0.4,0,0.2,1);z-index:2;}
 .tab-content-new{display:none;}
 .tab-content-new.active{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;}
 .service-detail-new h2{font-family:'Poppins',sans-serif;font-size:42px;color:var(--navy);margin-bottom:6px;line-height:1;}
@@ -2237,8 +2237,10 @@ function showTab(id){
 function moveTabActiveLine(el){
   const line=document.getElementById('tabActiveLine');
   if(!line||!el) return;
+  // place underline flush to bottom of the button row
   line.style.left=el.offsetLeft+'px';
   line.style.width=el.offsetWidth+'px';
+  line.style.top=(el.offsetTop+el.offsetHeight-2.5)+'px';
 }
 /* Vercel-style tab hover pill */
 (function(){
@@ -2251,14 +2253,14 @@ function moveTabActiveLine(el){
     // init active line on first active button
     const firstActive=nav.querySelector('.tab-btn-new.active');
     if(firstActive&&activeLine){
-      requestAnimationFrame(()=>{
-        activeLine.style.left=firstActive.offsetLeft+'px';
-        activeLine.style.width=firstActive.offsetWidth+'px';
-      });
+      requestAnimationFrame(()=>{ moveTabActiveLine(firstActive); });
     }
     btns.forEach(btn=>{
       btn.addEventListener('mouseenter',()=>{
         if(!hoverBg) return;
+        // centre the pill vertically within the button
+        const pillTop = btn.offsetTop + (btn.offsetHeight - 30) / 2;
+        hoverBg.style.top=pillTop+'px';
         hoverBg.style.left=btn.offsetLeft+'px';
         hoverBg.style.width=btn.offsetWidth+'px';
         hoverBg.style.opacity='1';
