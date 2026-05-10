@@ -329,12 +329,22 @@ nav{
 .page-hero-new h1{font-family:'Poppins',sans-serif;font-size:clamp(48px,6vw,72px);font-weight:700;color:#fff;line-height:1;margin-bottom:18px;}
 .page-hero-sub{font-size:16px;color:rgba(255,255,255,0.55);max-width:560px;line-height:1.8;font-weight:300;}
 
+/* ── SERVICES VIDEO HERO ── */
+.svc-hero{position:relative;overflow:hidden;background:#0d1f33;}
+.svc-hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+.svc-hero-overlay{position:absolute;inset:0;background:linear-gradient(150deg,rgba(13,31,51,0.72) 0%,rgba(18,50,88,0.58) 100%);z-index:1;}
+
 /* ── TABS ── */
 .tabs-wrap{background:#fff;padding:72px 48px;}
 .tabs-inner{max-width:1200px;margin:0 auto;}
-.tab-nav-new{display:flex;gap:0;flex-wrap:wrap;border-bottom:1.5px solid var(--gray2);margin-bottom:60px;}
-.tab-btn-new{font-family:'Poppins',sans-serif;font-size:12px;letter-spacing:1.2px;color:var(--text-muted);padding:13px 20px;border:none;background:none;cursor:pointer;border-bottom:2.5px solid transparent;margin-bottom:-1.5px;transition:all 0.2s;text-transform:uppercase;}
-.tab-btn-new.active,.tab-btn-new:hover{color:var(--navy);border-bottom-color:var(--blue);}
+.tab-nav-new{display:flex;gap:0;flex-wrap:wrap;border-bottom:1.5px solid var(--gray2);margin-bottom:60px;position:relative;}
+.tab-btn-new{font-family:'Poppins',sans-serif;font-size:12px;letter-spacing:1.2px;color:var(--text-muted);padding:13px 20px;border:none;background:none;cursor:pointer;border-bottom:2.5px solid transparent;margin-bottom:-1.5px;transition:color 0.2s;text-transform:uppercase;position:relative;z-index:1;}
+.tab-btn-new.active{color:var(--navy);}
+.tab-btn-new:hover{color:var(--navy);}
+/* hover pill */
+.tab-hover-bg{position:absolute;top:50%;transform:translateY(-50%);height:30px;background:rgba(27,58,92,0.07);border-radius:6px;pointer-events:none;transition:left 0.28s cubic-bezier(0.4,0,0.2,1),width 0.28s cubic-bezier(0.4,0,0.2,1),opacity 0.18s;opacity:0;z-index:0;}
+/* active sliding underline */
+.tab-active-line{position:absolute;bottom:-1.5px;height:2.5px;background:var(--blue);border-radius:2px;pointer-events:none;transition:left 0.28s cubic-bezier(0.4,0,0.2,1),width 0.28s cubic-bezier(0.4,0,0.2,1);z-index:2;}
 .tab-content-new{display:none;}
 .tab-content-new.active{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;}
 .service-detail-new h2{font-family:'Poppins',sans-serif;font-size:42px;color:var(--navy);margin-bottom:6px;line-height:1;}
@@ -831,7 +841,7 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
   <!-- HERO -->
   <section class="hero">
     <video class="hero-video" autoplay muted loop playsinline preload="metadata">
-      <source src="hero-video.mp4" type="video/mp4">
+      <source src="videos/hero-video.mp4" type="video/mp4">
     </video>
     <div class="hero-overlay"></div>
     <canvas id="heroCanvas"></canvas>
@@ -1510,16 +1520,21 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
 
 <!-- ══════════ SERVICES PAGE ══════════ -->
 <div class="page" id="page-services">
-  <div class="page-hero-new">
-    <div class="page-hero-inner-new">
+  <div class="page-hero-new svc-hero">
+    <video class="svc-hero-video" autoplay muted loop playsinline>
+      <source src="services page/services-header.mp4" type="video/mp4">
+    </video>
+    <div class="svc-hero-overlay"></div>
+    <div class="page-hero-inner-new" style="position:relative;z-index:2;">
       <div class="badge badge-dark" style="margin-bottom:16px;"><div class="badge-icon"><svg class="icon-svg"><use href="#ico-tool"/></svg></div><span class="badge-text">Advisory Services</span></div>
       <h1>What We Do</h1>
-      <p class="page-hero-sub">Comprehensive advisory services across the full programme cycle — from evidence generation and MEAL systems to strategy, organisational strengthening, and capacity development.</p>
     </div>
   </div>
   <div class="tabs-wrap">
     <div class="tabs-inner">
-      <div class="tab-nav-new">
+      <div class="tab-nav-new" id="svcTabNav">
+        <div class="tab-hover-bg" id="tabHoverBg"></div>
+        <div class="tab-active-line" id="tabActiveLine"></div>
         <button class="tab-btn-new active" onclick="showTab('eval')">Evaluations &amp; Research</button>
         <button class="tab-btn-new" onclick="showTab('meal')">MEAL Systems &amp; Digital</button>
         <button class="tab-btn-new" onclick="showTab('strategy')">Strategy &amp; Risk</button>
@@ -2213,8 +2228,47 @@ function showTab(id){
   if(tab)tab.classList.add('active');
   const tabMap={eval:0,meal:1,strategy:2,orgdev:3,capacity:4,resource:5,private:6};
   const btns=document.querySelectorAll('.tab-btn-new');
-  if(tabMap[id]!==undefined&&btns[tabMap[id]])btns[tabMap[id]].classList.add('active');
+  const idx=tabMap[id];
+  if(idx!==undefined&&btns[idx]){
+    btns[idx].classList.add('active');
+    moveTabActiveLine(btns[idx]);
+  }
 }
+function moveTabActiveLine(el){
+  const line=document.getElementById('tabActiveLine');
+  if(!line||!el) return;
+  line.style.left=el.offsetLeft+'px';
+  line.style.width=el.offsetWidth+'px';
+}
+/* Vercel-style tab hover pill */
+(function(){
+  document.addEventListener('DOMContentLoaded',function(){
+    const nav=document.getElementById('svcTabNav');
+    if(!nav) return;
+    const hoverBg=document.getElementById('tabHoverBg');
+    const activeLine=document.getElementById('tabActiveLine');
+    const btns=nav.querySelectorAll('.tab-btn-new');
+    // init active line on first active button
+    const firstActive=nav.querySelector('.tab-btn-new.active');
+    if(firstActive&&activeLine){
+      requestAnimationFrame(()=>{
+        activeLine.style.left=firstActive.offsetLeft+'px';
+        activeLine.style.width=firstActive.offsetWidth+'px';
+      });
+    }
+    btns.forEach(btn=>{
+      btn.addEventListener('mouseenter',()=>{
+        if(!hoverBg) return;
+        hoverBg.style.left=btn.offsetLeft+'px';
+        hoverBg.style.width=btn.offsetWidth+'px';
+        hoverBg.style.opacity='1';
+      });
+      btn.addEventListener('mouseleave',()=>{
+        if(hoverBg) hoverBg.style.opacity='0';
+      });
+    });
+  });
+})();
 
 function animateCounter(el){
   const target=parseInt(el.getAttribute('data-count'));
