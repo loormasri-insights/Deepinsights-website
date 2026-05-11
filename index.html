@@ -457,16 +457,27 @@ nav{
 .stat-item:last-child{border-right:none;}
 .stat-num{font-family:'Poppins',sans-serif;font-size:46px;color:#fff;line-height:1;}
 .stat-label{font-size:10px;color:rgba(255,255,255,0.4);margin-top:8px;letter-spacing:1.5px;text-transform:uppercase;}
+.stats-light{background:#fff;padding:64px 48px;border-bottom:1.5px solid var(--gray2);}
+.stats-light .stats-inner{border-color:var(--gray2);}
+.stats-light .stat-item{border-right-color:var(--gray2);}
+.stats-light .stat-num{color:var(--blue);font-weight:800;}
+.stats-light .stat-label{color:var(--text-muted);}
 
 .case-studies-wrap{padding:80px 48px;background:#fff;}
 .case-study-new{display:grid;grid-template-columns:1fr 1.4fr;gap:60px;align-items:center;margin-bottom:72px;padding-bottom:72px;border-bottom:1px solid var(--gray2);}
 .case-study-new:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
 .case-study-new:nth-child(even){grid-template-columns:1.4fr 1fr;}
 .case-study-new:nth-child(even) .cs-content-new{order:-1;}
-.cs-visual-new{background:linear-gradient(145deg,var(--navy),#204060);border-radius:var(--radius);padding:48px 36px;text-align:center;min-height:260px;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.cs-visual-new{background:linear-gradient(145deg,var(--navy),#204060);border-radius:var(--radius);padding:48px 36px;text-align:center;min-height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;}
 .cs-visual-new .icon{font-size:52px;margin-bottom:16px;}
 .cs-visual-new h3{font-family:'Poppins',sans-serif;font-size:22px;color:#fff;margin-bottom:6px;}
 .cs-visual-new span{font-size:11px;color:rgba(255,255,255,0.4);}
+.cs-visual-new.cs-img{padding:0;}
+.cs-visual-new.cs-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.55s ease;}
+.cs-visual-new.cs-img:hover img{transform:scale(1.05);}
+.cs-img-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(15,33,54,0.93) 0%,rgba(15,33,54,0.3) 70%,transparent 100%);padding:32px 28px 26px;z-index:2;}
+.cs-img-caption h3{font-family:'Poppins',sans-serif;font-size:17px;font-weight:700;color:#fff;margin-bottom:4px;}
+.cs-img-caption span{font-size:10.5px;color:rgba(255,255,255,0.55);letter-spacing:0.3px;}
 .cs-content-new .tag{font-family:'Poppins',sans-serif;font-size:10px;letter-spacing:2.5px;color:var(--blue);margin-bottom:10px;text-transform:uppercase;}
 .cs-content-new h2{font-family:'Poppins',sans-serif;font-size:28px;color:var(--navy);margin-bottom:6px;line-height:1.15;}
 .cs-content-new .client{font-size:12.5px;color:var(--text-muted);margin-bottom:18px;}
@@ -1932,9 +1943,9 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
       <p class="page-hero-sub">A cross-section of recent advisory, evaluation, and systems work across Palestine and the MENA region — representing the breadth of our thematic and methodological scope.</p>
     </div>
   </div>
-  <div class="stats-dark">
+  <div class="stats-light">
     <div class="stats-inner">
-      <div class="stat-item"><div class="stat-num" data-count="50" data-suffix="+">0</div><div class="stat-label">Engagements Delivered</div></div>
+      <div class="stat-item"><div class="stat-num" data-count="50" data-suffix="+">0</div><div class="stat-label">Projects Delivered</div></div>
       <div class="stat-item"><div class="stat-num" data-count="34" data-suffix="">0</div><div class="stat-label">Client Organisations</div></div>
       <div class="stat-item"><div class="stat-num" data-count="8" data-suffix="">0</div><div class="stat-label">Thematic Sectors</div></div>
       <div class="stat-item"><div class="stat-num" data-count="500" data-suffix="+">0</div><div class="stat-label">Professionals Trained</div></div>
@@ -1945,7 +1956,7 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
     <div class="section-inner" style="max-width:1100px;">
 
       <div class="case-study-new">
-        <div class="cs-visual-new"><div class="icon cs-icon-wrap"><svg class="icon-svg"><use href="#ico-activity"/></svg></div><h3>MHPSS Evaluation</h3><span>Gaza · East Jerusalem · West Bank</span></div>
+        <div class="cs-visual-new cs-img"><img src="project-images/p1.jpg" alt="MHPSS Programme Evaluation" loading="lazy"/><div class="cs-img-caption"><h3>MHPSS Evaluation</h3><span>Gaza · East Jerusalem · West Bank</span></div></div>
         <div class="cs-content-new">
           <div class="tag">EVALUATION · MHPSS · OECD-DAC</div>
           <h2>Integrated MHPSS Programme Evaluation</h2>
@@ -1956,7 +1967,7 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
       </div>
 
       <div class="case-study-new">
-        <div class="cs-visual-new"><div class="icon cs-icon-wrap"><svg class="icon-svg"><use href="#ico-leaf"/></svg></div><h3>Food Security Evaluation</h3><span>Beit Jala, Area C · West Bank</span></div>
+        <div class="cs-visual-new cs-img"><img src="project-images/p5.jpg" alt="Agro-Ecology and Food Security Evaluation" loading="lazy"/><div class="cs-img-caption"><h3>Food Security Evaluation</h3><span>Beit Jala, Area C · West Bank</span></div></div>
         <div class="cs-content-new">
           <div class="tag">EVALUATION · FOOD SECURITY · PARTICIPATORY</div>
           <h2>Agro-Ecology &amp; Food Security Final Evaluation</h2>
@@ -1967,7 +1978,7 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
       </div>
 
       <div class="case-study-new">
-        <div class="cs-visual-new"><div class="icon cs-icon-wrap"><svg class="icon-svg"><use href="#ico-baby"/></svg></div><h3>National ECD Strategy</h3><span>6 Government Ministries</span></div>
+        <div class="cs-visual-new cs-img"><img src="project-images/p3.jpg" alt="National ECD Strategy" loading="lazy"/><div class="cs-img-caption"><h3>National ECD Strategy</h3><span>6 Government Ministries</span></div></div>
         <div class="cs-content-new">
           <div class="tag">STRATEGY · ECD · GOVERNMENT</div>
           <h2>National ECD Strategy 2025–2030</h2>
@@ -1978,7 +1989,7 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
       </div>
 
       <div class="case-study-new">
-        <div class="cs-visual-new"><div class="icon cs-icon-wrap"><svg class="icon-svg"><use href="#ico-cloud"/></svg></div><h3>Regional Cloud MIS</h3><span>Palestine · Jordan · Lebanon</span></div>
+        <div class="cs-visual-new cs-img"><img src="project-images/p4.jpg" alt="Regional Cloud-Based MIS" loading="lazy"/><div class="cs-img-caption"><h3>Regional Cloud MIS</h3><span>Palestine · Jordan · Lebanon</span></div></div>
         <div class="cs-content-new">
           <div class="tag">MEAL SYSTEMS · MIS · REGIONAL</div>
           <h2>Regional Cloud-Based Management Information System</h2>
@@ -1989,7 +2000,7 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
       </div>
 
       <div class="case-study-new">
-        <div class="cs-visual-new"><div class="icon cs-icon-wrap"><svg class="icon-svg"><use href="#ico-alert"/></svg></div><h3>Child Protection Evaluation</h3><span>Gaza &amp; West Bank</span></div>
+        <div class="cs-visual-new cs-img"><img src="project-images/p6.jpg" alt="Child Protection Emergency Response Evaluation" loading="lazy"/><div class="cs-img-caption"><h3>Child Protection Evaluation</h3><span>Gaza &amp; West Bank</span></div></div>
         <div class="cs-content-new">
           <div class="tag">EVALUATION · CHILD PROTECTION · EMERGENCY</div>
           <h2>Child Protection &amp; MHPSS Emergency Response Evaluation</h2>
