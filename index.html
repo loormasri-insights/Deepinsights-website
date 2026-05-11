@@ -733,7 +733,7 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
 .dash-legend-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
 
 /* ── TEAM SHOWCASE ── */
-.team-showcase-outer{display:flex;gap:52px;align-items:flex-start;width:100%;}
+.team-showcase-outer{display:flex;gap:72px;align-items:center;justify-content:center;max-width:960px;margin:0 auto;}
 .approach-mini{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:12px;}
 .approach-mini-step{padding:14px 16px;background:var(--gray);border-radius:12px;}
 .approach-mini-num{font-family:'Poppins',sans-serif;font-size:10px;font-weight:700;color:var(--blue);letter-spacing:1.5px;margin-bottom:4px;}
@@ -744,24 +744,24 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
 .team-col:nth-child(2){margin-top:44px;}
 .team-col:nth-child(3){margin-top:22px;}
 .team-photo-card{
-  width:130px;height:145px;border-radius:16px;overflow:hidden;
+  width:170px;height:190px;border-radius:20px;overflow:hidden;
   cursor:pointer;transition:opacity 0.3s;
   background:linear-gradient(145deg,var(--blue),var(--navy));
   display:flex;align-items:center;justify-content:center;
-  font-family:'Poppins',sans-serif;font-size:28px;font-weight:700;color:rgba(255,255,255,0.9);
+  font-family:'Poppins',sans-serif;font-size:34px;font-weight:700;color:rgba(255,255,255,0.9);
   flex-shrink:0;
 }
 .team-photo-card.dimmed{opacity:0.45;filter:grayscale(0.7);}
 .team-photo-card.active{opacity:1;filter:none;box-shadow:0 8px 24px rgba(58,141,196,0.35);}
-.team-name-list{flex:1;display:flex;flex-direction:column;gap:20px;padding-top:8px;}
+.team-name-list{flex:1;display:flex;flex-direction:column;gap:28px;padding-top:8px;}
 .team-name-row{cursor:pointer;transition:opacity 0.3s;}
 .team-name-row.dimmed{opacity:0.4;}
-.team-name-row.active .tnr-bar{width:22px;background:var(--navy);}
-.tnr-top{display:flex;align-items:center;gap:10px;}
-.tnr-bar{width:16px;height:10px;border-radius:4px;background:rgba(27,58,92,0.2);transition:all 0.3s;flex-shrink:0;}
-.tnr-name{font-family:'Poppins',sans-serif;font-size:17px;font-weight:600;color:var(--navy);line-height:1;transition:color 0.3s;}
+.team-name-row.active .tnr-bar{width:26px;background:var(--navy);}
+.tnr-top{display:flex;align-items:center;gap:12px;}
+.tnr-bar{width:18px;height:12px;border-radius:4px;background:rgba(27,58,92,0.2);transition:all 0.3s;flex-shrink:0;}
+.tnr-name{font-family:'Poppins',sans-serif;font-size:22px;font-weight:600;color:var(--navy);line-height:1;transition:color 0.3s;}
 .team-name-row.active .tnr-name{color:var(--blue);}
-.tnr-role{margin-top:5px;padding-left:26px;font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);}
+.tnr-role{margin-top:6px;padding-left:30px;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);}
 
 /* ── SERVICE CARD VISUALS ── */
 .sc-visual-preview{margin-top:16px;border-radius:10px;overflow:hidden;background:var(--blue-pale);padding:14px;min-height:70px;}
@@ -2100,8 +2100,8 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
             <div class="team-photo-card" data-member="3" style="background:linear-gradient(145deg,#2874A6,#5DADE2);">SP</div>
           </div>
           <div class="team-col">
-            <div class="team-photo-card" data-member="1" style="background:linear-gradient(145deg,#3A8DC4,#1B3A5C);width:145px;height:160px;">SR</div>
-            <div class="team-photo-card" data-member="4" style="background:linear-gradient(145deg,#1F4878,#3A8DC4);width:145px;height:160px;">PM</div>
+            <div class="team-photo-card" data-member="1" style="background:linear-gradient(145deg,#3A8DC4,#1B3A5C);width:185px;height:210px;">SR</div>
+            <div class="team-photo-card" data-member="4" style="background:linear-gradient(145deg,#1F4878,#3A8DC4);width:185px;height:210px;">PM</div>
           </div>
           <div class="team-col">
             <div class="team-photo-card" data-member="2" style="background:linear-gradient(145deg,#5DADE2,#2874A6);">DA</div>
