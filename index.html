@@ -527,6 +527,23 @@ nav{
 .article-date-new{font-size:11px;color:var(--text-muted);margin-bottom:8px;}
 .article-excerpt-new{font-size:13px;color:var(--text-muted);line-height:1.7;font-weight:300;margin-bottom:14px;}
 .read-more-new{font-family:'Poppins',sans-serif;font-size:11px;color:var(--blue);letter-spacing:1.2px;text-transform:uppercase;}
+.read-more-btn{background:none;border:none;font-family:'Poppins',sans-serif;font-size:11px;font-weight:700;color:var(--blue);letter-spacing:1.2px;text-transform:uppercase;cursor:pointer;padding:0;display:inline-flex;align-items:center;gap:6px;transition:color 0.2s;}
+.read-more-btn:hover{color:var(--navy);}
+.article-full-content{display:none;padding:28px 28px 34px;border-top:1.5px solid var(--gray2);background:#f7fafd;}
+.article-full-content.open{display:block;}
+.article-full-content h4{font-family:'Poppins',sans-serif;font-size:13.5px;font-weight:700;color:var(--navy);margin:24px 0 8px;line-height:1.3;}
+.article-full-content h4:first-child{margin-top:0;}
+.article-full-content p{font-size:13.5px;color:var(--text-muted);line-height:1.9;margin-bottom:0;}
+.article-related-row{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:14px 0 18px;}
+.article-related-label{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);}
+.article-related-chip{display:inline-flex;align-items:center;padding:4px 12px;background:var(--blue-pale);border-radius:100px;font-size:11px;font-weight:600;color:var(--navy);cursor:pointer;transition:background 0.2s;}
+.article-related-chip:hover{background:#cde2f5;}
+.article-card-new.expanded{transform:none!important;box-shadow:0 4px 20px rgba(27,58,92,0.07);}
+.articles-grid{display:grid;grid-template-columns:1fr;gap:22px;padding:52px 48px;max-width:900px;margin:0 auto;}
+.cs-related-reading{margin-top:22px;padding-top:18px;border-top:1px solid var(--gray2);}
+.cs-related-label{font-size:9.5px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px;}
+.cs-related-link{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--blue);cursor:pointer;transition:color 0.2s;background:none;border:none;padding:0;font-family:inherit;}
+.cs-related-link:hover{color:var(--navy);}
 
 /* ── CONTACT PAGE ── */
 .contact-wrap{padding:72px 48px;}
@@ -1963,6 +1980,7 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
           <div class="client">Médecins du Monde | BMZ Funding</div>
           <p>Multi-site evaluation of integrated mental health and psychosocial support services across three sites in Palestine. Applying OECD-DAC criteria with a rights-based methodology, we assessed service quality, referral pathways, staff wellbeing, and programmatic adaptations following the October 2023 escalation.</p>
           <div class="cs-results-new"><div class="cs-result-new"><strong>3</strong><span>Sites Evaluated</span></div><div class="cs-result-new"><strong>OECD-DAC</strong><span>Standard Applied</span></div><div class="cs-result-new"><strong>BMZ</strong><span>Funded Programme</span></div></div>
+          <div class="cs-related-reading"><div class="cs-related-label">Related Reading</div><button class="cs-related-link" onclick="showPage('insights')">MHPSS Evaluation in Protracted Crisis: Field Notes from Palestine →</button></div>
         </div>
       </div>
 
@@ -1974,6 +1992,7 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
           <div class="client">Caritas Jerusalem | Generalitat Valenciana</div>
           <p>Final evaluation of a community food sovereignty programme in Beit Jala (Area C) engaging 1,495 beneficiaries. Mixed-methods design combined KIIs, FGDs, field observations, and document review — with systematic qualitative analysis in ATLAS.ti.</p>
           <div class="cs-results-new"><div class="cs-result-new"><strong>1,495</strong><span>Beneficiaries</span></div><div class="cs-result-new"><strong>ATLAS.ti</strong><span>Qualitative Analysis</span></div><div class="cs-result-new"><strong>Area C</strong><span>Complex Context</span></div></div>
+          <div class="cs-related-reading"><div class="cs-related-label">Related Reading</div><button class="cs-related-link" onclick="showPage('insights')">Evaluation Under Constraint: Participatory Methods in Restricted Contexts →</button></div>
         </div>
       </div>
 
@@ -1985,6 +2004,7 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
           <div class="client">Humanity &amp; Inclusion | Government of Palestine</div>
           <p>Led the national review and redesign of Palestine's Early Childhood Development Strategy, engaging six government ministries in a comprehensive participatory process. The five-year framework integrates health, education, and protection with disability inclusion, MHPSS, and emergency preparedness — plus a costed action plan.</p>
           <div class="cs-results-new"><div class="cs-result-new"><strong>6</strong><span>Ministries Engaged</span></div><div class="cs-result-new"><strong>2025–2030</strong><span>Strategy Period</span></div><div class="cs-result-new"><strong>National</strong><span>Policy Level</span></div></div>
+          <div class="cs-related-reading"><div class="cs-related-label">Related Reading</div><button class="cs-related-link" onclick="showPage('insights')">Evaluation Under Constraint: Participatory Methods in Restricted Contexts →</button></div>
         </div>
       </div>
 
@@ -1996,6 +2016,7 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
           <div class="client">United Palestinian Appeal</div>
           <p>Designed and implemented a regional MIS connecting UPA's operations across Palestine, Jordan, and Lebanon through a nine-phase development process. Unified data architecture with ActivityInfo integration, custom Power BI dashboards, GDPR-compliant data management, and automated reporting workflows.</p>
           <div class="cs-results-new"><div class="cs-result-new"><strong>3</strong><span>Countries Connected</span></div><div class="cs-result-new"><strong>9-Phase</strong><span>Development</span></div><div class="cs-result-new"><strong>Real-Time</strong><span>Cross-Country Data</span></div></div>
+          <div class="cs-related-reading"><div class="cs-related-label">Related Reading</div><button class="cs-related-link" onclick="showPage('insights')">Building MEAL Systems That Work in the Field →</button></div>
         </div>
       </div>
 
@@ -2007,6 +2028,7 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
           <div class="client">Save the Children | YMCA</div>
           <p>Endline evaluation of a three-year child protection and MHPSS emergency response reaching 4,200 crisis-affected beneficiaries. The evaluation validated the effectiveness of a 12-session resilience model and assessed case management quality and referral pathway functionality.</p>
           <div class="cs-results-new"><div class="cs-result-new"><strong>4,200</strong><span>Beneficiaries</span></div><div class="cs-result-new"><strong>12-Session</strong><span>Model Validated</span></div><div class="cs-result-new"><strong>Endline</strong><span>Evaluation</span></div></div>
+          <div class="cs-related-reading"><div class="cs-related-label">Related Reading</div><button class="cs-related-link" onclick="showPage('insights')">MHPSS Evaluation in Protracted Crisis: Field Notes from Palestine →</button></div>
         </div>
       </div>
 
@@ -2298,22 +2320,89 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
     <div class="page-hero-inner-new" style="position:relative;z-index:2;">
       <div class="badge badge-dark" style="margin-bottom:16px;"><div class="badge-icon"><svg class="icon-svg"><use href="#ico-book"/></svg></div><span class="badge-text">Knowledge &amp; Learning</span></div>
       <h1>Insights</h1>
-      <p class="page-hero-sub">Publications, methodology notes, and analytical pieces drawn from our advisory work across Palestine and the MENA region.</p>
+      <p class="page-hero-sub">Methodology notes and publications drawn directly from our advisory and evaluation work across Palestine and the MENA region.</p>
     </div>
   </div>
-  <div class="insights-filter-new">
-    <button class="filter-btn-new active">All</button>
-    <button class="filter-btn-new">Publications</button>
-    <button class="filter-btn-new">Methodology Notes</button>
-    <button class="filter-btn-new">Data &amp; Dashboards</button>
-  </div>
+
   <div class="articles-grid">
-    <div class="article-card-new"><div class="article-top t-pub"><div class="article-type-tag">Publication</div><div class="article-card-title">Youth Mental Health in Palestine: Lessons from the Enabel Programme</div></div><div class="article-body-new"><div class="article-date-new">January 2025 · 12 min read</div><div class="article-excerpt-new">Synthesising good practices from multi-year youth MHPSS interventions — community-based approaches, family engagement, and integration with education and livelihoods programming.</div><div class="read-more-new">Read More →</div></div></div>
-    <div class="article-card-new"><div class="article-top t-method"><div class="article-type-tag">Methodology Note</div><div class="article-card-title">Building Adaptive MEAL Systems: A Practitioner's Framework</div></div><div class="article-body-new"><div class="article-date-new">January 2025 · 15 min read</div><div class="article-excerpt-new">A practitioner's guide to designing monitoring systems organisations actually use — balancing donor requirements with field-level practicality and genuine feedback loops.</div><div class="read-more-new">Read More →</div></div></div>
-    <div class="article-card-new"><div class="article-top t-pub"><div class="article-type-tag">Publication</div><div class="article-card-title">Gender-Responsive Evaluation in Humanitarian Settings</div></div><div class="article-body-new"><div class="article-date-new">January 2025 · 10 min read</div><div class="article-excerpt-new">Integrating feminist evaluation principles into standard OECD-DAC evaluations — practical tools, sampling approaches, and reporting considerations for GBV-sensitive contexts.</div><div class="read-more-new">Read More →</div></div></div>
-    <div class="article-card-new"><div class="article-top t-data"><div class="article-type-tag">Data &amp; Dashboards</div><div class="article-card-title">Power BI for M&amp;E: From Raw Data to Actionable Reporting</div></div><div class="article-body-new"><div class="article-date-new">February 2025 · 8 min read</div><div class="article-excerpt-new">How we design Power BI dashboards for development sector clients — data architecture, indicator logic, refresh cycles, and the training considerations that determine whether dashboards are actually used.</div><div class="read-more-new">Read More →</div></div></div>
-    <div class="article-card-new"><div class="article-top t-method"><div class="article-type-tag">Methodology Note</div><div class="article-card-title">Outcome Harvesting in Conflict Settings: Field Adaptations</div></div><div class="article-body-new"><div class="article-date-new">March 2025 · 18 min read</div><div class="article-excerpt-new">Applying Outcome Harvesting in active conflict and protracted crisis contexts — adaptations for access constraints, safety considerations, and evidence verification under field conditions.</div><div class="read-more-new">Read More →</div></div></div>
-    <div class="article-card-new"><div class="article-top t-pub"><div class="article-type-tag">Publication</div><div class="article-card-title">MHPSS Evaluation Practice: A Palestinian Perspective</div></div><div class="article-body-new"><div class="article-date-new">March 2025 · 14 min read</div><div class="article-excerpt-new">Reflections on applying IASC MHPSS evaluation guidelines in Palestine — indicators, qualitative approaches, and ethical considerations for evaluating mental health programming in crisis.</div><div class="read-more-new">Read More →</div></div></div>
+
+    <!-- ARTICLE 1 -->
+    <div class="article-card-new">
+      <div class="article-top t-pub">
+        <div class="article-type-tag">Publication</div>
+        <div class="article-card-title">MHPSS Evaluation in Protracted Crisis: Field Notes from Palestine</div>
+      </div>
+      <div class="article-body-new">
+        <div class="article-date-new">March 2025 · 14 min read</div>
+        <div class="article-excerpt-new">Applying OECD-DAC criteria in active conflict demands more than methodological rigour — it requires ethical adaptation, clinical team composition, and a willingness to let programme context reshape evaluation design.</div>
+        <div class="article-related-row"><span class="article-related-label">Related Projects</span><span class="article-related-chip" onclick="showPage('impact')">MHPSS Evaluation</span><span class="article-related-chip" onclick="showPage('impact')">Child Protection Evaluation</span></div>
+        <button class="read-more-btn" onclick="toggleArticle(this)"><span class="rmt">Read the note</span> <span class="rma">↓</span></button>
+      </div>
+      <div class="article-full-content">
+        <p>Evaluating MHPSS programmes in active conflict is methodologically demanding in ways that standard OECD-DAC guidance does not fully anticipate. This note draws on two programme evaluations conducted across Gaza, East Jerusalem, and the West Bank to offer practical field notes for evaluation practitioners working in similar contexts.</p>
+        <h4>The OECD-DAC criteria don't break — but they need adaptation</h4>
+        <p>Relevance, effectiveness, efficiency, impact, and sustainability remain the right framework. What changes in a protracted crisis is how each criterion is operationalised. Relevance requires asking whether the programme is responding to the right presenting needs at this moment — which shifts rapidly in active conflict. A programme designed for chronic complex trauma looks very different from one responding to mass casualty events. We found it useful to build explicit sensitivity to programme adaptation into our evaluation questions: not just did it work, but how did the programme change in response to the crisis, and were those changes appropriate? Sustainability, similarly, asks different questions when institutional continuity is genuinely uncertain. We found it more useful to evaluate sustainability at the level of trained workforce and community-embedded approaches than at the level of organisational infrastructure.</p>
+        <h4>Staff wellbeing as a substantive evaluative indicator</h4>
+        <p>In both evaluations we treated staff wellbeing as a substantive indicator — not an afterthought. Practitioners delivering MHPSS services in Gaza post-October 2023 were simultaneously affected community members. Their capacity to deliver quality services, maintain professional boundaries, and manage caseloads was directly affected by their own exposure to trauma. Staff interviews were conducted by team members with clinical MHPSS backgrounds, in private, with clear separation from any performance review process. The findings — on supervision adequacy, peer support structures, and caseload manageability — became some of the evaluation's most actionable outputs, with concrete recommendations for management that programme teams could act on immediately.</p>
+        <h4>Ethical data collection with conflict-affected populations</h4>
+        <p>Standard informed consent procedures require adjustment when respondents may associate formal paperwork with risk. We simplified consent forms and used verbal consent in all FGD settings, building in additional rapport time before structured data collection began. Beneficiary interviews were conducted in trusted community settings rather than programme facilities wherever possible. All data on sensitive indicators — trauma symptoms, GBV disclosure history, suicidal ideation in adolescent programming — was collected exclusively by trained clinical staff, never by data enumerators, and transmitted under strict data protection protocols.</p>
+        <h4>Referral pathway assessment as a core effectiveness question</h4>
+        <p>Referral pathway functionality emerged as a central effectiveness question in both evaluations. The most technically sound MHPSS programme fails beneficiaries if the systems around it cannot provide the specialised care that case management identifies. We assessed pathways through case file review, KIIs with receiving facilities, and — where accessible — traced case interviews. A consistent finding: referral documentation was stronger than referral outcomes. Recording a referral and confirming a beneficiary received the referred service are not the same thing, and MEAL systems rarely track the latter. This gap represents one of the most significant quality risks in MHPSS case management, and one of the most addressable.</p>
+        <h4>On team composition</h4>
+        <p>MHPSS evaluations are strengthened by genuine multidisciplinarity. Our teams combined evaluation methodology expertise with clinical MHPSS knowledge and deep contextual familiarity with Palestine. That combination shaped not just the quality of data collection but the interpretation of findings — and ultimately the utility of recommendations for programme teams navigating genuinely difficult operating environments.</p>
+      </div>
+    </div>
+
+    <!-- ARTICLE 2 -->
+    <div class="article-card-new">
+      <div class="article-top t-method">
+        <div class="article-type-tag">Methodology Note</div>
+        <div class="article-card-title">Building MEAL Systems That Work in the Field</div>
+      </div>
+      <div class="article-body-new">
+        <div class="article-date-new">February 2025 · 12 min read</div>
+        <div class="article-excerpt-new">The gap between a well-designed MEAL system and one field teams actually use is one of the most persistent failures in development programme management. This note draws on a regional MIS implementation connecting operations across three countries.</div>
+        <div class="article-related-row"><span class="article-related-label">Related Projects</span><span class="article-related-chip" onclick="showPage('impact')">Regional Cloud MIS</span></div>
+        <button class="read-more-btn" onclick="toggleArticle(this)"><span class="rmt">Read the note</span> <span class="rma">↓</span></button>
+      </div>
+      <div class="article-full-content">
+        <p>MEAL systems most often fail not because of technical inadequacy but because they were designed around donor reporting requirements rather than programme team decision-making needs. This note documents lessons from a nine-phase regional MIS implementation connecting UPA's operations across Palestine, Jordan, and Lebanon — and from the patterns we encounter when inheriting systems built without that distinction in mind.</p>
+        <h4>The most common failure mode</h4>
+        <p>When the primary output of a MEAL system is a quarterly donor report, field teams quickly learn the system exists for compliance — not for them. Data quality declines, workarounds proliferate, and the system gradually becomes a parallel administrative burden rather than a management tool. The fix is to design data flows around the questions programme managers actually want answered, and treat donor reporting as a downstream output of that — not the primary driver. In practice, this means sitting with programme teams before system design begins and asking: what do you genuinely need to know each week to manage this programme well? Those answers drive the system architecture.</p>
+        <h4>ActivityInfo as a field data backbone</h4>
+        <p>For organisations operating across MENA, ActivityInfo has become our preferred platform for field-level data collection and indicator tracking. Its offline functionality handles the connectivity constraints common in field settings; its form builder is accessible to non-technical staff; and its outputs feed directly into Power BI for dashboard visualisation. In the UPA implementation, we connected data from three country offices — each with different programme structures and indicator frameworks — into a unified data architecture. The upfront investment in indicator harmonisation and data governance protocols paid off in cross-country real-time programme data, replacing a quarterly Excel reconciliation process that was absorbing significant M&E officer time.</p>
+        <h4>Power BI dashboards — the choices that matter</h4>
+        <p>A Power BI dashboard is only useful if programme teams actually open it. That sounds obvious, but a significant proportion of dashboards we inherit have not been accessed by anyone other than the M&E officer in months. Useful dashboards are designed around three or four genuinely important management questions. They are not comprehensive, do not attempt to visualise every logframe indicator, and are structured around how programme teams think about their work — not how a results framework is sequenced. Load time, screen size, and language all matter more than visual sophistication. We also invest heavily in the handover process: a dashboard a team understands and trusts is far more valuable than a technically sophisticated one that functions as a black box.</p>
+        <h4>The governance question nobody asks early enough</h4>
+        <p>In multi-country or multi-partner implementations, data governance is the issue that causes the most downstream problems when not addressed at the design stage. Who has permission to enter and edit records? Who can view aggregated cross-site data, and who sees only their own? What happens to data access when a staff member leaves? What is the protocol when submitted data is contested? We document data governance in a formal protocol and build permission structures into the system architecture from the start — not as an afterthought when a data breach or a disputed entry first surfaces.</p>
+      </div>
+    </div>
+
+    <!-- ARTICLE 3 -->
+    <div class="article-card-new">
+      <div class="article-top t-pub" style="background:linear-gradient(145deg,#0F4C3A,#166A50);">
+        <div class="article-type-tag">Methodology Note</div>
+        <div class="article-card-title">Evaluation Under Constraint: Participatory Methods in Restricted Contexts</div>
+      </div>
+      <div class="article-body-new">
+        <div class="article-date-new">January 2025 · 11 min read</div>
+        <div class="article-excerpt-new">Two engagements — a food security evaluation in Area C and a six-ministry ECD strategy process — present different methodological challenges with a common thread: useful evaluation evidence requires adapting methods to context, not forcing context to fit methods.</div>
+        <div class="article-related-row"><span class="article-related-label">Related Projects</span><span class="article-related-chip" onclick="showPage('impact')">Food Security Evaluation</span><span class="article-related-chip" onclick="showPage('impact')">National ECD Strategy</span></div>
+        <button class="read-more-btn" onclick="toggleArticle(this)"><span class="rmt">Read the note</span> <span class="rma">↓</span></button>
+      </div>
+      <div class="article-full-content">
+        <p>Two of our recent engagements — a final evaluation of a food sovereignty programme in Beit Jala (Area C, West Bank) and the development of Palestine's National ECD Strategy spanning six government ministries — presented very different methodological challenges. What connects them is a principle that holds across both: useful evaluation evidence requires adapting methods to context, not forcing context to fit a preferred method.</p>
+        <h4>Area C: treating access as a live methodological variable</h4>
+        <p>Evaluation in Area C of the West Bank requires treating access as a live methodological variable rather than a fixed condition. Entry restrictions, unpredictable road closures, and community sensitivity to external presence all affect what data can be collected, from whom, and when. For the Beit Jala evaluation, field observations were conducted in pairs with community guides rather than by external evaluators alone. FGD timing and locations were determined by community leaders, not by our data collection schedule. The evaluation team included local researchers with existing community relationships — not as a courtesy, but as a methodological necessity. These adaptations produced richer data than a more externally controlled process would have. Community members spoke more openly in settings they controlled, about a programme they had participated in designing.</p>
+        <h4>ATLAS.ti for rigorous qualitative analysis</h4>
+        <p>With 1,495 beneficiaries and a programme embedded in a specific community context, the qualitative dimension of the evaluation required systematic analysis across a substantial volume of transcript data. We coded all FGD and KII transcripts in ATLAS.ti using a coding framework developed iteratively from both the evaluation questions and the data itself. This approach allows us to move from individual responses to patterns across the full dataset in a way that is rigorous and auditable — commissioners can follow the analytical trail from raw transcript to published finding. It also surfaces divergences between beneficiary accounts and programme documentation that would be easy to miss in a less systematic process. In this evaluation, those divergences became some of the most important findings.</p>
+        <h4>Multi-ministry participatory processes</h4>
+        <p>The National ECD Strategy process presented an entirely different challenge: not restricted access to a community, but the coordination of six government ministries with overlapping mandates, political relationships, and institutional cultures. Participatory strategy development at this scale requires deliberate facilitation design. We used bilateral ministry consultations before any joint sessions to understand each ministry's priorities without the political dynamics of a shared table; structured joint workshops with deliberate role design to prevent any single ministry from dominating; and iterative draft review processes that allowed disagreements to surface and be negotiated before they became blocking issues. The resulting strategy reflected genuine multi-ministry ownership — because the process was designed to create the conditions for it, not assume them.</p>
+        <h4>A principle that holds across both contexts</h4>
+        <p>In both engagements, what produced the most useful evaluation evidence was genuine participant ownership of the process. In Beit Jala, community members shaped when and how data was collected. Across the ministries, government counterparts shaped what questions the strategy needed to answer. This is not simply an ethical position — though it is that. Evaluation evidence is more useful when the people who generated it feel ownership of the findings. Utilisation is downstream of participation, and participation requires more than consultation.</p>
+      </div>
+    </div>
+
   </div>
   <section class="cta-section"><h2>Commission a Study</h2><p>Looking for specialised research or a sector evidence review? We produce bespoke analytical products alongside our advisory work.</p><div class="cta-btns"><button class="btn-pill btn-pill-primary" onclick="showPage('contact')">Get in Touch <span class="pill-arrow">→</span></button></div></section>
 </div>
@@ -2427,6 +2516,15 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
 
 
 <script>
+function toggleArticle(btn){
+  const card=btn.closest('.article-card-new');
+  const content=card.querySelector('.article-full-content');
+  const isOpen=content.classList.contains('open');
+  content.classList.toggle('open',!isOpen);
+  card.classList.toggle('expanded',!isOpen);
+  btn.querySelector('.rmt').textContent=isOpen?'Read the note':'Close';
+  btn.querySelector('.rma').textContent=isOpen?'↓':'↑';
+}
 function showPage(id){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
