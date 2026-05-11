@@ -2734,14 +2734,17 @@ function observeAboutGallery(){
   animItems.forEach(i=>obs2.observe(i));
 }
 function observeWorkStats(){
-  const section=document.querySelector('.stats-dark');
-  if(!section)return;
+  const sections=document.querySelectorAll('.stats-dark,.stats-light');
+  if(!sections.length)return;
   const obs=new IntersectionObserver(entries=>{
-    if(entries[0].isIntersecting){
-      section.querySelectorAll('[data-count]').forEach(el=>animateCounter(el));
-    }
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.querySelectorAll('[data-count]').forEach(el=>animateCounter(el));
+        obs.unobserve(e.target);
+      }
+    });
   },{threshold:0.4});
-  obs.observe(section);
+  sections.forEach(s=>obs.observe(s));
 }
 
 const svcData = [
