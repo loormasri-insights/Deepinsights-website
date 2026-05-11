@@ -753,6 +753,7 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
 }
 .team-photo-card.dimmed{opacity:0.45;filter:grayscale(0.7);}
 .team-photo-card.active{opacity:1;filter:none;box-shadow:0 8px 24px rgba(58,141,196,0.35);}
+.team-photo-card img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
 .team-name-list{flex:1;display:flex;flex-direction:column;gap:28px;padding-top:8px;}
 .team-name-row{cursor:pointer;transition:opacity 0.3s;}
 .team-name-row.dimmed{opacity:0.4;}
@@ -2060,16 +2061,9 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
       <div class="split-grid">
         <div>
           <div class="badge"><div class="badge-icon"><svg class="icon-svg"><use href="#ico-building"/></svg></div><span class="badge-text">Our Firm</span></div>
-          <h2 class="section-title">Who We Are &amp; How We Work</h2>
+          <h2 class="section-title">Who We Are</h2>
           <p style="font-size:15.5px;color:var(--text-muted);line-height:1.85;margin-bottom:18px;font-weight:300;">Deep Insights for Monitoring and Evaluation is a specialist advisory firm built around an uncompromising commitment to quality. Every engagement — regardless of scale or sector — is held to the same international standards: OECD-DAC evaluation criteria, UNEG norms, IASC guidelines, and EU evaluation frameworks, applied rigorously and without exception.</p>
-          <p style="font-size:15.5px;color:var(--text-muted);line-height:1.85;margin-bottom:24px;font-weight:300;">Our team brings together evaluation methodologists, digital systems specialists, thematic sector experts, and strategic advisors — professionals with track records across UN agencies, bilateral programmes, and government reform processes throughout the MENA region and beyond. We serve UN agencies, international NGOs, bilateral donors, government institutions, and private enterprises, with a consistent focus on producing evidence and advisory that is credible, contextually grounded, and genuinely useful.</p>
-          <div style="font-family:'Poppins',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:14px;">How We Work</div>
-          <div class="approach-mini">
-            <div class="approach-mini-step"><div class="approach-mini-num">01</div><div class="approach-mini-title">Contextualise</div><div class="approach-mini-desc">Situational analysis, stakeholder mapping, and scoping — defining the right questions before designing methodology.</div></div>
-            <div class="approach-mini-step"><div class="approach-mini-num">02</div><div class="approach-mini-title">Design</div><div class="approach-mini-desc">Methodological design tailored to context and objectives — balancing depth with feasibility, with ethical safeguards built in.</div></div>
-            <div class="approach-mini-step"><div class="approach-mini-num">03</div><div class="approach-mini-title">Deliver</div><div class="approach-mini-desc">Systematic data collection, rigorous analysis, and synthesis — with quality assurance and transparent client communication throughout.</div></div>
-            <div class="approach-mini-step"><div class="approach-mini-num">04</div><div class="approach-mini-title">Translate</div><div class="approach-mini-desc">Findings communicated for genuine learning — through validation workshops, accessible reports, and facilitated sessions that build ownership.</div></div>
-          </div>
+          <p style="font-size:15.5px;color:var(--text-muted);line-height:1.85;font-weight:300;">Our team brings together evaluation methodologists, digital systems specialists, thematic sector experts, and strategic advisors — professionals with track records across UN agencies, bilateral programmes, and government reform processes throughout the MENA region and beyond. We serve UN agencies, international NGOs, bilateral donors, government institutions, and private enterprises, with a consistent focus on producing evidence and advisory that is credible, contextually grounded, and genuinely useful.</p>
         </div>
         <div>
           <div class="badge"><div class="badge-icon"><svg class="icon-svg"><use href="#ico-diamond"/></svg></div><span class="badge-text">Our Values</span></div>
@@ -2085,6 +2079,20 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
     </div>
   </section>
 
+  <section class="section dots-bg" style="background:var(--gray);">
+    <div class="section-inner">
+      <div class="badge"><div class="badge-icon"><svg class="icon-svg"><use href="#ico-cog"/></svg></div><span class="badge-text">How We Work</span></div>
+      <h2 class="section-title">Our Approach</h2>
+      <p class="section-intro">A structured delivery model — from context analysis to actionable learning.</p>
+      <div class="approach-grid">
+        <div class="approach-step-new"><div class="approach-num">01</div><div class="approach-icon"><svg class="icon-svg"><use href="#ico-search"/></svg></div><div class="approach-title">Contextualise</div><div class="approach-desc">Deep situational analysis, stakeholder mapping, document review, and scoping — to define the right evaluation or advisory questions before designing methodology.</div></div>
+        <div class="approach-step-new"><div class="approach-num">02</div><div class="approach-icon"><svg class="icon-svg"><use href="#ico-compass"/></svg></div><div class="approach-title">Design</div><div class="approach-desc">Methodological design tailored to context, objectives, and available resources — balancing depth with feasibility, and integrating ethical safeguards.</div></div>
+        <div class="approach-step-new"><div class="approach-num">03</div><div class="approach-icon"><svg class="icon-svg"><use href="#ico-cog"/></svg></div><div class="approach-title">Deliver</div><div class="approach-desc">Careful data collection, systematic analysis, and synthesis — with quality assurance at every stage and transparent communication with clients throughout.</div></div>
+        <div class="approach-step-new"><div class="approach-num">04</div><div class="approach-icon"><svg class="icon-svg"><use href="#ico-lightbulb"/></svg></div><div class="approach-title">Translate</div><div class="approach-desc">Findings communicated to generate genuine learning — through validation workshops, accessible reports, dashboards, and facilitated sessions that build stakeholder ownership.</div></div>
+      </div>
+    </div>
+  </section>
+
   <section class="section" style="background:#fff;">
     <div class="section-inner" style="max-width:1300px;">
       <div style="text-align:center;margin-bottom:52px;">
@@ -2095,39 +2103,39 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
       <div class="team-showcase-outer" id="teamShowcase">
         <!-- Photo grid (staggered 3 columns) -->
         <div class="team-photo-grid">
-          <div class="team-col">
-            <div class="team-photo-card" data-member="0" style="background:linear-gradient(145deg,#1B3A5C,#2874A6);">DI</div>
-            <div class="team-photo-card" data-member="3" style="background:linear-gradient(145deg,#2874A6,#5DADE2);">SP</div>
+          <div class="team-col" style="margin-top:60px;">
+            <div class="team-photo-card" data-member="2"><img src="Team/Loor Masri.png" alt="Loor Masri"></div>
+            <div class="team-photo-card" data-member="3"><img src="Team/ramzy ibsais.jpeg" alt="Ramzy Ibsais"></div>
           </div>
-          <div class="team-col">
-            <div class="team-photo-card" data-member="1" style="background:linear-gradient(145deg,#3A8DC4,#1B3A5C);width:185px;height:210px;">SR</div>
-            <div class="team-photo-card" data-member="4" style="background:linear-gradient(145deg,#1F4878,#3A8DC4);width:185px;height:210px;">PM</div>
+          <div class="team-col" style="margin-top:0;">
+            <div class="team-photo-card" data-member="0" style="width:205px;height:230px;"><img src="Team/Ghazi Kamal.jpeg" alt="Ghazi Kamal"></div>
+            <div class="team-photo-card" data-member="1" style="width:205px;height:230px;"><img src="Team/Amal Tarazi.png" alt="Amal Tarazi"></div>
           </div>
-          <div class="team-col">
-            <div class="team-photo-card" data-member="2" style="background:linear-gradient(145deg,#5DADE2,#2874A6);">DA</div>
+          <div class="team-col" style="margin-top:60px;">
+            <div class="team-photo-card" data-member="4"><img src="Team/alejandro rizo .png" alt="Alejandro Rizzo"></div>
           </div>
         </div>
         <!-- Name list -->
         <div class="team-name-list">
           <div class="team-name-row" data-member="0">
-            <div class="tnr-top"><div class="tnr-bar"></div><span class="tnr-name">M&amp;E Director</span></div>
-            <div class="tnr-role">Evaluations Lead · Mixed-Methods</div>
+            <div class="tnr-top"><div class="tnr-bar"></div><span class="tnr-name">Ghazi Kamal</span></div>
+            <div class="tnr-role">COO &amp; Co-Founder</div>
           </div>
           <div class="team-name-row" data-member="1">
-            <div class="tnr-top"><div class="tnr-bar"></div><span class="tnr-name">Senior Researcher</span></div>
-            <div class="tnr-role">Qualitative &amp; Quantitative Design</div>
+            <div class="tnr-top"><div class="tnr-bar"></div><span class="tnr-name">Amal Tarazi</span></div>
+            <div class="tnr-role">CEO &amp; Co-Founder</div>
           </div>
           <div class="team-name-row" data-member="2">
-            <div class="tnr-top"><div class="tnr-bar"></div><span class="tnr-name">Data Systems Lead</span></div>
-            <div class="tnr-role">MEAL &amp; Digital · ActivityInfo · Power BI</div>
+            <div class="tnr-top"><div class="tnr-bar"></div><span class="tnr-name">Loor Masri</span></div>
+            <div class="tnr-role">Communications &amp; Research Specialist</div>
           </div>
           <div class="team-name-row" data-member="3">
-            <div class="tnr-top"><div class="tnr-bar"></div><span class="tnr-name">Sector Specialist</span></div>
-            <div class="tnr-role">Gender &amp; GBV · Feminist Evaluation</div>
+            <div class="tnr-top"><div class="tnr-bar"></div><span class="tnr-name">Ramzy Ibsais</span></div>
+            <div class="tnr-role">Organisation Development Specialist</div>
           </div>
           <div class="team-name-row" data-member="4">
-            <div class="tnr-top"><div class="tnr-bar"></div><span class="tnr-name">Project Manager</span></div>
-            <div class="tnr-role">Operations &amp; Coordination</div>
+            <div class="tnr-top"><div class="tnr-bar"></div><span class="tnr-name">Alejandro Rizzo</span></div>
+            <div class="tnr-role">MEL Systems Specialist</div>
           </div>
         </div>
       </div>
