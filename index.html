@@ -347,6 +347,52 @@ nav{
 .tab-active-line{position:absolute;top:0;left:0;height:2.5px;background:var(--blue);border-radius:2px;pointer-events:none;transition:left 0.28s cubic-bezier(0.4,0,0.2,1),top 0.28s cubic-bezier(0.4,0,0.2,1),width 0.28s cubic-bezier(0.4,0,0.2,1);z-index:2;}
 .tab-content-new{display:none;}
 .tab-content-new.active{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;}
+
+/* ── NEW SERVICES LAYOUT ── */
+.svc-new-wrap{background:#fff;padding:80px 48px;}
+.svc-new-inner{max-width:1200px;margin:0 auto;}
+.svc-new-layout{display:grid;grid-template-columns:240px 1fr;gap:64px;align-items:start;}
+.svc-new-nav{position:sticky;top:110px;}
+.svc-new-nav-item{display:flex;align-items:baseline;gap:14px;padding:14px 16px;border-radius:10px;cursor:pointer;transition:all 0.22s;border-left:3px solid transparent;margin-bottom:2px;}
+.svc-new-nav-item:hover{background:var(--gray);}
+.svc-new-nav-item.active{background:var(--gray);border-left-color:var(--blue);}
+.svc-new-nav-num{font-family:'Poppins',sans-serif;font-size:10px;font-weight:700;color:var(--blue);letter-spacing:2px;flex-shrink:0;}
+.svc-new-nav-label{font-family:'Poppins',sans-serif;font-size:13px;font-weight:500;color:var(--text-muted);line-height:1.35;}
+.svc-new-nav-item.active .svc-new-nav-label{color:var(--navy);font-weight:600;}
+.svc-new-nav-item:hover .svc-new-nav-label{color:var(--navy);}
+.svc-new-panel{display:none;}
+.svc-new-panel.active{display:block;animation:svcPanelIn 0.38s ease both;}
+@keyframes svcPanelIn{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+.svc-new-eyebrow{font-family:'Poppins',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;color:var(--blue);text-transform:uppercase;margin-bottom:14px;}
+.svc-new-title{font-family:'Poppins',sans-serif;font-size:clamp(28px,3.5vw,44px);font-weight:800;color:var(--navy);line-height:1.1;margin-bottom:14px;}
+.svc-new-tagline{font-size:16px;color:var(--text-muted);font-weight:300;line-height:1.75;font-style:italic;max-width:600px;margin-bottom:40px;padding-bottom:36px;border-bottom:1px solid var(--gray2);}
+.svc-new-body{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start;margin-bottom:48px;}
+.svc-new-desc p{font-size:15px;color:var(--text-muted);line-height:1.9;font-weight:300;margin-bottom:18px;}
+.svc-visual-box{border-radius:20px;background:linear-gradient(135deg,#EBF4FB 0%,#D6EAF8 60%,#EBF4FB 100%);min-height:380px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;border:1.5px dashed #B6D4ED;}
+.svc-visual-cam{width:52px;height:52px;border-radius:14px;background:rgba(58,141,196,0.13);display:flex;align-items:center;justify-content:center;}
+.svc-visual-box-label{font-family:'Poppins',sans-serif;font-size:11px;letter-spacing:2px;color:var(--blue);text-transform:uppercase;font-weight:600;}
+.svc-visual-box-sub{font-size:12px;color:var(--text-muted);font-weight:300;}
+.svc-new-offer-wrap{background:var(--gray);border-radius:20px;padding:36px 40px;}
+.svc-new-offer-title{font-family:'Poppins',sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--navy);margin-bottom:20px;}
+.svc-new-offer-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.svc-new-offer-item{display:flex;align-items:flex-start;gap:10px;padding:13px 20px 13px 0;border-bottom:1px solid var(--gray2);font-size:13.5px;color:var(--text-muted);font-weight:300;line-height:1.5;}
+.svc-new-offer-item:nth-last-child(-n+2){border-bottom:none;}
+.svc-new-offer-item:nth-last-child(1):nth-child(odd){border-bottom:none;}
+.svc-offer-tick{width:18px;height:18px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.svc-offer-tick-navy{background:var(--navy);}
+@media(max-width:960px){
+  .svc-new-layout{grid-template-columns:1fr;}
+  .svc-new-nav{position:static;display:flex;flex-wrap:wrap;gap:6px;margin-bottom:40px;}
+  .svc-new-nav-item{padding:8px 14px;border-left:none;border-bottom:2px solid transparent;border-radius:8px;}
+  .svc-new-nav-item.active{border-left:none;border-bottom-color:var(--blue);}
+  .svc-new-body{grid-template-columns:1fr;}
+  .svc-new-wrap{padding:60px 24px;}
+}
+@media(max-width:600px){
+  .svc-new-offer-grid{grid-template-columns:1fr;}
+  .svc-new-offer-item:nth-last-child(-n+2){border-bottom:1px solid var(--gray2);}
+  .svc-new-offer-item:last-child{border-bottom:none;}
+}
 .service-detail-new h2{font-family:'Poppins',sans-serif;font-size:42px;color:var(--navy);margin-bottom:6px;line-height:1;}
 .service-tagline-new{font-size:14px;color:var(--blue);margin-bottom:26px;font-style:italic;font-weight:300;}
 .service-detail-new p{font-size:14.5px;color:var(--text-muted);line-height:1.85;margin-bottom:16px;font-weight:300;}
@@ -1530,164 +1576,253 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
       <h1>What We Do</h1>
     </div>
   </div>
-  <div class="tabs-wrap">
-    <div class="tabs-inner">
-      <div class="tab-nav-new" id="svcTabNav">
-        <div class="tab-hover-bg" id="tabHoverBg"></div>
-        <div class="tab-active-line" id="tabActiveLine"></div>
-        <button class="tab-btn-new active" onclick="showTab('eval')">Evaluations &amp; Research</button>
-        <button class="tab-btn-new" onclick="showTab('meal')">MEAL Systems &amp; Digital</button>
-        <button class="tab-btn-new" onclick="showTab('strategy')">Strategy &amp; Risk</button>
-        <button class="tab-btn-new" onclick="showTab('orgdev')">Organisational Dev</button>
-        <button class="tab-btn-new" onclick="showTab('capacity')">Capacity Building</button>
-        <button class="tab-btn-new" onclick="showTab('resource')">Resource Mobilisation</button>
-        <button class="tab-btn-new" onclick="showTab('private')">Private Sector Analytics</button>
-      </div>
+  <div class="svc-new-wrap">
+    <div class="svc-new-inner">
+      <div class="svc-new-layout">
 
-      <div class="tab-content-new active" id="tab-eval">
-        <div class="service-detail-new">
-          <h2>Evaluations &amp; Research</h2>
-          <p class="service-tagline-new">Independent evaluation grounded in international standards, tailored to your context</p>
-          <p>We design and lead evaluations that meet the highest methodological standards while remaining responsive to the realities of programming in complex MENA environments. Our evaluation practice is grounded in OECD-DAC criteria, UNEG norms, and EU evaluation guidelines, adapted to access constraints, stakeholder dynamics, and ethical considerations specific to each context.</p>
-          <p>Our team has conducted evaluations for UN agencies, international NGOs, bilateral donors, and government institutions across MHPSS, GBV, sexual and reproductive health, child protection, food security, education, and livelihoods — at baseline, mid-term, and final stages.</p>
-          <p>We design mixed-methods evaluations combining quantitative analysis with qualitative depth. Specialist techniques — Outcome Harvesting, Most Significant Change, Contribution Analysis — help us assess change in complex, non-linear programme contexts.</p>
-          <div style="margin-top:28px;"><button class="btn-pill btn-pill-dark" onclick="showPage('contact')">Request This Service <span class="pill-arrow">→</span></button></div>
-        </div>
-        <div class="service-sidebar-new">
-          <div class="sidebar-section-new"><h4>Service Offer</h4><ul class="sidebar-list-new"><li>Final, mid-term, and baseline evaluations</li><li>Theory of Change validation and logframe review</li><li>Outcome Harvesting and impact assessment</li><li>Thematic evaluations (MHPSS, GBV, protection, SRH)</li><li>Rapid needs assessments</li><li>Real-time and learning reviews</li><li>Evidence synthesis and literature review</li><li>Post-crisis and resilience-focused evaluation</li></ul></div>
-          <div class="sidebar-section-new"><h4>Methods &amp; Standards</h4><ul class="sidebar-list-new"><li>OECD-DAC six evaluation criteria</li><li>UNEG Norms and Standards</li><li>IASC MHPSS Guidelines</li><li>Mixed-methods design</li><li>ATLAS.ti qualitative coding</li><li>KoboToolbox / ODK data collection</li><li>SPSS / Stata statistical analysis</li></ul></div>
-        </div>
-      </div>
+        <!-- LEFT: sticky numbered nav -->
+        <nav class="svc-new-nav">
+          <div class="svc-new-nav-item active" onclick="showSvc('eval')"><span class="svc-new-nav-num">01</span><span class="svc-new-nav-label">Evaluations &amp; Research</span></div>
+          <div class="svc-new-nav-item" onclick="showSvc('meal')"><span class="svc-new-nav-num">02</span><span class="svc-new-nav-label">MEAL Systems &amp; Digital</span></div>
+          <div class="svc-new-nav-item" onclick="showSvc('strategy')"><span class="svc-new-nav-num">03</span><span class="svc-new-nav-label">Strategy &amp; Risk</span></div>
+          <div class="svc-new-nav-item" onclick="showSvc('orgdev')"><span class="svc-new-nav-num">04</span><span class="svc-new-nav-label">Organisational Development</span></div>
+          <div class="svc-new-nav-item" onclick="showSvc('capacity')"><span class="svc-new-nav-num">05</span><span class="svc-new-nav-label">Capacity Building</span></div>
+          <div class="svc-new-nav-item" onclick="showSvc('resource')"><span class="svc-new-nav-num">06</span><span class="svc-new-nav-label">Resource Mobilisation</span></div>
+          <div class="svc-new-nav-item" onclick="showSvc('private')"><span class="svc-new-nav-num">07</span><span class="svc-new-nav-label">Private Sector Analytics</span></div>
+        </nav>
 
-      <div class="tab-content-new" id="tab-meal">
-        <div class="service-detail-new">
-          <h2>MEAL Systems &amp; Digital</h2>
-          <p class="service-tagline-new">Adaptive monitoring systems that organisations actually use — built for decision-making, not compliance</p>
-          <p>We build MEAL systems that work in the field, not just on paper. Our approach combines technical expertise in digital platforms with hard-won understanding of how monitoring systems function in complex operating environments — where connectivity is intermittent, staff capacity varies, and donor reporting requirements are demanding.</p>
-          <p>We are experienced ActivityInfo implementers, skilled Power BI dashboard developers, and MIS architects. We have built systems connecting multiple country offices, designed mobile data collection workflows, and created automated reporting solutions that eliminate hours of manual work each reporting cycle.</p>
-          <div style="margin-top:28px;"><button class="btn-pill btn-pill-dark" onclick="showPage('contact')">Request This Service <span class="pill-arrow">→</span></button></div>
-        </div>
-        <div>
-          <!-- ANIMATED M&E DASHBOARD MOCKUP -->
-          <div class="meal-dash" id="mealDash">
-            <div class="dash-header">
-              <span class="dash-title">M&amp;E Dashboard — Q1 2025</span>
-              <span class="dash-live"><span class="dash-live-dot"></span>Live</span>
-            </div>
-            <div class="dash-kpi-row">
-              <div class="dash-kpi">
-                <div class="dash-kpi-val" data-dash-count="1495">0</div>
-                <div class="dash-kpi-lbl">Beneficiaries Reached</div>
-                <div class="dash-kpi-delta">↑ +12% vs target</div>
+        <!-- RIGHT: content panels -->
+        <div class="svc-new-content">
+
+          <!-- ① EVALUATIONS -->
+          <div class="svc-new-panel active" id="svcp-eval">
+            <div class="svc-new-eyebrow">01 — Advisory Services</div>
+            <h2 class="svc-new-title">Evaluations &amp; Research</h2>
+            <p class="svc-new-tagline">Independent evaluation grounded in international standards, tailored to your context</p>
+            <div class="svc-new-body">
+              <div class="svc-new-desc">
+                <p>We design and lead evaluations that meet the highest methodological standards while remaining responsive to the realities of programming in complex MENA environments. Our evaluation practice is grounded in OECD-DAC criteria, UNEG norms, and EU evaluation guidelines, adapted to access constraints, stakeholder dynamics, and ethical considerations specific to each context.</p>
+                <p>Our team has conducted evaluations for UN agencies, international NGOs, bilateral donors, and government institutions across MHPSS, GBV, sexual and reproductive health, child protection, food security, education, and livelihoods — at baseline, mid-term, and final stages.</p>
+                <p>We design mixed-methods evaluations combining quantitative analysis with qualitative depth. Specialist techniques — Outcome Harvesting, Most Significant Change, Contribution Analysis — help us assess change in complex, non-linear programme contexts.</p>
+                <button class="btn-pill btn-pill-dark" onclick="showPage('contact')" style="margin-top:8px;">Request This Service <span class="pill-arrow">→</span></button>
               </div>
-              <div class="dash-kpi">
-                <div class="dash-kpi-val" data-dash-count="87">0</div>
-                <div class="dash-kpi-lbl">Indicator Coverage %</div>
-                <div class="dash-kpi-delta">↑ On track</div>
-              </div>
-              <div class="dash-kpi">
-                <div class="dash-kpi-val" data-dash-count="34">0</div>
-                <div class="dash-kpi-lbl">Data Quality Score</div>
-                <div class="dash-kpi-delta">/ 40 max</div>
+              <div class="svc-visual-box">
+                <div class="svc-visual-cam"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3A8DC4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+                <div class="svc-visual-box-label">Photo Placeholder</div>
+                <div class="svc-visual-box-sub">Field evaluation / community interview</div>
               </div>
             </div>
-            <div class="dash-grid">
-              <div class="dash-chart-wrap">
-                <div class="dash-chart-title">Monthly Reach by District</div>
-                <div class="dash-bars" id="dashBars">
-                  <div class="dash-bar-wrap"><div class="dash-bar" style="height:0%" data-h="52%"></div><div class="dash-bar-lbl">Jan</div></div>
-                  <div class="dash-bar-wrap"><div class="dash-bar" style="height:0%" data-h="68%"></div><div class="dash-bar-lbl">Feb</div></div>
-                  <div class="dash-bar-wrap"><div class="dash-bar" style="height:0%" data-h="45%"></div><div class="dash-bar-lbl">Mar</div></div>
-                  <div class="dash-bar-wrap"><div class="dash-bar" style="height:0%" data-h="82%"></div><div class="dash-bar-lbl">Apr</div></div>
-                  <div class="dash-bar-wrap"><div class="dash-bar" style="height:0%" data-h="91%"></div><div class="dash-bar-lbl">May</div></div>
-                  <div class="dash-bar-wrap"><div class="dash-bar" style="height:0%" data-h="76%"></div><div class="dash-bar-lbl">Jun</div></div>
-                </div>
+            <div class="svc-new-offer-wrap">
+              <div class="svc-new-offer-title">Service Offer</div>
+              <div class="svc-new-offer-grid">
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Final, mid-term, and baseline evaluations</div>
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Theory of Change validation and logframe review</div>
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Outcome Harvesting and impact assessment</div>
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Thematic evaluations (MHPSS, GBV, protection, SRH)</div>
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Rapid needs assessments</div>
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Real-time and learning reviews</div>
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Evidence synthesis and literature review</div>
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Post-crisis and resilience-focused evaluation</div>
               </div>
-              <div class="dash-donut-wrap">
-                <div class="dash-donut-title">Sector Split</div>
-                <svg class="dash-donut-svg" viewBox="0 0 70 70">
-                  <circle cx="35" cy="35" r="26" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="12"/>
-                  <circle cx="35" cy="35" r="26" fill="none" stroke="#5DADE2" stroke-width="12" stroke-dasharray="0 163.4" id="donut1" stroke-linecap="round" transform="rotate(-90 35 35)" style="transition:stroke-dasharray 1.2s ease;"/>
-                  <circle cx="35" cy="35" r="26" fill="none" stroke="#3A8DC4" stroke-width="12" stroke-dasharray="0 163.4" id="donut2" stroke-linecap="round" transform="rotate(-90 35 35)" style="transition:stroke-dasharray 1.4s ease 0.2s;"/>
-                  <circle cx="35" cy="35" r="26" fill="none" stroke="#1B3A5C" stroke-width="12" stroke-dasharray="0 163.4" id="donut3" stroke-linecap="round" transform="rotate(-90 35 35)" style="transition:stroke-dasharray 1.6s ease 0.4s;"/>
-                  <text x="35" y="39" text-anchor="middle" font-size="11" font-weight="700" fill="white" font-family="Poppins,sans-serif">Q1</text>
-                </svg>
-                <div class="dash-legend">
-                  <div class="dash-legend-item"><div class="dash-legend-dot" style="background:#5DADE2"></div>MHPSS (42%)</div>
-                  <div class="dash-legend-item"><div class="dash-legend-dot" style="background:#3A8DC4"></div>Protection (35%)</div>
-                  <div class="dash-legend-item"><div class="dash-legend-dot" style="background:#1B3A5C"></div>Livelihoods (23%)</div>
+              <div style="margin-top:28px;padding-top:24px;border-top:1px solid var(--gray2);">
+                <div class="svc-new-offer-title">Methods &amp; Standards</div>
+                <div class="svc-new-offer-grid">
+                  <div class="svc-new-offer-item"><div class="svc-offer-tick svc-offer-tick-navy"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>OECD-DAC six evaluation criteria</div>
+                  <div class="svc-new-offer-item"><div class="svc-offer-tick svc-offer-tick-navy"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>UNEG Norms and Standards</div>
+                  <div class="svc-new-offer-item"><div class="svc-offer-tick svc-offer-tick-navy"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>IASC MHPSS Guidelines</div>
+                  <div class="svc-new-offer-item"><div class="svc-offer-tick svc-offer-tick-navy"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Mixed-methods design</div>
+                  <div class="svc-new-offer-item"><div class="svc-offer-tick svc-offer-tick-navy"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>ATLAS.ti qualitative coding</div>
+                  <div class="svc-new-offer-item"><div class="svc-offer-tick svc-offer-tick-navy"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>KoboToolbox / ODK data collection</div>
+                  <div class="svc-new-offer-item"><div class="svc-offer-tick svc-offer-tick-navy"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>SPSS / Stata statistical analysis</div>
                 </div>
               </div>
             </div>
           </div>
-          <p style="font-size:11px;color:var(--text-muted);margin-top:12px;text-align:center;font-style:italic;">Illustrative dashboard — built with ActivityInfo + Power BI</p>
-        </div>
-      </div>
 
-      <div class="tab-content-new" id="tab-strategy">
-        <div class="service-detail-new">
-          <h2>Strategy &amp; Risk Management</h2>
-          <p class="service-tagline-new">Evidence-informed strategic planning for organisations navigating uncertain and complex environments</p>
-          <p>Strategic planning in the MENA region requires approaches that account for volatility, political complexity, and rapidly shifting funding landscapes. We combine thorough situational analysis with participatory facilitation that builds ownership and organisational alignment — while keeping plans adaptable enough for course-correction.</p>
-          <p>We have facilitated strategic planning for local NGOs, international organisations, and government ministries across a range of contexts — from multi-year institutional strategies to emergency-response contingency frameworks.</p>
-          <div style="margin-top:28px;"><button class="btn-pill btn-pill-dark" onclick="showPage('contact')">Request This Service <span class="pill-arrow">→</span></button></div>
-        </div>
-        <div class="service-sidebar-new">
-          <div class="sidebar-section-new"><h4>Service Offer</h4><ul class="sidebar-list-new"><li>Organisational strategic planning</li><li>National and sector strategy development</li><li>Theory of Change development and validation</li><li>Risk analysis and risk register development</li><li>Contingency and emergency preparedness planning</li><li>Stakeholder engagement and facilitation</li><li>Strategic review and mid-course correction</li></ul></div>
-        </div>
-      </div>
+          <!-- ② MEAL -->
+          <div class="svc-new-panel" id="svcp-meal">
+            <div class="svc-new-eyebrow">02 — Advisory Services</div>
+            <h2 class="svc-new-title">MEAL Systems &amp; Digital</h2>
+            <p class="svc-new-tagline">Adaptive monitoring systems that organisations actually use — built for decision-making, not compliance</p>
+            <div class="svc-new-body">
+              <div class="svc-new-desc">
+                <p>We build MEAL systems that work in the field, not just on paper. Our approach combines technical expertise in digital platforms with hard-won understanding of how monitoring systems function in complex operating environments — where connectivity is intermittent, staff capacity varies, and donor reporting requirements are demanding.</p>
+                <p>We are experienced ActivityInfo implementers, skilled Power BI dashboard developers, and MIS architects. We have built systems connecting multiple country offices, designed mobile data collection workflows, and created automated reporting solutions that eliminate hours of manual work each reporting cycle.</p>
+                <button class="btn-pill btn-pill-dark" onclick="showPage('contact')" style="margin-top:8px;">Request This Service <span class="pill-arrow">→</span></button>
+              </div>
+              <div>
+                <div class="meal-dash" id="mealDash">
+                  <div class="dash-header"><span class="dash-title">M&amp;E Dashboard — Q1 2025</span><span class="dash-live"><span class="dash-live-dot"></span>Live</span></div>
+                  <div class="dash-kpi-row">
+                    <div class="dash-kpi"><div class="dash-kpi-val" data-dash-count="1495">0</div><div class="dash-kpi-lbl">Beneficiaries Reached</div><div class="dash-kpi-delta">↑ +12% vs target</div></div>
+                    <div class="dash-kpi"><div class="dash-kpi-val" data-dash-count="87">0</div><div class="dash-kpi-lbl">Indicator Coverage %</div><div class="dash-kpi-delta">↑ On track</div></div>
+                    <div class="dash-kpi"><div class="dash-kpi-val" data-dash-count="34">0</div><div class="dash-kpi-lbl">Data Quality Score</div><div class="dash-kpi-delta">/ 40 max</div></div>
+                  </div>
+                  <div class="dash-grid">
+                    <div class="dash-chart-wrap"><div class="dash-chart-title">Monthly Reach by District</div><div class="dash-bars" id="dashBars"><div class="dash-bar-wrap"><div class="dash-bar" style="height:0%" data-h="52%"></div><div class="dash-bar-lbl">Jan</div></div><div class="dash-bar-wrap"><div class="dash-bar" style="height:0%" data-h="68%"></div><div class="dash-bar-lbl">Feb</div></div><div class="dash-bar-wrap"><div class="dash-bar" style="height:0%" data-h="45%"></div><div class="dash-bar-lbl">Mar</div></div><div class="dash-bar-wrap"><div class="dash-bar" style="height:0%" data-h="82%"></div><div class="dash-bar-lbl">Apr</div></div><div class="dash-bar-wrap"><div class="dash-bar" style="height:0%" data-h="91%"></div><div class="dash-bar-lbl">May</div></div><div class="dash-bar-wrap"><div class="dash-bar" style="height:0%" data-h="76%"></div><div class="dash-bar-lbl">Jun</div></div></div></div>
+                    <div class="dash-donut-wrap"><div class="dash-donut-title">Sector Split</div><svg class="dash-donut-svg" viewBox="0 0 70 70"><circle cx="35" cy="35" r="26" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="12"/><circle cx="35" cy="35" r="26" fill="none" stroke="#5DADE2" stroke-width="12" stroke-dasharray="0 163.4" id="donut1" stroke-linecap="round" transform="rotate(-90 35 35)" style="transition:stroke-dasharray 1.2s ease;"/><circle cx="35" cy="35" r="26" fill="none" stroke="#3A8DC4" stroke-width="12" stroke-dasharray="0 163.4" id="donut2" stroke-linecap="round" transform="rotate(-90 35 35)" style="transition:stroke-dasharray 1.4s ease 0.2s;"/><circle cx="35" cy="35" r="26" fill="none" stroke="#1B3A5C" stroke-width="12" stroke-dasharray="0 163.4" id="donut3" stroke-linecap="round" transform="rotate(-90 35 35)" style="transition:stroke-dasharray 1.6s ease 0.4s;"/><text x="35" y="39" text-anchor="middle" font-size="11" font-weight="700" fill="white" font-family="Poppins,sans-serif">Q1</text></svg><div class="dash-legend"><div class="dash-legend-item"><div class="dash-legend-dot" style="background:#5DADE2"></div>MHPSS (42%)</div><div class="dash-legend-item"><div class="dash-legend-dot" style="background:#3A8DC4"></div>Protection (35%)</div><div class="dash-legend-item"><div class="dash-legend-dot" style="background:#1B3A5C"></div>Livelihoods (23%)</div></div></div>
+                  </div>
+                </div>
+                <p style="font-size:11px;color:var(--text-muted);margin-top:12px;text-align:center;font-style:italic;">Illustrative dashboard — built with ActivityInfo + Power BI</p>
+              </div>
+            </div>
+          </div>
 
-      <div class="tab-content-new" id="tab-orgdev">
-        <div class="service-detail-new">
-          <h2>Organisational Development</h2>
-          <p class="service-tagline-new">Governance, compliance, and institutional frameworks that prepare organisations for expanded partnerships</p>
-          <p>We strengthen organisations from the inside — developing governance structures, policy frameworks, and compliance systems that meet major donor requirements and build the institutional credibility needed to access new funding. Our work aligns with UNICEF, EU, and USAID institutional standards.</p>
-          <p>Our organisational development work is grounded in realistic assessments of existing capacity — we identify genuine gaps, not just documentation deficiencies, and work with organisations to build systems that function sustainably in their specific context.</p>
-          <div style="margin-top:28px;"><button class="btn-pill btn-pill-dark" onclick="showPage('contact')">Request This Service <span class="pill-arrow">→</span></button></div>
-        </div>
-        <div class="service-sidebar-new">
-          <div class="sidebar-section-new"><h4>Service Offer</h4><ul class="sidebar-list-new"><li>Governance and board policy development</li><li>Finance and procurement manual development</li><li>HR policy frameworks</li><li>Safeguarding policies (PSEA, child protection)</li><li>Organisational Capacity Assessments (OCA)</li><li>HACT framework implementation</li><li>Compliance gap analysis and remediation plans</li></ul></div>
-        </div>
-      </div>
+          <!-- ③ STRATEGY -->
+          <div class="svc-new-panel" id="svcp-strategy">
+            <div class="svc-new-eyebrow">03 — Advisory Services</div>
+            <h2 class="svc-new-title">Strategy &amp; Risk Management</h2>
+            <p class="svc-new-tagline">Evidence-informed strategic planning for organisations navigating uncertain and complex environments</p>
+            <div class="svc-new-body">
+              <div class="svc-new-desc">
+                <p>Strategic planning in the MENA region requires approaches that account for volatility, political complexity, and rapidly shifting funding landscapes. We combine thorough situational analysis with participatory facilitation that builds ownership and organisational alignment — while keeping plans adaptable enough for course-correction.</p>
+                <p>We have facilitated strategic planning for local NGOs, international organisations, and government ministries across a range of contexts — from multi-year institutional strategies to emergency-response contingency frameworks.</p>
+                <button class="btn-pill btn-pill-dark" onclick="showPage('contact')" style="margin-top:8px;">Request This Service <span class="pill-arrow">→</span></button>
+              </div>
+              <div class="svc-visual-box">
+                <div class="svc-visual-cam"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3A8DC4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+                <div class="svc-visual-box-label">Photo Placeholder</div>
+                <div class="svc-visual-box-sub">Strategic planning session / whiteboard</div>
+              </div>
+            </div>
+            <div class="svc-new-offer-wrap">
+              <div class="svc-new-offer-title">Service Offer</div>
+              <div class="svc-new-offer-grid">
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Organisational strategic planning</div>
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>National and sector strategy development</div>
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Theory of Change development and validation</div>
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Risk analysis and risk register development</div>
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Contingency and emergency preparedness planning</div>
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Stakeholder engagement and facilitation</div>
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Strategic review and mid-course correction</div>
+              </div>
+            </div>
+          </div>
 
-      <div class="tab-content-new" id="tab-capacity">
-        <div class="service-detail-new">
-          <h2>Capacity Building &amp; Training</h2>
-          <p class="service-tagline-new">Structured learning that builds genuine, lasting capability — not just awareness</p>
-          <p>Our capacity building approach goes beyond knowledge transfer. We combine structured training with practical application, on-the-job coaching, and mentoring — ensuring that learning translates into changed practice. Training of Trainers programmes build sustainable internal capacity.</p>
-          <p>We have trained government staff, NGO programme teams, field officers, and senior management across Palestine and the region — in groups ranging from small specialist workshops to large-scale multi-organisation programmes.</p>
-          <div style="margin-top:28px;"><button class="btn-pill btn-pill-dark" onclick="showPage('contact')">Request This Service <span class="pill-arrow">→</span></button></div>
-        </div>
-        <div class="service-sidebar-new">
-          <div class="sidebar-section-new"><h4>Training Areas</h4><ul class="sidebar-list-new"><li>MEL systems and data management</li><li>GBV prevention and response</li><li>Child protection and safeguarding</li><li>MHPSS programming and evaluation</li><li>Proposal writing and results frameworks</li><li>Power BI and data visualisation</li><li>Training of Trainers (ToT) facilitation</li></ul></div>
-        </div>
-      </div>
+          <!-- ④ ORG DEV -->
+          <div class="svc-new-panel" id="svcp-orgdev">
+            <div class="svc-new-eyebrow">04 — Advisory Services</div>
+            <h2 class="svc-new-title">Organisational Development</h2>
+            <p class="svc-new-tagline">Governance, compliance, and institutional frameworks that prepare organisations for expanded partnerships</p>
+            <div class="svc-new-body">
+              <div class="svc-new-desc">
+                <p>We strengthen organisations from the inside — developing governance structures, policy frameworks, and compliance systems that meet major donor requirements and build the institutional credibility needed to access new funding. Our work aligns with UNICEF, EU, and USAID institutional standards.</p>
+                <p>Our organisational development work is grounded in realistic assessments of existing capacity — we identify genuine gaps, not just documentation deficiencies, and work with organisations to build systems that function sustainably in their specific context.</p>
+                <button class="btn-pill btn-pill-dark" onclick="showPage('contact')" style="margin-top:8px;">Request This Service <span class="pill-arrow">→</span></button>
+              </div>
+              <div class="svc-visual-box">
+                <div class="svc-visual-cam"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3A8DC4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+                <div class="svc-visual-box-label">Photo Placeholder</div>
+                <div class="svc-visual-box-sub">Governance / policy framework visual</div>
+              </div>
+            </div>
+            <div class="svc-new-offer-wrap">
+              <div class="svc-new-offer-title">Service Offer</div>
+              <div class="svc-new-offer-grid">
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Governance and board policy development</div>
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Finance and procurement manual development</div>
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>HR policy frameworks</div>
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Safeguarding policies (PSEA, child protection)</div>
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Organisational Capacity Assessments (OCA)</div>
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>HACT framework implementation</div>
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Compliance gap analysis and remediation plans</div>
+              </div>
+            </div>
+          </div>
 
-      <div class="tab-content-new" id="tab-resource">
-        <div class="service-detail-new">
-          <h2>Resource Mobilisation</h2>
-          <p class="service-tagline-new">Evidence-based proposals and fundraising strategy that win institutional funding</p>
-          <p>We help organisations translate their evidence and expertise into competitive funding proposals. Our proposal development combines technical quality — well-structured results frameworks, clear theories of change, coherent budgets — with compelling narrative that communicates an organisation's value proposition to institutional donors.</p>
-          <div style="margin-top:28px;"><button class="btn-pill btn-pill-dark" onclick="showPage('contact')">Request This Service <span class="pill-arrow">→</span></button></div>
-        </div>
-        <div class="service-sidebar-new">
-          <div class="sidebar-section-new"><h4>Service Offer</h4><ul class="sidebar-list-new"><li>Proposal writing and technical development</li><li>Donor landscape analysis and mapping</li><li>Fundraising strategy development</li><li>Results framework and logframe development</li><li>Concept note development</li><li>Grant management advisory support</li></ul></div>
-        </div>
-      </div>
+          <!-- ⑤ CAPACITY -->
+          <div class="svc-new-panel" id="svcp-capacity">
+            <div class="svc-new-eyebrow">05 — Advisory Services</div>
+            <h2 class="svc-new-title">Capacity Building &amp; Training</h2>
+            <p class="svc-new-tagline">Structured learning that builds genuine, lasting capability — not just awareness</p>
+            <div class="svc-new-body">
+              <div class="svc-new-desc">
+                <p>Our capacity building approach goes beyond knowledge transfer. We combine structured training with practical application, on-the-job coaching, and mentoring — ensuring that learning translates into changed practice. Training of Trainers programmes build sustainable internal capacity.</p>
+                <p>We have trained government staff, NGO programme teams, field officers, and senior management across Palestine and the region — in groups ranging from small specialist workshops to large-scale multi-organisation programmes.</p>
+                <button class="btn-pill btn-pill-dark" onclick="showPage('contact')" style="margin-top:8px;">Request This Service <span class="pill-arrow">→</span></button>
+              </div>
+              <div class="svc-visual-box">
+                <div class="svc-visual-cam"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3A8DC4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+                <div class="svc-visual-box-label">Photo Placeholder</div>
+                <div class="svc-visual-box-sub">Training session / workshop facilitation</div>
+              </div>
+            </div>
+            <div class="svc-new-offer-wrap">
+              <div class="svc-new-offer-title">Training Areas</div>
+              <div class="svc-new-offer-grid">
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>MEL systems and data management</div>
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>GBV prevention and response</div>
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Child protection and safeguarding</div>
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>MHPSS programming and evaluation</div>
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Proposal writing and results frameworks</div>
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Power BI and data visualisation</div>
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Training of Trainers (ToT) facilitation</div>
+              </div>
+            </div>
+          </div>
 
-      <div class="tab-content-new" id="tab-private">
-        <div class="service-detail-new">
-          <h2>Private Sector Analytics &amp; BI</h2>
-          <p class="service-tagline-new">Development-sector analytical depth applied to private sector intelligence needs</p>
-          <p>We bring the same methodological standards and analytical discipline that underpin our evaluation work to private sector challenges. Our business intelligence solutions help growth-oriented enterprises transform raw operational data into strategic intelligence — enabling better decisions and competitive advantage in MENA markets.</p>
-          <div style="margin-top:28px;"><button class="btn-pill btn-pill-dark" onclick="showPage('contact')">Request This Service <span class="pill-arrow">→</span></button></div>
-        </div>
-        <div class="service-sidebar-new">
-          <div class="sidebar-section-new"><h4>Service Offer</h4><ul class="sidebar-list-new"><li>BI dashboard design and development</li><li>KPI framework and performance tracking</li><li>Predictive analytics and modelling</li><li>Market research and competitive analysis</li><li>Customer and operational data analysis</li><li>Data pipeline and automation development</li></ul></div>
-        </div>
-      </div>
-    </div>
-  </div>
+          <!-- ⑥ RESOURCE MOB -->
+          <div class="svc-new-panel" id="svcp-resource">
+            <div class="svc-new-eyebrow">06 — Advisory Services</div>
+            <h2 class="svc-new-title">Resource Mobilisation</h2>
+            <p class="svc-new-tagline">Evidence-based proposals and fundraising strategy that win institutional funding</p>
+            <div class="svc-new-body">
+              <div class="svc-new-desc">
+                <p>We help organisations translate their evidence and expertise into competitive funding proposals. Our proposal development combines technical quality — well-structured results frameworks, clear theories of change, coherent budgets — with compelling narrative that communicates an organisation's value proposition to institutional donors.</p>
+                <button class="btn-pill btn-pill-dark" onclick="showPage('contact')" style="margin-top:8px;">Request This Service <span class="pill-arrow">→</span></button>
+              </div>
+              <div class="svc-visual-box">
+                <div class="svc-visual-cam"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3A8DC4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+                <div class="svc-visual-box-label">Photo Placeholder</div>
+                <div class="svc-visual-box-sub">Proposal / donor meeting visual</div>
+              </div>
+            </div>
+            <div class="svc-new-offer-wrap">
+              <div class="svc-new-offer-title">Service Offer</div>
+              <div class="svc-new-offer-grid">
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Proposal writing and technical development</div>
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Donor landscape analysis and mapping</div>
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Fundraising strategy development</div>
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Results framework and logframe development</div>
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Concept note development</div>
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Grant management advisory support</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ⑦ PRIVATE SECTOR -->
+          <div class="svc-new-panel" id="svcp-private">
+            <div class="svc-new-eyebrow">07 — Advisory Services</div>
+            <h2 class="svc-new-title">Private Sector Analytics &amp; BI</h2>
+            <p class="svc-new-tagline">Development-sector analytical depth applied to private sector intelligence needs</p>
+            <div class="svc-new-body">
+              <div class="svc-new-desc">
+                <p>We bring the same methodological standards and analytical discipline that underpin our evaluation work to private sector challenges. Our business intelligence solutions help growth-oriented enterprises transform raw operational data into strategic intelligence — enabling better decisions and competitive advantage in MENA markets.</p>
+                <button class="btn-pill btn-pill-dark" onclick="showPage('contact')" style="margin-top:8px;">Request This Service <span class="pill-arrow">→</span></button>
+              </div>
+              <div class="svc-visual-box">
+                <div class="svc-visual-cam"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3A8DC4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+                <div class="svc-visual-box-label">Photo Placeholder</div>
+                <div class="svc-visual-box-sub">BI dashboard / analytics visual</div>
+              </div>
+            </div>
+            <div class="svc-new-offer-wrap">
+              <div class="svc-new-offer-title">Service Offer</div>
+              <div class="svc-new-offer-grid">
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>BI dashboard design and development</div>
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>KPI framework and performance tracking</div>
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Predictive analytics and modelling</div>
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Market research and competitive analysis</div>
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Customer and operational data analysis</div>
+                <div class="svc-new-offer-item"><div class="svc-offer-tick"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Data pipeline and automation development</div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- end svc-new-content -->
+      </div><!-- end svc-new-layout -->
+    </div><!-- end svc-new-inner -->
+  </div><!-- end svc-new-wrap -->
   <section class="cta-section"><h2>Discuss Your Requirements</h2><p>Every engagement begins with a scoping conversation. Let us understand your context before we propose an approach.</p><div class="cta-btns"><button class="btn-pill btn-pill-primary" onclick="showPage('contact')">Request a Proposal <span class="pill-arrow">→</span></button></div></section>
 </div>
 
@@ -2229,6 +2364,16 @@ function showPage(id){
   if(id==='about'){setTimeout(()=>{initTeamShowcase();},100);}
 }
 
+function showSvc(id){
+  document.querySelectorAll('.svc-new-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.svc-new-nav-item').forEach(n=>n.classList.remove('active'));
+  const panel=document.getElementById('svcp-'+id);
+  if(panel) panel.classList.add('active');
+  const map={eval:0,meal:1,strategy:2,orgdev:3,capacity:4,resource:5,private:6};
+  const items=document.querySelectorAll('.svc-new-nav-item');
+  const idx=map[id];
+  if(idx!==undefined&&items[idx]) items[idx].classList.add('active');
+}
 function showTab(id){
   document.querySelectorAll('.tab-content-new').forEach(t=>t.classList.remove('active'));
   document.querySelectorAll('.tab-btn-new').forEach(b=>b.classList.remove('active'));
