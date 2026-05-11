@@ -733,7 +733,12 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
 .dash-legend-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
 
 /* ── TEAM SHOWCASE ── */
-.team-showcase-outer{display:flex;gap:52px;align-items:flex-start;max-width:1100px;margin:0 auto;}
+.team-showcase-outer{display:flex;gap:52px;align-items:flex-start;width:100%;}
+.approach-mini{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.approach-mini-step{padding:14px 16px;background:var(--gray);border-radius:12px;}
+.approach-mini-num{font-family:'Poppins',sans-serif;font-size:10px;font-weight:700;color:var(--blue);letter-spacing:1.5px;margin-bottom:4px;}
+.approach-mini-title{font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.approach-mini-desc{font-size:12px;color:var(--text-muted);line-height:1.55;}
 .team-photo-grid{display:flex;gap:12px;flex-shrink:0;}
 .team-col{display:flex;flex-direction:column;gap:12px;}
 .team-col:nth-child(2){margin-top:44px;}
@@ -2046,7 +2051,7 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
     <div class="page-hero-inner-new" style="position:relative;z-index:2;">
       <div class="badge badge-dark" style="margin-bottom:16px;"><div class="badge-icon"><svg class="icon-svg"><use href="#ico-building"/></svg></div><span class="badge-text">Who We Are</span></div>
       <h1>About Deep Insights</h1>
-      <p class="page-hero-sub">A specialist M&E and strategic advisory firm grounded in Palestine, serving international clients across the MENA region.</p>
+      <p class="page-hero-sub">A specialist monitoring, evaluation, and strategic advisory firm — built on international standards and committed to quality across every engagement.</p>
     </div>
   </div>
 
@@ -2055,10 +2060,16 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
       <div class="split-grid">
         <div>
           <div class="badge"><div class="badge-icon"><svg class="icon-svg"><use href="#ico-building"/></svg></div><span class="badge-text">Our Firm</span></div>
-          <h2 class="section-title">Who We Are</h2>
-          <p style="font-size:15.5px;color:var(--text-muted);line-height:1.85;margin-bottom:18px;font-weight:300;">Deep Insights for Monitoring and Evaluation was founded on a simple conviction: organisations working in Palestine and the MENA region deserve high-quality, evidence-based advisory — delivered by specialists who understand the environment from the inside.</p>
-          <p style="font-size:15.5px;color:var(--text-muted);line-height:1.85;margin-bottom:18px;font-weight:300;">We are based in Al Bireh, West Bank. Our team has worked across Gaza during active escalations, in protracted displacement settings, and in politically complex environments where access, trust, and cultural competence are prerequisites for credible evidence generation.</p>
-          <p style="font-size:15.5px;color:var(--text-muted);line-height:1.85;font-weight:300;">We serve UN agencies, international NGOs, bilateral donors, government institutions, and private enterprises — across the full programme cycle.</p>
+          <h2 class="section-title">Who We Are &amp; How We Work</h2>
+          <p style="font-size:15.5px;color:var(--text-muted);line-height:1.85;margin-bottom:18px;font-weight:300;">Deep Insights for Monitoring and Evaluation is a specialist advisory firm built around an uncompromising commitment to quality. Every engagement — regardless of scale or sector — is held to the same international standards: OECD-DAC evaluation criteria, UNEG norms, IASC guidelines, and EU evaluation frameworks, applied rigorously and without exception.</p>
+          <p style="font-size:15.5px;color:var(--text-muted);line-height:1.85;margin-bottom:24px;font-weight:300;">Our team brings together evaluation methodologists, digital systems specialists, thematic sector experts, and strategic advisors — professionals with track records across UN agencies, bilateral programmes, and government reform processes throughout the MENA region and beyond. We serve UN agencies, international NGOs, bilateral donors, government institutions, and private enterprises, with a consistent focus on producing evidence and advisory that is credible, contextually grounded, and genuinely useful.</p>
+          <div style="font-family:'Poppins',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:14px;">How We Work</div>
+          <div class="approach-mini">
+            <div class="approach-mini-step"><div class="approach-mini-num">01</div><div class="approach-mini-title">Contextualise</div><div class="approach-mini-desc">Situational analysis, stakeholder mapping, and scoping — defining the right questions before designing methodology.</div></div>
+            <div class="approach-mini-step"><div class="approach-mini-num">02</div><div class="approach-mini-title">Design</div><div class="approach-mini-desc">Methodological design tailored to context and objectives — balancing depth with feasibility, with ethical safeguards built in.</div></div>
+            <div class="approach-mini-step"><div class="approach-mini-num">03</div><div class="approach-mini-title">Deliver</div><div class="approach-mini-desc">Systematic data collection, rigorous analysis, and synthesis — with quality assurance and transparent client communication throughout.</div></div>
+            <div class="approach-mini-step"><div class="approach-mini-num">04</div><div class="approach-mini-title">Translate</div><div class="approach-mini-desc">Findings communicated for genuine learning — through validation workshops, accessible reports, and facilitated sessions that build ownership.</div></div>
+          </div>
         </div>
         <div>
           <div class="badge"><div class="badge-icon"><svg class="icon-svg"><use href="#ico-diamond"/></svg></div><span class="badge-text">Our Values</span></div>
@@ -2074,24 +2085,13 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
     </div>
   </section>
 
-  <section class="section dots-bg" style="background:var(--gray);">
-    <div class="section-inner">
-      <div class="badge"><div class="badge-icon"><svg class="icon-svg"><use href="#ico-cog"/></svg></div><span class="badge-text">How We Work</span></div>
-      <h2 class="section-title">Our Approach</h2>
-      <p class="section-intro">A structured delivery model — from context analysis to actionable learning.</p>
-      <div class="approach-grid">
-        <div class="approach-step-new"><div class="approach-num">01</div><div class="approach-icon"><svg class="icon-svg"><use href="#ico-search"/></svg></div><div class="approach-title">Contextualise</div><div class="approach-desc">Deep situational analysis, stakeholder mapping, document review, and scoping — to define the right evaluation or advisory questions before designing methodology.</div></div>
-        <div class="approach-step-new"><div class="approach-num">02</div><div class="approach-icon"><svg class="icon-svg"><use href="#ico-compass"/></svg></div><div class="approach-title">Design</div><div class="approach-desc">Methodological design tailored to context, objectives, and available resources — balancing depth with feasibility, and integrating ethical safeguards.</div></div>
-        <div class="approach-step-new"><div class="approach-num">03</div><div class="approach-icon"><svg class="icon-svg"><use href="#ico-cog"/></svg></div><div class="approach-title">Deliver</div><div class="approach-desc">Careful data collection, systematic analysis, and synthesis — with quality assurance at every stage and transparent communication with clients throughout.</div></div>
-        <div class="approach-step-new"><div class="approach-num">04</div><div class="approach-icon"><svg class="icon-svg"><use href="#ico-lightbulb"/></svg></div><div class="approach-title">Translate</div><div class="approach-desc">Findings communicated to generate genuine learning — through validation workshops, accessible reports, dashboards, and facilitated sessions that build stakeholder ownership.</div></div>
-      </div>
-    </div>
-  </section>
-
   <section class="section" style="background:#fff;">
-    <div class="section-inner">
-      <div class="badge"><div class="badge-icon"><svg class="icon-svg"><use href="#ico-users"/></svg></div><span class="badge-text">The Team</span></div>
-      <h2 class="section-title">Leadership</h2>
+    <div class="section-inner" style="max-width:1300px;">
+      <div style="text-align:center;margin-bottom:52px;">
+        <div class="badge" style="justify-content:center;"><div class="badge-icon"><svg class="icon-svg"><use href="#ico-users"/></svg></div><span class="badge-text">The Team</span></div>
+        <h2 class="section-title" style="margin-bottom:10px;">Leadership</h2>
+        <p style="font-size:15px;color:var(--text-muted);font-weight:300;line-height:1.75;max-width:580px;margin:0 auto;">A multidisciplinary team of evaluation specialists, systems experts, and strategic advisors — united by a shared commitment to rigour and impact.</p>
+      </div>
       <div class="team-showcase-outer" id="teamShowcase">
         <!-- Photo grid (staggered 3 columns) -->
         <div class="team-photo-grid">
