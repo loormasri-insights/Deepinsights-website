@@ -66,7 +66,7 @@ nav{
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(13,31,51,0.45) 0%,rgba(18,42,72,0.38) 50%,rgba(22,58,95,0.32) 100%);z-index:1;}
 #heroCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:2;opacity:0.35;}
-.hero-inner{max-width:1200px;margin:0 auto;padding:80px 48px;width:100%;position:relative;z-index:3;display:grid;grid-template-columns:1fr 420px;gap:60px;align-items:center;}
+.hero-inner{max-width:900px;margin:0 auto;padding:80px 48px;width:100%;position:relative;z-index:3;display:flex;flex-direction:column;align-items:flex-start;}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;background:rgba(93,173,226,0.15);border:1px solid rgba(93,173,226,0.25);border-radius:var(--radius-pill);padding:7px 16px 7px 10px;margin-bottom:32px;}
 .hero-eyebrow-dot{width:28px;height:28px;background:var(--blue);border-radius:8px;display:flex;align-items:center;justify-content:center;}
 .hero-eyebrow-text{font-family:'Poppins',sans-serif;font-size:10px;font-weight:500;letter-spacing:1.5px;color:rgba(255,255,255,0.7);text-transform:uppercase;}
@@ -317,11 +317,10 @@ nav{
 .client-pill:hover{background:var(--blue-pale);color:var(--blue);}
 
 /* ── CTA BANNER ── */
-.cta-section{background:linear-gradient(135deg,var(--navy) 0%,#1E4878 100%);padding:100px 48px;text-align:center;position:relative;overflow:hidden;}
-.cta-section::before{content:'';position:absolute;top:-40%;left:50%;transform:translateX(-50%);width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(58,141,196,0.08) 0%,transparent 70%);}
-.cta-section h2{font-family:'Poppins',sans-serif;font-size:clamp(36px,5vw,60px);color:#fff;margin-bottom:18px;line-height:1.05;position:relative;}
-.cta-section p{font-size:16px;color:rgba(255,255,255,0.55);max-width:520px;margin:0 auto 44px;line-height:1.8;font-weight:300;position:relative;}
-.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative;}
+.cta-section{background:#fff;padding:64px 48px;text-align:center;position:relative;border-top:4px solid var(--navy);border-bottom:1.5px solid var(--gray2);}
+.cta-section h2{font-family:'Poppins',sans-serif;font-size:clamp(26px,3.5vw,42px);color:var(--navy);margin-bottom:14px;line-height:1.1;font-weight:700;}
+.cta-section p{font-size:15px;color:var(--text-muted);max-width:500px;margin:0 auto 36px;line-height:1.75;font-weight:300;}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
 
 /* ── PAGE HEROES ── */
 .page-hero-new{background:linear-gradient(150deg,var(--navy),#1E4878);padding:130px 48px 80px;}
@@ -930,14 +929,14 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
           <div class="hero-eyebrow-dot"><svg class="icon-svg"><use href="#ico-chart"/></svg></div>
           <span class="hero-eyebrow-text">M&amp;E Advisory · Palestine &amp; MENA</span>
         </div>
-        <h1>Monitoring and<br><em>Evaluation.</em></h1>
-        <p class="hero-sub">We help organisations turn evidence into achievable results — through independent evaluations, adaptive MEAL systems, strategic planning, capacity building, and organisational development, built for complex environments across Palestine and the MENA region.</p>
+        <h1>Where International Standards<br><em>Meet Local Reality.</em></h1>
+        <p class="hero-sub">We help organisations turn evidence into achievable results through independent evaluations, adaptive MEAL systems, strategic planning, capacity building, and organisational development, built for complex environments across Palestine and the MENA region.</p>
         <div class="hero-btns">
           <button class="btn-pill btn-pill-primary" onclick="showPage('services')">Our Services <span class="pill-arrow">→</span></button>
           <button class="btn-pill btn-pill-outline" onclick="showPage('impact')">View Our Work <span class="pill-arrow">→</span></button>
         </div>
       </div>
-      <div class="hero-card">
+      <div class="hero-card" style="display:none;">
         <div class="hero-card-tag">Track Record</div>
         <div class="hero-stat">
           <div class="hero-stat-num">50+</div>
@@ -1256,40 +1255,18 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
             <div class="feat-svc-tags"><span class="feat-svc-tag">ActivityInfo</span><span class="feat-svc-tag">Power BI</span><span class="feat-svc-tag">Comcare</span></div>
             <button class="feat-explore-btn" onclick="showPage('services');showTab('meal')">Explore <span>→</span></button>
           </div>
-          <div class="feat-right" style="background:var(--navy);padding:44px;">
-            <div style="position:absolute;width:300px;height:300px;border-radius:50%;background:#2DD4BF;opacity:0.18;top:50%;left:48%;transform:translate(-50%,-50%);pointer-events:none;"></div>
-            <!-- Dashboard card -->
-            <div style="position:relative;z-index:1;background:#fff;border-radius:16px;padding:0;border:1.5px solid #99F6E4;box-shadow:0 8px 28px rgba(13,148,136,0.18);transform:rotate(-1deg);width:240px;overflow:hidden;">
-              <div style="background:#134E4A;padding:11px 16px;display:flex;align-items:center;gap:6px;">
-                <div style="width:9px;height:9px;border-radius:50%;background:#EF4444;"></div>
-                <div style="width:9px;height:9px;border-radius:50%;background:#F59E0B;"></div>
-                <div style="width:9px;height:9px;border-radius:50%;background:#22C55E;"></div>
-                <span style="font-size:10.5px;color:#99F6E4;font-family:'Poppins',sans-serif;margin-left:6px;font-weight:500;">M&amp;E Dashboard</span>
+          <div class="feat-right" style="padding:0;overflow:hidden;">
+            <div class="meal-dash" id="mealDash2" style="border-radius:0;min-height:420px;width:100%;height:100%;">
+              <div class="dash-header"><span class="dash-title">M&amp;E Dashboard — Q1 2025</span><span class="dash-live"><span class="dash-live-dot"></span>Live</span></div>
+              <div class="dash-kpi-row">
+                <div class="dash-kpi"><div class="dash-kpi-val" data-dash-count="1495">0</div><div class="dash-kpi-lbl">Beneficiaries Reached</div><div class="dash-kpi-delta">↑ +12% vs target</div></div>
+                <div class="dash-kpi"><div class="dash-kpi-val" data-dash-count="87">0</div><div class="dash-kpi-lbl">Indicator Coverage %</div><div class="dash-kpi-delta">↑ On track</div></div>
+                <div class="dash-kpi"><div class="dash-kpi-val" data-dash-count="34">0</div><div class="dash-kpi-lbl">Data Quality Score</div><div class="dash-kpi-delta">/ 40 max</div></div>
               </div>
-              <div style="padding:14px 16px;">
-                <svg width="206" height="64" viewBox="0 0 206 64" fill="none">
-                  <polyline points="4,56 34,41 58,48 86,26 110,34 138,17 162,23 202,8" stroke="#0D9488" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                  <circle cx="4" cy="56" r="4" fill="#0D9488"/><circle cx="86" cy="26" r="4" fill="#0D9488"/><circle cx="138" cy="17" r="4" fill="#0D9488"/><circle cx="202" cy="8" r="4" fill="#134E4A"/>
-                </svg>
-                <div style="display:flex;gap:8px;margin-top:10px;">
-                  <div style="flex:1;text-align:center;background:#F0FDFA;border-radius:8px;padding:7px 4px;"><div style="font-size:14px;font-weight:800;color:#0D9488;font-family:'Poppins',sans-serif;">94%</div><div style="font-size:9px;color:#64748B;font-family:'Poppins',sans-serif;">Coverage</div></div>
-                  <div style="flex:1;text-align:center;background:#F0F9FF;border-radius:8px;padding:7px 4px;"><div style="font-size:14px;font-weight:800;color:#1B3A5C;font-family:'Poppins',sans-serif;">12K</div><div style="font-size:9px;color:#64748B;font-family:'Poppins',sans-serif;">Indicators</div></div>
-                  <div style="flex:1;text-align:center;background:#EFF6FF;border-radius:8px;padding:7px 4px;"><div style="font-size:14px;font-weight:800;color:#3A8DC4;font-family:'Poppins',sans-serif;">6</div><div style="font-size:9px;color:#64748B;font-family:'Poppins',sans-serif;">Platforms</div></div>
-                </div>
+              <div class="dash-grid">
+                <div class="dash-chart-wrap"><div class="dash-chart-title">Monthly Reach by District</div><div class="dash-bars"><div class="dash-bar-wrap"><div class="dash-bar" style="height:0%" data-h="52%"></div><div class="dash-bar-lbl">Jan</div></div><div class="dash-bar-wrap"><div class="dash-bar" style="height:0%" data-h="68%"></div><div class="dash-bar-lbl">Feb</div></div><div class="dash-bar-wrap"><div class="dash-bar" style="height:0%" data-h="45%"></div><div class="dash-bar-lbl">Mar</div></div><div class="dash-bar-wrap"><div class="dash-bar" style="height:0%" data-h="82%"></div><div class="dash-bar-lbl">Apr</div></div><div class="dash-bar-wrap"><div class="dash-bar" style="height:0%" data-h="91%"></div><div class="dash-bar-lbl">May</div></div><div class="dash-bar-wrap"><div class="dash-bar" style="height:0%" data-h="76%"></div><div class="dash-bar-lbl">Jun</div></div></div></div>
+                <div class="dash-donut-wrap"><div class="dash-donut-title">Sector Split</div><svg class="dash-donut-svg" viewBox="0 0 70 70"><circle cx="35" cy="35" r="26" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="12"/><circle cx="35" cy="35" r="26" fill="none" stroke="#5DADE2" stroke-width="12" stroke-dasharray="0 163.4" class="dash-seg" stroke-linecap="round" transform="rotate(-90 35 35)" style="transition:stroke-dasharray 1.2s ease;"/><circle cx="35" cy="35" r="26" fill="none" stroke="#3A8DC4" stroke-width="12" stroke-dasharray="0 163.4" class="dash-seg" stroke-linecap="round" transform="rotate(-90 35 35)" style="transition:stroke-dasharray 1.4s ease 0.2s;"/><circle cx="35" cy="35" r="26" fill="none" stroke="#1B3A5C" stroke-width="12" stroke-dasharray="0 163.4" class="dash-seg" stroke-linecap="round" transform="rotate(-90 35 35)" style="transition:stroke-dasharray 1.6s ease 0.4s;"/><text x="35" y="39" text-anchor="middle" font-size="11" font-weight="700" fill="white" font-family="Poppins,sans-serif">Q1</text></svg><div class="dash-legend"><div class="dash-legend-item"><div class="dash-legend-dot" style="background:#5DADE2"></div>MHPSS (42%)</div><div class="dash-legend-item"><div class="dash-legend-dot" style="background:#3A8DC4"></div>Protection (35%)</div><div class="dash-legend-item"><div class="dash-legend-dot" style="background:#1B3A5C"></div>Livelihoods (23%)</div></div></div>
               </div>
-            </div>
-            <!-- Connected nodes card -->
-            <div style="position:absolute;bottom:14%;right:5%;z-index:2;background:#fff;border-radius:14px;padding:16px 18px;border:1.5px solid #99F6E4;box-shadow:0 8px 28px rgba(13,148,136,0.14);transform:rotate(4deg);">
-              <svg width="110" height="86" viewBox="0 0 110 86" fill="none">
-                <circle cx="55" cy="16" r="14" fill="#CCFBF1" stroke="#0D9488" stroke-width="2"/>
-                <circle cx="18" cy="64" r="11" fill="#99F6E4" stroke="#0D9488" stroke-width="2"/>
-                <circle cx="92" cy="64" r="11" fill="#99F6E4" stroke="#0D9488" stroke-width="2"/>
-                <line x1="44" y1="28" x2="27" y2="54" stroke="#0D9488" stroke-width="2" stroke-dasharray="4,3"/>
-                <line x1="66" y1="28" x2="83" y2="54" stroke="#0D9488" stroke-width="2" stroke-dasharray="4,3"/>
-                <text x="46" y="20" font-size="9" fill="#0D9488" font-family="Poppins,sans-serif" font-weight="600">MIS</text>
-                <text x="6" y="70" font-size="8" fill="#0D9488" font-family="Poppins,sans-serif">MEAL</text>
-                <text x="80" y="70" font-size="8" fill="#0D9488" font-family="Poppins,sans-serif">M&amp;E</text>
-              </svg>
             </div>
           </div>
         </div>
@@ -1467,11 +1444,11 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
 
   <!-- CTA -->
   <section class="cta-section">
-    <h2>Ready When You Are.</h2>
-    <p>Whether you need an independent evaluation, a MEAL system, a strategic review, or bespoke research — let's discuss your requirements.</p>
+    <h2>Let's Talk About Your Project</h2>
+    <p>Whether you need an evaluation, a MEAL system, or strategic advisory support — we'd welcome a conversation about your work.</p>
     <div class="cta-btns">
-      <button class="btn-pill btn-pill-primary" onclick="showPage('contact')">Request a Proposal <span class="pill-arrow">→</span></button>
-      <button class="btn-pill btn-pill-outline" onclick="showPage('contact')">Get in Touch <span class="pill-arrow">→</span></button>
+      <button class="btn-pill btn-pill-primary" onclick="showPage('contact')">Get in Touch <span class="pill-arrow">→</span></button>
+      <button class="btn-pill btn-pill-outline-navy" onclick="showPage('impact')">See Our Work <span class="pill-arrow">→</span></button>
     </div>
   </section>
 
@@ -1571,7 +1548,7 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
               </div>
               <div class="dash-grid">
                 <div class="dash-chart-wrap"><div class="dash-chart-title">Monthly Reach by District</div><div class="dash-bars" id="dashBars"><div class="dash-bar-wrap"><div class="dash-bar" style="height:0%" data-h="52%"></div><div class="dash-bar-lbl">Jan</div></div><div class="dash-bar-wrap"><div class="dash-bar" style="height:0%" data-h="68%"></div><div class="dash-bar-lbl">Feb</div></div><div class="dash-bar-wrap"><div class="dash-bar" style="height:0%" data-h="45%"></div><div class="dash-bar-lbl">Mar</div></div><div class="dash-bar-wrap"><div class="dash-bar" style="height:0%" data-h="82%"></div><div class="dash-bar-lbl">Apr</div></div><div class="dash-bar-wrap"><div class="dash-bar" style="height:0%" data-h="91%"></div><div class="dash-bar-lbl">May</div></div><div class="dash-bar-wrap"><div class="dash-bar" style="height:0%" data-h="76%"></div><div class="dash-bar-lbl">Jun</div></div></div></div>
-                <div class="dash-donut-wrap"><div class="dash-donut-title">Sector Split</div><svg class="dash-donut-svg" viewBox="0 0 70 70"><circle cx="35" cy="35" r="26" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="12"/><circle cx="35" cy="35" r="26" fill="none" stroke="#5DADE2" stroke-width="12" stroke-dasharray="0 163.4" id="donut1" stroke-linecap="round" transform="rotate(-90 35 35)" style="transition:stroke-dasharray 1.2s ease;"/><circle cx="35" cy="35" r="26" fill="none" stroke="#3A8DC4" stroke-width="12" stroke-dasharray="0 163.4" id="donut2" stroke-linecap="round" transform="rotate(-90 35 35)" style="transition:stroke-dasharray 1.4s ease 0.2s;"/><circle cx="35" cy="35" r="26" fill="none" stroke="#1B3A5C" stroke-width="12" stroke-dasharray="0 163.4" id="donut3" stroke-linecap="round" transform="rotate(-90 35 35)" style="transition:stroke-dasharray 1.6s ease 0.4s;"/><text x="35" y="39" text-anchor="middle" font-size="11" font-weight="700" fill="white" font-family="Poppins,sans-serif">Q1</text></svg><div class="dash-legend"><div class="dash-legend-item"><div class="dash-legend-dot" style="background:#5DADE2"></div>MHPSS (42%)</div><div class="dash-legend-item"><div class="dash-legend-dot" style="background:#3A8DC4"></div>Protection (35%)</div><div class="dash-legend-item"><div class="dash-legend-dot" style="background:#1B3A5C"></div>Livelihoods (23%)</div></div></div>
+                <div class="dash-donut-wrap"><div class="dash-donut-title">Sector Split</div><svg class="dash-donut-svg" viewBox="0 0 70 70"><circle cx="35" cy="35" r="26" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="12"/><circle cx="35" cy="35" r="26" fill="none" stroke="#5DADE2" stroke-width="12" stroke-dasharray="0 163.4" id="donut1" class="dash-seg" stroke-linecap="round" transform="rotate(-90 35 35)" style="transition:stroke-dasharray 1.2s ease;"/><circle cx="35" cy="35" r="26" fill="none" stroke="#3A8DC4" stroke-width="12" stroke-dasharray="0 163.4" id="donut2" class="dash-seg" stroke-linecap="round" transform="rotate(-90 35 35)" style="transition:stroke-dasharray 1.4s ease 0.2s;"/><circle cx="35" cy="35" r="26" fill="none" stroke="#1B3A5C" stroke-width="12" stroke-dasharray="0 163.4" id="donut3" class="dash-seg" stroke-linecap="round" transform="rotate(-90 35 35)" style="transition:stroke-dasharray 1.6s ease 0.4s;"/><text x="35" y="39" text-anchor="middle" font-size="11" font-weight="700" fill="white" font-family="Poppins,sans-serif">Q1</text></svg><div class="dash-legend"><div class="dash-legend-item"><div class="dash-legend-dot" style="background:#5DADE2"></div>MHPSS (42%)</div><div class="dash-legend-item"><div class="dash-legend-dot" style="background:#3A8DC4"></div>Protection (35%)</div><div class="dash-legend-item"><div class="dash-legend-dot" style="background:#1B3A5C"></div>Livelihoods (23%)</div></div></div>
               </div>
             </div>
             <p style="font-size:11px;color:var(--text-muted);margin-top:12px;text-align:center;font-style:italic;">Illustrative dashboard — built with ActivityInfo + Power BI</p>
@@ -1765,7 +1742,7 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
       </div>
     </div>
   </div>
-  <section class="cta-section"><h2>Discuss Your Requirements</h2><p>Every engagement begins with a scoping conversation. Let us understand your context before we propose an approach.</p><div class="cta-btns"><button class="btn-pill btn-pill-primary" onclick="showPage('contact')">Request a Proposal <span class="pill-arrow">→</span></button></div></section>
+  <section class="cta-section"><h2>Tell Us About Your Project</h2><p>Every project starts with a conversation. Share your brief and we'll outline the right approach for your context and objectives.</p><div class="cta-btns"><button class="btn-pill btn-pill-primary" onclick="showPage('contact')">Get in Touch <span class="pill-arrow">→</span></button></div></section>
 </div>
 
 
@@ -1794,7 +1771,7 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
       </div>
     </div>
   </section>
-  <section class="cta-section"><h2>Deep Expertise, Applied Well</h2><p>Our Advisory Network strengthens every engagement with practitioner knowledge that complements our methodological expertise.</p><div class="cta-btns"><button class="btn-pill btn-pill-primary" onclick="showPage('contact')">Talk to a Specialist <span class="pill-arrow">→</span></button><button class="btn-pill btn-pill-outline" onclick="showPage('impact')">See Our Work <span class="pill-arrow">→</span></button></div></section>
+  <section class="cta-section"><h2>Work With Our Team</h2><p>Our specialists bring methodological rigour and deep sector knowledge to every project — from scoping to final report.</p><div class="cta-btns"><button class="btn-pill btn-pill-primary" onclick="showPage('contact')">Book a Meeting <span class="pill-arrow">→</span></button><button class="btn-pill btn-pill-outline-navy" onclick="showPage('impact')">See Our Work <span class="pill-arrow">→</span></button></div></section>
 </div>
 
 
@@ -1883,7 +1860,7 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
 
     </div>
   </div>
-  <section class="cta-section"><h2>Commission an Evaluation</h2><p>Every engagement begins with a thorough scoping conversation to ensure our approach fits your context and objectives.</p><div class="cta-btns"><button class="btn-pill btn-pill-primary" onclick="showPage('contact')">Request a Proposal <span class="pill-arrow">→</span></button></div></section>
+  <section class="cta-section"><h2>Start a Project With Us</h2><p>Tell us about your programme, your objectives, and your timeline. We'll scope a rigorous, context-appropriate approach.</p><div class="cta-btns"><button class="btn-pill btn-pill-primary" onclick="showPage('contact')">Get in Touch <span class="pill-arrow">→</span></button></div></section>
 </div>
 
 
@@ -2255,7 +2232,7 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
     </div>
 
   </div>
-  <section class="cta-section"><h2>Commission a Study</h2><p>Looking for specialised research or a sector evidence review? We produce bespoke analytical products alongside our advisory work.</p><div class="cta-btns"><button class="btn-pill btn-pill-primary" onclick="showPage('contact')">Get in Touch <span class="pill-arrow">→</span></button></div></section>
+  <section class="cta-section"><h2>Let's Work Together</h2><p>We produce analytical products, evidence reviews, and bespoke research to support strategic planning and programming.</p><div class="cta-btns"><button class="btn-pill btn-pill-primary" onclick="showPage('contact')">Get in Touch <span class="pill-arrow">→</span></button></div></section>
 </div>
 
 
@@ -2554,8 +2531,7 @@ function initHeroCanvas(){
 }
 
 // ── MEAL DASHBOARD ANIMATION ──
-function initMealDash(){
-  const dash=document.getElementById('mealDash');
+function initMealDash(dash){
   if(!dash)return;
 
   // Animate KPI counters
@@ -2564,8 +2540,8 @@ function initMealDash(){
     let cur=0; const step=Math.ceil(target/50);
     const t=setInterval(()=>{
       cur=Math.min(cur+step,target);
-      el.textContent=cur+(target>=100?'+':'%'===el.nextElementSibling?.textContent?'%':'');
-      if(cur>=target){el.textContent=target+(target===87?'%':target===34?'/40':'');clearInterval(t);}
+      el.textContent=cur+(target>=100?'+':'');
+      if(cur>=target){el.textContent=target===87?'87%':target===34?'34/40':target+'+';clearInterval(t);}
     },30);
   });
 
@@ -2579,14 +2555,14 @@ function initMealDash(){
   // Animate donut chart segments
   const total=163.4;
   setTimeout(()=>{
-    const d1=dash.querySelector('#donut1'),d2=dash.querySelector('#donut2'),d3=dash.querySelector('#donut3');
-    if(d1){
+    const segs=dash.querySelectorAll('.dash-seg');
+    if(segs.length>=3){
       const s1=total*0.42,s2=total*0.35,s3=total*0.23;
-      d1.setAttribute('stroke-dasharray',`${s1} ${total-s1}`);
-      d2.setAttribute('stroke-dasharray',`0 ${s1} ${s2} ${total-s1-s2}`);
-      d2.style.strokeDashoffset=-s1;
-      d3.setAttribute('stroke-dasharray',`0 ${s1+s2} ${s3} ${total-s1-s2-s3}`);
-      d3.style.strokeDashoffset=-(s1+s2);
+      segs[0].setAttribute('stroke-dasharray',`${s1} ${total-s1}`);
+      segs[1].setAttribute('stroke-dasharray',`0 ${s1} ${s2} ${total-s1-s2}`);
+      segs[1].style.strokeDashoffset=-s1;
+      segs[2].setAttribute('stroke-dasharray',`0 ${s1+s2} ${s3} ${total-s1-s2-s3}`);
+      segs[2].style.strokeDashoffset=-(s1+s2);
     }
   },600);
 }
@@ -2621,13 +2597,13 @@ function initTeamShowcase(){
 
 // ── DASHBOARD OBSERVER (trigger when visible) ──
 function observeDashboard(){
-  const dash=document.getElementById('mealDash');
-  if(!dash)return;
-  let triggered=false;
-  const obs=new IntersectionObserver(entries=>{
-    if(entries[0].isIntersecting&&!triggered){triggered=true;initMealDash();}
-  },{threshold:0.3});
-  obs.observe(dash);
+  document.querySelectorAll('.meal-dash').forEach(dash=>{
+    let triggered=false;
+    const obs=new IntersectionObserver(entries=>{
+      if(entries[0].isIntersecting&&!triggered){triggered=true;initMealDash(dash);}
+    },{threshold:0.3});
+    obs.observe(dash);
+  });
 }
 
 function observeAboutGallery(){
