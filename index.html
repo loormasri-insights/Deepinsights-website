@@ -527,6 +527,15 @@ nav{
 .filter-btn-new[data-fcat="publication"].active,.filter-btn-new[data-fcat="publication"]:hover{background:var(--blue);color:#fff;}
 .filter-btn-new[data-fcat="brief"].active,.filter-btn-new[data-fcat="brief"]:hover{background:#2B7A5B;color:#fff;}
 .filter-btn-new[data-fcat="news"].active,.filter-btn-new[data-fcat="news"]:hover{background:#6B52A8;color:#fff;}
+/* About page filter buttons */
+.filter-btn-new[data-acat="all"]{background:#DDE4EE;color:#1B3A5C;}
+.filter-btn-new[data-acat="firm"]{background:#D8EFF2;color:#0D4A55;}
+.filter-btn-new[data-acat="team"]{background:#F5EDD8;color:#5E3A00;}
+.filter-btn-new[data-acat="partners"]{background:#D9EEE2;color:#1A3D25;}
+.filter-btn-new[data-acat="all"].active,.filter-btn-new[data-acat="all"]:hover{background:var(--navy);color:#fff;}
+.filter-btn-new[data-acat="firm"].active,.filter-btn-new[data-acat="firm"]:hover{background:#1A7B8A;color:#fff;}
+.filter-btn-new[data-acat="team"].active,.filter-btn-new[data-acat="team"]:hover{background:#B07328;color:#fff;}
+.filter-btn-new[data-acat="partners"].active,.filter-btn-new[data-acat="partners"]:hover{background:#2B5E3A;color:#fff;}
 .articles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:52px 48px;max-width:1280px;margin:0 auto;}
 .article-card-new{background:#fff;border-radius:var(--radius);overflow:hidden;border:1.5px solid var(--gray2);transition:all 0.25s;cursor:pointer;}
 .article-card-new:hover{box-shadow:0 8px 32px rgba(27,58,92,0.08);transform:translateY(-3px);}
@@ -1953,6 +1962,17 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
     </div>
   </div>
 
+  <!-- ABOUT FILTER BAR -->
+  <div class="insights-filter-new">
+    <button class="filter-btn-new active" data-acat="all" onclick="filterAbout(this,'all')">All</button>
+    <button class="filter-btn-new" data-acat="firm" onclick="filterAbout(this,'firm')">Our Firm</button>
+    <button class="filter-btn-new" data-acat="team" onclick="filterAbout(this,'team')">Team</button>
+    <button class="filter-btn-new" data-acat="partners" onclick="filterAbout(this,'partners')">Partners &amp; Clients</button>
+  </div>
+
+  <!-- ① OUR FIRM + HOW WE WORK -->
+  <div class="about-section" data-acat="firm">
+
   <section class="section" style="background:#fff;">
     <div class="section-inner">
       <div class="split-grid">
@@ -1989,6 +2009,11 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
       </div>
     </div>
   </section>
+
+  </div><!-- /about-section firm -->
+
+  <!-- ② TEAM + ADVISORS -->
+  <div class="about-section" data-acat="team">
 
   <section class="section" style="background:#fff;">
     <div class="section-inner" style="max-width:1300px;">
@@ -2052,6 +2077,11 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
       </div>
     </div>
   </section>
+
+  </div><!-- /about-section team -->
+
+  <!-- ③ PARTNERS & CLIENTS -->
+  <div class="about-section" data-acat="partners">
 
   <section class="section" style="background:var(--gray);">
     <div class="section-inner">
@@ -2538,6 +2568,8 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
     </div><!-- /news-grid -->
   </div><!-- /insights-section news -->
 
+  </div><!-- /about-section partners -->
+
   <section class="cta-section"><h2>Let's Work Together</h2><p>We produce analytical products, evidence reviews, and bespoke research to support strategic planning and programming.</p><div class="cta-btns"><button class="btn-pill btn-pill-primary" onclick="showPage('contact')">Get in Touch <span class="pill-arrow">→</span></button></div></section>
 </div>
 
@@ -2627,6 +2659,13 @@ function filterInsights(btn, cat){
   btn.classList.add('active');
   document.querySelectorAll('.insights-section').forEach(function(s){
     s.style.display=(cat==='all'||s.dataset.cat===cat)?'block':'none';
+  });
+}
+function filterAbout(btn, cat){
+  document.querySelectorAll('[data-acat]').forEach(function(b){b.classList.remove('active');});
+  btn.classList.add('active');
+  document.querySelectorAll('.about-section').forEach(function(s){
+    s.style.display=(cat==='all'||s.dataset.acat===cat)?'block':'none';
   });
 }
 function goToInsights(cat){
