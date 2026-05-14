@@ -517,6 +517,10 @@ nav{
 .insights-filter-new{display:flex;gap:8px;flex-wrap:wrap;padding:32px 48px;border-bottom:1px solid var(--gray2);max-width:1280px;margin:0 auto;}
 .filter-btn-new{background:var(--gray);border:none;border-radius:var(--radius-pill);padding:9px 22px;font-family:'Poppins',sans-serif;font-size:11px;letter-spacing:1.2px;color:var(--text-muted);cursor:pointer;transition:all 0.2s;text-transform:uppercase;}
 .filter-btn-new.active,.filter-btn-new:hover{background:var(--blue);color:#fff;}
+.filter-btn-new[data-fcat="all"].active,.filter-btn-new[data-fcat="all"]:hover{background:var(--navy);}
+.filter-btn-new[data-fcat="publication"].active,.filter-btn-new[data-fcat="publication"]:hover{background:var(--blue);}
+.filter-btn-new[data-fcat="brief"].active,.filter-btn-new[data-fcat="brief"]:hover{background:#2B7A5B;}
+.filter-btn-new[data-fcat="news"].active,.filter-btn-new[data-fcat="news"]:hover{background:#6B52A8;}
 .articles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:52px 48px;max-width:1280px;margin:0 auto;}
 .article-card-new{background:#fff;border-radius:var(--radius);overflow:hidden;border:1.5px solid var(--gray2);transition:all 0.25s;cursor:pointer;}
 .article-card-new:hover{box-shadow:0 8px 32px rgba(27,58,92,0.08);transform:translateY(-3px);}
@@ -542,7 +546,7 @@ nav{
 .article-related-chip{display:inline-flex;align-items:center;padding:4px 12px;background:var(--blue-pale);border-radius:100px;font-size:11px;font-weight:600;color:var(--navy);cursor:pointer;transition:background 0.2s;}
 .article-related-chip:hover{background:#cde2f5;}
 .article-card-new.expanded{transform:none!important;box-shadow:0 4px 20px rgba(27,58,92,0.07);}
-.articles-grid{display:grid;grid-template-columns:1fr;gap:22px;padding:52px 48px;max-width:900px;margin:0 auto;}
+.articles-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;padding:52px 48px;max-width:1280px;margin:0 auto;}
 .cs-related-reading{margin-top:22px;padding-top:18px;border-top:1px solid var(--gray2);}
 .cs-related-label{font-size:9.5px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px;}
 .cs-related-link{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--blue);cursor:pointer;transition:color 0.2s;background:none;border:none;padding:0;font-family:inherit;}
@@ -564,9 +568,20 @@ nav{
 .brief-body{padding:16px 22px 20px;}
 .brief-desc{font-size:12.5px;color:var(--text-muted);line-height:1.75;font-weight:300;margin-bottom:12px;}
 .brief-service-pill{display:inline-flex;align-items:center;padding:4px 12px;background:var(--blue-pale);border-radius:100px;font-size:10px;font-weight:700;color:var(--navy);font-family:'Poppins',sans-serif;letter-spacing:0.3px;}
-.brief-result{margin-top:12px;padding-top:12px;border-top:1px solid var(--gray2);display:flex;align-items:center;gap:10px;}
-.brief-result-num{font-family:'Poppins',sans-serif;font-size:20px;font-weight:800;color:var(--blue);line-height:1;}
-.brief-result-label{font-size:11px;color:var(--text-muted);line-height:1.4;}
+/* Brief card color accents */
+.brief-color-bar{height:5px;width:100%;}
+.brief-eval .brief-color-bar{background:#2763A5;}
+.brief-research .brief-color-bar{background:#6B52A8;}
+.brief-meal .brief-color-bar{background:#1A7B8A;}
+.brief-strategy .brief-color-bar{background:#2B7A5B;}
+.brief-orgdev .brief-color-bar{background:var(--navy);}
+.brief-capacity .brief-color-bar{background:#B85530;}
+/* Brief card footer */
+.brief-footer{margin-top:12px;padding-top:12px;border-top:1px solid var(--gray2);display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;}
+.bf-funder{font-size:11px;color:var(--text-muted);font-weight:300;line-height:1.4;min-width:0;}
+.bf-funder strong{color:var(--navy);font-weight:700;display:block;font-size:10.5px;font-family:'Poppins',sans-serif;letter-spacing:0.3px;}
+.brief-status-done{display:inline-flex;font-family:'Poppins',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 10px;border-radius:100px;background:#E6F4EE;color:#1A6B4A;white-space:nowrap;flex-shrink:0;}
+.brief-status-ongoing{display:inline-flex;font-family:'Poppins',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 10px;border-radius:100px;background:#EBF0FB;color:#1A3A8C;white-space:nowrap;flex-shrink:0;}
 
 /* ── NEWS SECTION ── */
 .news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:20px 48px 52px;max-width:1280px;margin:0 auto;}
@@ -577,13 +592,7 @@ nav{
 .news-title{font-family:'Poppins',sans-serif;font-size:15.5px;font-weight:700;color:var(--navy);line-height:1.3;margin-bottom:10px;}
 .news-body{font-size:13px;color:var(--text-muted);line-height:1.75;font-weight:300;}
 
-/* ── SERVICE FEATURED PROJECT CALLOUT ── */
-.svc-featured-project{margin:0 48px 52px;padding:18px 22px 18px 24px;background:var(--gray);border-radius:var(--radius-sm);border-left:3px solid var(--blue);cursor:pointer;transition:all 0.2s;max-width:1184px;}
-.svc-featured-project:hover{background:var(--blue-pale);}
-.sfp-label{font-family:'Poppins',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--blue);margin-bottom:6px;}
-.sfp-title{font-family:'Poppins',sans-serif;font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px;}
-.sfp-desc{font-size:12.5px;color:var(--text-muted);font-weight:300;line-height:1.65;margin-bottom:8px;}
-.sfp-link{font-family:'Poppins',sans-serif;font-size:10px;font-weight:700;color:var(--blue);letter-spacing:1.5px;text-transform:uppercase;display:inline-flex;align-items:center;gap:5px;}
+/* ── SERVICE PROJECT EXAMPLE (inline in desc col) — uses .cs-related-* styles ── */
 
 /* ── CONTACT PAGE ── */
 .contact-wrap{padding:72px 48px;}
@@ -639,8 +648,7 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
   .section-title-lg{font-size:40px;}
   .hero h1{font-size:38px;}
   .page-hero-new{padding:110px 24px 60px;}
-  .insights-filter-new,.articles-grid,.briefs-grid,.news-grid,.svc-featured-project{padding-left:24px;padding-right:24px;}
-  .svc-featured-project{margin-left:24px;margin-right:24px;}
+  .insights-filter-new,.articles-grid,.briefs-grid,.news-grid{padding-left:24px;padding-right:24px;}
   .insights-section-header{padding-left:24px;padding-right:24px;}
   .visual-float-card{display:none;}
   .logo-slider-outer{padding:40px 24px;}
@@ -1537,6 +1545,10 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
             <p>Our team has conducted evaluations for UN agencies, international NGOs, bilateral donors, and government institutions across MHPSS, GBV, sexual and reproductive health, child protection, food security, education, and livelihoods, at baseline, mid-term, and final stages.</p>
             <p>We design mixed-methods evaluations combining quantitative analysis with qualitative depth. Specialist techniques such as Outcome Harvesting, Most Significant Change, and Contribution Analysis help us assess change in complex, non-linear programme contexts.</p>
             <div style="margin-top:20px;"><button class="btn-pill btn-pill-dark" onclick="showPage('contact')">Request This Service <span class="pill-arrow">→</span></button></div>
+            <div class="cs-related-reading" style="margin-top:18px;">
+              <div class="cs-related-label">Project Example</div>
+              <button class="cs-related-link" onclick="goToInsights('brief')">Final Evaluation — Provision of Mental Health Services to Children, Women and Youth · GTC →</button>
+            </div>
           </div>
           <div class="svc-media-real">
             <video autoplay muted loop playsinline><source src="services page/specific services/evaluations.mp4" type="video/mp4"></video>
@@ -1570,12 +1582,6 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
             <div class="svc-offer-card"><div class="svc-card-tick svc-card-tick-navy"><svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div><div class="svc-card-text">SPSS / Stata statistical analysis</div></div>
           </div>
         </div>
-        <div class="svc-featured-project" onclick="goToInsights('brief')">
-          <div class="sfp-label">Featured Project Brief</div>
-          <div class="sfp-title">Integrated MHPSS Programme Evaluation — Médecins du Monde</div>
-          <div class="sfp-desc">Multi-site OECD-DAC evaluation across Gaza, East Jerusalem, and the West Bank. Rights-based methodology assessing service quality, referral pathways, and staff wellbeing under active conflict conditions.</div>
-          <div class="sfp-link">Read the project brief →</div>
-        </div>
       </div>
 
       <!-- ② MEAL -->
@@ -1587,6 +1593,10 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
             <p>We build MEAL systems that work in the field, not just on paper. Our approach combines technical expertise in digital platforms with hard-won understanding of how monitoring systems function in complex operating environments, where connectivity is intermittent, staff capacity varies, and donor reporting requirements are demanding.</p>
             <p>We are experienced ActivityInfo implementers, skilled Power BI dashboard developers, CommCare service providers, and MIS architects. We have built systems connecting multiple country offices, designed mobile data collection workflows, and created automated reporting solutions that eliminate hours of manual work each reporting cycle.</p>
             <div style="margin-top:20px;"><button class="btn-pill btn-pill-dark" onclick="showPage('contact')">Request This Service <span class="pill-arrow">→</span></button></div>
+            <div class="cs-related-reading" style="margin-top:18px;">
+              <div class="cs-related-label">Project Example</div>
+              <button class="cs-related-link" onclick="goToInsights('brief')">MEAL System Development — GBV Prevention &amp; Response Initiative · PFPPA / UNFPA →</button>
+            </div>
           </div>
           <div>
             <div class="meal-dash" id="mealDash">
@@ -1631,12 +1641,6 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
             <div class="svc-offer-card"><div class="svc-card-tick svc-card-tick-navy"><svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div><div class="svc-card-text">CommCare / ONA</div></div>
           </div>
         </div>
-        <div class="svc-featured-project" onclick="goToInsights('brief')">
-          <div class="sfp-label">Featured Project Brief</div>
-          <div class="sfp-title">Regional Cloud-Based MIS — United Palestinian Appeal</div>
-          <div class="sfp-desc">Nine-phase design and implementation of a regional MIS connecting operations across Palestine, Jordan, and Lebanon using ActivityInfo and Power BI — replacing quarterly manual reporting with real-time cross-country data.</div>
-          <div class="sfp-link">Read the project brief →</div>
-        </div>
       </div>
 
       <!-- ③ STRATEGY -->
@@ -1648,6 +1652,10 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
             <p>Strategic planning in the MENA region requires approaches that account for volatility, political complexity, and rapidly shifting funding landscapes. We combine thorough situational analysis with participatory facilitation that builds ownership and organisational alignment, while keeping plans adaptable enough for course-correction.</p>
             <p>We have facilitated strategic planning for local NGOs, international organisations, and government ministries across a range of contexts, from multi-year institutional strategies to emergency-response contingency frameworks.</p>
             <div style="margin-top:20px;"><button class="btn-pill btn-pill-dark" onclick="showPage('contact')">Request This Service <span class="pill-arrow">→</span></button></div>
+            <div class="cs-related-reading" style="margin-top:18px;">
+              <div class="cs-related-label">Project Example</div>
+              <button class="cs-related-link" onclick="goToInsights('brief')">Emergency Preparedness and Response Strategy — Palestinian Farmers' Union · NPA →</button>
+            </div>
           </div>
           <div class="svc-media-real">
             <img src="services page/specific services/strategy and risk management.jpg" alt="Strategy &amp; Risk Management">
@@ -1667,12 +1675,6 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
             <div class="svc-offer-card"><div class="svc-card-tick"><svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div><div class="svc-card-text">Strategic review and mid-course correction</div></div>
           </div>
         </div>
-        <div class="svc-featured-project" onclick="goToInsights('brief')">
-          <div class="sfp-label">Featured Project Brief</div>
-          <div class="sfp-title">National ECD Strategy 2025–2030 — Humanity &amp; Inclusion</div>
-          <div class="sfp-desc">Led the national review and redesign of Palestine's Early Childhood Development Strategy, engaging six government ministries through a participatory process. The framework integrates health, education, and protection with a costed five-year action plan.</div>
-          <div class="sfp-link">Read the project brief →</div>
-        </div>
       </div>
 
       <!-- ④ ORG DEV -->
@@ -1684,6 +1686,10 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
             <p>We strengthen organisations from the inside, developing governance structures, policy frameworks, SOPs, and compliance systems that meet major donor requirements and build the institutional credibility needed to access new funding. Our work aligns with UNICEF, EU, and USAID institutional standards.</p>
             <p>Our organisational development work is grounded in realistic assessments of existing capacity. We identify genuine gaps and work with organisations to build systems that function sustainably in their specific context.</p>
             <div style="margin-top:20px;"><button class="btn-pill btn-pill-dark" onclick="showPage('contact')">Request This Service <span class="pill-arrow">→</span></button></div>
+            <div class="cs-related-reading" style="margin-top:18px;">
+              <div class="cs-related-label">Project Example</div>
+              <button class="cs-related-link" onclick="goToInsights('brief')">Governance, Finance &amp; HR Manuals Development — ANAR for Empowerment &amp; Psychosocial Support · UNICEF →</button>
+            </div>
           </div>
           <div class="svc-media-real">
             <img src="services page/specific services/organizational development.jpg" alt="Organisational Development">
@@ -1703,12 +1709,6 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
             <div class="svc-offer-card"><div class="svc-card-tick"><svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div><div class="svc-card-text">Compliance gap analysis and remediation plans</div></div>
           </div>
         </div>
-        <div class="svc-featured-project" onclick="goToInsights('brief')">
-          <div class="sfp-label">Featured Project Brief</div>
-          <div class="sfp-title">Institutional Capacity Assessment &amp; Policy Package — World Vision</div>
-          <div class="sfp-desc">Comprehensive Organisational Capacity Assessment followed by full policy package development — governance, HR, finance, safeguarding, and procurement manuals — aligned with HACT and UNICEF institutional standards across 12 policy documents.</div>
-          <div class="sfp-link">Read the project brief →</div>
-        </div>
       </div>
 
       <!-- ⑤ CAPACITY -->
@@ -1720,6 +1720,10 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
             <p>Our capacity building approach goes beyond knowledge transfer. We combine structured training with practical application, on-the-job coaching, and mentoring, ensuring that learning translates into changed practice. Training of Trainers programmes build sustainable internal capacity.</p>
             <p>We have trained government staff, NGO programme teams, field officers, and senior management across the region, in groups ranging from small specialist workshops to large-scale multi-organisation programmes. We also deliver dedicated handover training when we build MEAL systems or organisational frameworks, ensuring staff can independently operate and maintain what we create.</p>
             <div style="margin-top:20px;"><button class="btn-pill btn-pill-dark" onclick="showPage('contact')">Request This Service <span class="pill-arrow">→</span></button></div>
+            <div class="cs-related-reading" style="margin-top:18px;">
+              <div class="cs-related-label">Project Example</div>
+              <button class="cs-related-link" onclick="goToInsights('brief')">Capacity Development on Child Rights Indicators through Administrative Data Systems — Save the Children →</button>
+            </div>
           </div>
           <div class="svc-media-real">
             <video autoplay muted loop playsinline><source src="services page/specific services/capacity-building.mp4" type="video/mp4"></video>
@@ -1739,12 +1743,6 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
             <div class="svc-offer-card"><div class="svc-card-tick"><svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div><div class="svc-card-text">Training of Trainers (ToT) facilitation</div></div>
           </div>
         </div>
-        <div class="svc-featured-project" onclick="goToInsights('brief')">
-          <div class="sfp-label">Featured Project Brief</div>
-          <div class="sfp-title">Regional MEL Systems Training Programme — UNDP Palestine</div>
-          <div class="sfp-desc">Structured MEL capacity building programme for 14 UNDP partner NGOs, covering indicator development, data tools, ActivityInfo implementation, and Power BI dashboards. A Training of Trainers component built lasting internal capacity across the cohort.</div>
-          <div class="sfp-link">Read the project brief →</div>
-        </div>
       </div>
 
       <!-- ⑥ RESOURCE -->
@@ -1755,6 +1753,10 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
             <p class="service-tagline-new">Evidence-based proposals and fundraising strategy that win institutional funding</p>
             <p>We help organisations translate their evidence and expertise into competitive funding proposals. Our proposal development combines technical quality — well-structured results frameworks, clear theories of change, coherent budgets — with compelling narrative that communicates an organisation's value proposition to institutional donors.</p>
             <div style="margin-top:20px;"><button class="btn-pill btn-pill-dark" onclick="showPage('contact')">Request This Service <span class="pill-arrow">→</span></button></div>
+            <div class="cs-related-reading" style="margin-top:18px;">
+              <div class="cs-related-label">Project Example</div>
+              <button class="cs-related-link" onclick="goToInsights('brief')">Fundraising Consultancy and Resource Mobilisation — Guidance and Training Center (GTC) →</button>
+            </div>
           </div>
           <div class="svc-media-real">
             <img src="services page/specific services/Resource Mobilisation.jpg" alt="Resource Mobilisation">
@@ -1772,12 +1774,6 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
             <div class="svc-offer-card"><div class="svc-card-tick"><svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div><div class="svc-card-text">Concept note development</div></div>
             <div class="svc-offer-card"><div class="svc-card-tick"><svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div><div class="svc-card-text">Grant management advisory support</div></div>
           </div>
-        </div>
-        <div class="svc-featured-project" onclick="goToInsights('brief')">
-          <div class="sfp-label">Featured Project Brief</div>
-          <div class="sfp-title">Institutional Fundraising Strategy &amp; Proposal Development — NRC</div>
-          <div class="sfp-desc">Developed a three-year institutional fundraising strategy with donor landscape mapping and tailored engagement plans. Supported proposal development for EU, ECHO, and bilateral donors — including results frameworks and theory of change documentation.</div>
-          <div class="sfp-link">Read the project brief →</div>
         </div>
       </div>
 
@@ -2325,133 +2321,173 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
     </div>
     <div class="briefs-grid">
 
-      <!-- BRIEF 1 -->
-      <div class="brief-card">
+      <!-- BRIEF 1: GTC Final Evaluation – Mental Health Services -->
+      <div class="brief-card brief-eval">
+        <div class="brief-color-bar"></div>
         <div class="brief-header">
-          <div class="brief-org">Médecins du Monde · BMZ</div>
-          <div class="brief-title">Integrated MHPSS Programme Evaluation</div>
+          <div class="brief-org">Guidance and Training Center (GTC) · Bethlehem</div>
+          <div class="brief-title">Final Evaluation — Provision of Mental Health Services to Children, Women and Youth in Palestine</div>
         </div>
         <div class="brief-body">
-          <div class="brief-desc">Multi-site OECD-DAC evaluation of integrated mental health and psychosocial support services across Gaza, East Jerusalem, and the West Bank. Rights-based methodology with clinical staff interviews, referral pathway assessment, and staff wellbeing indicators.</div>
+          <div class="brief-desc">Final evaluation of a five-year programme delivered by Palestine's leading specialised MHPSS institution. Assessed all six OECD-DAC criteria through KIIs with clinical psychologists, FGDs with beneficiaries, and a staff wellbeing component.</div>
           <span class="brief-service-pill">Evaluation</span>
-          <div class="brief-result"><div class="brief-result-num">3</div><div class="brief-result-label">Sites evaluated across Palestine</div></div>
+          <div class="brief-footer">
+            <div class="bf-funder">Funded by<strong>Bread for the World · Misereor · MAP-UK</strong></div>
+            <span class="brief-status-done">Completed</span>
+          </div>
         </div>
       </div>
 
-      <!-- BRIEF 2 -->
-      <div class="brief-card">
+      <!-- BRIEF 2: BASR Disability Final Evaluation -->
+      <div class="brief-card brief-eval">
+        <div class="brief-color-bar"></div>
         <div class="brief-header">
-          <div class="brief-org">Save the Children · YMCA</div>
-          <div class="brief-title">Child Protection &amp; MHPSS Emergency Response Evaluation</div>
+          <div class="brief-org">Bethlehem Arab Society for Rehabilitation (BASR) · APEFE</div>
+          <div class="brief-title">Final Evaluation — Promoting Inclusive Development for People with Disabilities in the West Bank</div>
         </div>
         <div class="brief-body">
-          <div class="brief-desc">Endline evaluation of a three-year child protection and MHPSS emergency response reaching 4,200 crisis-affected beneficiaries in Gaza and the West Bank. Validated the effectiveness of a 12-session resilience model and assessed case management quality.</div>
+          <div class="brief-desc">Final evaluation of a four-year Belgian-funded programme assessing rehabilitation, disability-inclusive education, and economic empowerment outcomes. Complex multi-stakeholder design engaging government counterparts, civil society, and disability rights organisations.</div>
           <span class="brief-service-pill">Evaluation</span>
-          <div class="brief-result"><div class="brief-result-num">4,200</div><div class="brief-result-label">Beneficiaries reached</div></div>
+          <div class="brief-footer">
+            <div class="bf-funder">Funded by<strong>DGD — Belgian Development Cooperation</strong></div>
+            <span class="brief-status-ongoing">Ongoing</span>
+          </div>
         </div>
       </div>
 
-      <!-- BRIEF 3 -->
-      <div class="brief-card">
+      <!-- BRIEF 3: Alianza Women-Led Protection Evaluation -->
+      <div class="brief-card brief-eval">
+        <div class="brief-color-bar"></div>
         <div class="brief-header">
-          <div class="brief-org">Caritas Jerusalem · Generalitat Valenciana</div>
-          <div class="brief-title">Agro-Ecology &amp; Food Security Final Evaluation</div>
+          <div class="brief-org">Alianza por la Solidaridad — ActionAid Spain</div>
+          <div class="brief-title">Final Evaluation — Strengthening Community-Based and Women-Led Protection Mechanisms for SGBV Survivors</div>
         </div>
         <div class="brief-body">
-          <div class="brief-desc">Final evaluation of a community food sovereignty programme in Beit Jala (Area C, West Bank) engaging 1,495 beneficiaries. Mixed-methods design with KIIs, FGDs, field observations, and systematic qualitative analysis using ATLAS.ti.</div>
+          <div class="brief-desc">Final evaluation of a programme supporting survivor-centred GBV response, women-led safe spaces, and economic empowerment in the West Bank. Rigorous ethical protocols applied throughout data collection with SGBV-affected populations.</div>
           <span class="brief-service-pill">Evaluation</span>
-          <div class="brief-result"><div class="brief-result-num">1,495</div><div class="brief-result-label">Beneficiaries engaged</div></div>
+          <div class="brief-footer">
+            <div class="bf-funder">Funded by<strong>AACID — Andalusian Agency for International Development</strong></div>
+            <span class="brief-status-done">Completed</span>
+          </div>
         </div>
       </div>
 
-      <!-- BRIEF 4 -->
-      <div class="brief-card">
+      <!-- BRIEF 4: British Council HESPAL -->
+      <div class="brief-card brief-research">
+        <div class="brief-color-bar"></div>
         <div class="brief-header">
-          <div class="brief-org">Medical Aid for Palestinians (MAP)</div>
-          <div class="brief-title">Integrated SRH Services Evaluation</div>
+          <div class="brief-org">British Council Palestine</div>
+          <div class="brief-title">Impact Research Study — HESPAL Programme (Higher Education Scholarships Palestine)</div>
         </div>
         <div class="brief-body">
-          <div class="brief-desc">Independent evaluation of sexual and reproductive health services for conflict-affected women and girls across the West Bank. Feminist evaluation lens with survivor-centred methodology and Contribution Analysis to assess programme impact.</div>
-          <span class="brief-service-pill">Evaluation</span>
-          <div class="brief-result"><div class="brief-result-num">6</div><div class="brief-result-label">Districts covered</div></div>
+          <div class="brief-desc">Multi-cohort impact study examining career trajectories, professional outcomes, and contributions to Palestinian society among HESPAL scholarship alumni. Combined large-scale alumni survey with qualitative follow-up interviews and documentary analysis.</div>
+          <span class="brief-service-pill">Research</span>
+          <div class="brief-footer">
+            <div class="bf-funder">Funded by<strong>British Council</strong></div>
+            <span class="brief-status-done">Completed</span>
+          </div>
         </div>
       </div>
 
-      <!-- BRIEF 5 -->
-      <div class="brief-card">
+      <!-- BRIEF 5: We Effect Baseline Study -->
+      <div class="brief-card brief-research">
+        <div class="brief-color-bar"></div>
         <div class="brief-header">
-          <div class="brief-org">Humanity &amp; Inclusion · Government of Palestine</div>
-          <div class="brief-title">National ECD Strategy 2025–2030</div>
+          <div class="brief-org">We Effect — Swedish Development Cooperation</div>
+          <div class="brief-title">Baseline Study and Logical Framework Update — LIFT Programme</div>
         </div>
         <div class="brief-body">
-          <div class="brief-desc">Led the national review and redesign of Palestine's Early Childhood Development Strategy, engaging six government ministries through a comprehensive participatory process. The five-year framework integrates health, education, and protection with a costed action plan.</div>
-          <span class="brief-service-pill">Strategy</span>
-          <div class="brief-result"><div class="brief-result-num">6</div><div class="brief-result-label">Ministries engaged</div></div>
+          <div class="brief-desc">Baseline study and LFA update for a Sida-funded livelihoods and agriculture programme in the West Bank. Established baseline indicators across food systems, gender equality, and climate resilience dimensions, with updated logframe for the programme cycle.</div>
+          <span class="brief-service-pill">Research &amp; MEL</span>
+          <div class="brief-footer">
+            <div class="bf-funder">Funded by<strong>Sida — Swedish International Development Cooperation Agency</strong></div>
+            <span class="brief-status-done">Completed</span>
+          </div>
         </div>
       </div>
 
-      <!-- BRIEF 6 -->
-      <div class="brief-card">
+      <!-- BRIEF 6: PFPPA MEAL System -->
+      <div class="brief-card brief-meal">
+        <div class="brief-color-bar"></div>
         <div class="brief-header">
-          <div class="brief-org">United Palestinian Appeal (UPA)</div>
-          <div class="brief-title">Regional Cloud-Based Management Information System</div>
+          <div class="brief-org">Palestinian Family Planning &amp; Protection Association (PFPPA)</div>
+          <div class="brief-title">MEAL System Development — GBV Prevention and Response Initiative</div>
         </div>
         <div class="brief-body">
-          <div class="brief-desc">Nine-phase design and implementation of a regional MIS connecting UPA's operations across Palestine, Jordan, and Lebanon. Unified data architecture with ActivityInfo, custom Power BI dashboards, and automated reporting workflows replacing manual quarterly processes.</div>
+          <div class="brief-desc">Custom MEAL system design and digital data collection setup for a UNFPA-funded GBV prevention and response programme. Developed indicator frameworks, KoboToolbox data collection forms, and data management protocols aligned with UNFPA protection standards.</div>
           <span class="brief-service-pill">MEAL Systems</span>
-          <div class="brief-result"><div class="brief-result-num">3</div><div class="brief-result-label">Countries connected in real time</div></div>
+          <div class="brief-footer">
+            <div class="bf-funder">Funded by<strong>UNFPA — United Nations Population Fund</strong></div>
+            <span class="brief-status-done">Completed</span>
+          </div>
         </div>
       </div>
 
-      <!-- BRIEF 7 -->
-      <div class="brief-card">
+      <!-- BRIEF 7: PWWSD Youth Engagement Strategy -->
+      <div class="brief-card brief-strategy">
+        <div class="brief-color-bar"></div>
         <div class="brief-header">
-          <div class="brief-org">ACTED · EU Funding</div>
-          <div class="brief-title">Livelihoods Programme Mid-Term Evaluation</div>
+          <div class="brief-org">Palestinian Working Woman Society for Development (PWWSD)</div>
+          <div class="brief-title">Youth Engagement Strategy and Action Plan</div>
         </div>
         <div class="brief-body">
-          <div class="brief-desc">Mid-term evaluation of an EU-funded livelihoods programme across the West Bank, assessing relevance, effectiveness, and early indicators of sustainability. Applied Contribution Analysis to assess income change in a complex economic environment.</div>
-          <span class="brief-service-pill">Evaluation</span>
-          <div class="brief-result"><div class="brief-result-num">850</div><div class="brief-result-label">Beneficiary households surveyed</div></div>
+          <div class="brief-desc">Participatory strategy process producing a youth engagement strategy and action plan for a leading Palestinian feminist organisation. Integrating youth voices, disability inclusion, and feminist movement-building principles under the Dutch-funded FemPawer Project.</div>
+          <span class="brief-service-pill">Strategy</span>
+          <div class="brief-footer">
+            <div class="bf-funder">Funded by<strong>Dutch Ministry of Foreign Affairs — FemPawer</strong></div>
+            <span class="brief-status-done">Completed</span>
+          </div>
         </div>
       </div>
 
-      <!-- BRIEF 8 -->
-      <div class="brief-card">
+      <!-- BRIEF 8: PFU Emergency Preparedness -->
+      <div class="brief-card brief-strategy">
+        <div class="brief-color-bar"></div>
         <div class="brief-header">
-          <div class="brief-org">World Vision · UNICEF</div>
-          <div class="brief-title">Institutional Capacity Assessment &amp; Policy Package</div>
+          <div class="brief-org">Palestinian Farmers' Union (PFU)</div>
+          <div class="brief-title">Emergency Preparedness and Response Strategy</div>
         </div>
         <div class="brief-body">
-          <div class="brief-desc">Comprehensive Organisational Capacity Assessment followed by full policy package development including governance, HR, finance, safeguarding, and procurement manuals aligned with HACT and UNICEF institutional standards.</div>
+          <div class="brief-desc">Developed an emergency preparedness and response strategy for Palestine's national farmers' union, assessing agricultural risks and climate shocks. Produced contingency protocols and risk reduction frameworks to protect farmer livelihoods under crisis conditions.</div>
+          <span class="brief-service-pill">Strategy</span>
+          <div class="brief-footer">
+            <div class="bf-funder">Funded by<strong>Norwegian People's Aid (NPA)</strong></div>
+            <span class="brief-status-done">Completed</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- BRIEF 9: ANAR Governance Manuals -->
+      <div class="brief-card brief-orgdev">
+        <div class="brief-color-bar"></div>
+        <div class="brief-header">
+          <div class="brief-org">ANAR for Empowerment &amp; Psychosocial Support</div>
+          <div class="brief-title">Governance, Finance, and HR Manuals Development</div>
+        </div>
+        <div class="brief-body">
+          <div class="brief-desc">Full organisational policy package for a UNICEF-funded MHPSS organisation, comprising governance, finance, procurement, and HR policy frameworks. Fully aligned with Palestinian labour law and UNICEF compliance and accountability standards.</div>
           <span class="brief-service-pill">Organisational Development</span>
-          <div class="brief-result"><div class="brief-result-num">12</div><div class="brief-result-label">Policy documents developed</div></div>
+          <div class="brief-footer">
+            <div class="bf-funder">Funded by<strong>UNICEF</strong></div>
+            <span class="brief-status-done">Completed</span>
+          </div>
         </div>
       </div>
 
-      <!-- BRIEF 9 -->
-      <div class="brief-card">
+      <!-- BRIEF 10: Save the Children – Child Rights Indicators -->
+      <div class="brief-card brief-capacity">
+        <div class="brief-color-bar"></div>
         <div class="brief-header">
-          <div class="brief-org">UNDP Palestine · Partner NGOs</div>
-          <div class="brief-title">Regional MEL Systems Training Programme</div>
+          <div class="brief-org">Save the Children · PCBS · MoSD</div>
+          <div class="brief-title">Capacity Development on Child Rights Indicators through Administrative Data Systems</div>
         </div>
         <div class="brief-body">
-          <div class="brief-desc">Structured MEL capacity building programme for 14 UNDP partner NGOs, covering indicator development, data collection tools, ActivityInfo implementation, and Power BI dashboard use. Training of Trainers component built sustainable internal capacity.</div>
+          <div class="brief-desc">Multi-workshop capacity building programme strengthening government and NGO staff ability to track child rights indicators using administrative data systems. Facilitated with PCBS and the Ministry of Social Development across a structured multi-session programme.</div>
           <span class="brief-service-pill">Capacity Building</span>
-          <div class="brief-result"><div class="brief-result-num">14</div><div class="brief-result-label">Partner organisations trained</div></div>
-        </div>
-      </div>
-
-      <!-- BRIEF 10 -->
-      <div class="brief-card">
-        <div class="brief-header">
-          <div class="brief-org">Norwegian Refugee Council (NRC)</div>
-          <div class="brief-title">Institutional Fundraising Strategy &amp; Proposal Development</div>
-        </div>
-        <div class="brief-body">
-          <div class="brief-desc">Developed a three-year institutional fundraising strategy including donor landscape mapping and tailored engagement plans. Supported proposal development for EU, ECHO, and bilateral donor opportunities with results frameworks and theory of change.</div>
-          <span class="brief-service-pill">Resource Mobilisation</span>
-          <div class="brief-result"><div class="brief-result-num">3</div><div class="brief-result-label">Major proposals submitted</div></div>
+          <div class="brief-footer">
+            <div class="bf-funder">Funded by<strong>Save the Children International</strong></div>
+            <span class="brief-status-done">Completed</span>
+          </div>
         </div>
       </div>
 
@@ -2481,10 +2517,10 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
       </div>
 
       <div class="news-card">
-        <div class="news-tag">New Engagement</div>
-        <div class="news-date">February 2025</div>
-        <div class="news-title">Deep Insights Completes Fifth Consecutive Evaluation for Humanitarian Partners</div>
-        <div class="news-body">Building on four years of evaluation work across MHPSS, child protection, and food security, Deep Insights has completed its fifth consecutive evaluation engagement for UN-funded humanitarian programmes in the West Bank and Gaza.</div>
+        <div class="news-tag">New Contract</div>
+        <div class="news-date">March 2026</div>
+        <div class="news-title">Deep Insights Contracted for Mid-Term Evaluation of Inclusive ECD Programme — Humanity &amp; Inclusion</div>
+        <div class="news-body">Deep Insights has been contracted by Humanity &amp; Inclusion to conduct the mid-term evaluation of the AC6 project, supporting children with developmental delays and disabilities across Palestine. The Luxembourg-funded programme assessment covers family support, rehabilitation, and community inclusion result areas.</div>
       </div>
 
     </div><!-- /news-grid -->
