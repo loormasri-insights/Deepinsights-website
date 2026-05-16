@@ -529,7 +529,9 @@ nav{
 
 /* ── INSIGHTS PAGE ── */
 .insights-filter-new{display:flex;gap:8px;flex-wrap:wrap;padding:32px 48px;border-bottom:1px solid var(--gray2);max-width:1280px;margin:0 auto;}
+@keyframes filter-btn-pop{0%{transform:translateY(0) scale(1);}40%{transform:translateY(-4px) scale(1.13);}72%{transform:translateY(0) scale(0.97);}100%{transform:translateY(0) scale(1);}}
 .filter-btn-new{background:var(--gray);border:none;border-radius:var(--radius-pill);padding:9px 22px;font-family:'Poppins',sans-serif;font-size:11px;letter-spacing:1.2px;color:var(--text-muted);cursor:pointer;transition:all 0.22s ease;text-transform:uppercase;transform:translateY(0);box-shadow:0 1px 3px rgba(0,0,0,0.06);}.filter-btn-new:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.13);}
+.filter-btn-new.popping{animation:filter-btn-pop 0.5s cubic-bezier(0.34,1.56,0.64,1) both;transition:none;}
 .filter-btn-new.active,.filter-btn-new:hover{color:#fff;}
 /* Default pastel tints per category */
 .filter-btn-new[data-fcat="all"]{background:#DDE4EE;color:#1B3A5C;}
@@ -2630,7 +2632,6 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
     <div class="page-hero-inner-new">
       <div class="badge badge-dark" style="margin-bottom:16px;"><div class="badge-icon"><svg class="icon-svg"><use href="#ico-mail"/></svg></div><span class="badge-text">Get in Touch</span></div>
       <h1>Contact Us</h1>
-      <p class="page-hero-sub">We welcome enquiries from organisations across the MENA region and beyond. Every engagement begins with a conversation.</p>
     </div>
   </div>
   <div class="contact-wrap">
@@ -2656,6 +2657,10 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
             <div class="form-group-new"><label>Last Name</label><input type="text" placeholder="Last name"></div>
           </div>
           <div class="form-group-new"><label>Organisation</label><input type="text" placeholder="Your organisation"></div>
+          <div class="form-row-new">
+            <div class="form-group-new"><label>Country</label><input type="text" placeholder="Country"></div>
+            <div class="form-group-new"><label>Website <span style="font-weight:300;color:var(--text-muted);font-size:11px;">(optional)</span></label><input type="url" placeholder="https://yourorganisation.org"></div>
+          </div>
           <div class="form-group-new"><label>Email Address</label><input type="email" placeholder="your@organisation.org"></div>
           <div class="form-group-new"><label>Service Required</label>
             <select>
@@ -2668,6 +2673,7 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
               <option>Resource Mobilisation</option>
               <option>Private Sector Analytics</option>
               <option>General Enquiry</option>
+              <option>Other</option>
             </select>
           </div>
           <div class="form-group-new"><label>Message</label><textarea placeholder="Describe your project context, key questions, and any timing requirements..."></textarea></div>
@@ -2725,6 +2731,18 @@ function goToInsights(cat){
     if(btn)btn.click();
   },120);
 }
+function pulseFilterBtns(pageId){
+  var sel=pageId==='insights'?'#page-insights [data-fcat]':'#page-about [data-acat]';
+  var btns=document.querySelectorAll(sel);
+  btns.forEach(function(btn,i){
+    setTimeout(function(){
+      btn.classList.remove('popping');
+      void btn.offsetWidth; // force reflow so animation restarts cleanly
+      btn.classList.add('popping');
+      setTimeout(function(){btn.classList.remove('popping');},520);
+    },i*90);
+  });
+}
 function toggleArticle(btn){
   const card=btn.closest('.article-card-new');
   const content=card.querySelector('.article-full-content');
@@ -2745,6 +2763,7 @@ function showPage(id){
   // Re-init interactive components on page switch
   if(id==='services'){setTimeout(()=>{observeDashboard();},200);}
   if(id==='about'){setTimeout(()=>{initTeamShowcase();initMediaGallery();},100);}
+  if(id==='about'||id==='insights'){setTimeout(()=>{pulseFilterBtns(id);},200);}
   // Restart background videos on pages that start hidden
   setTimeout(()=>{
     var pg=document.getElementById('page-'+id);
