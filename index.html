@@ -497,7 +497,7 @@ nav{
 .value-item-new p{font-size:13.5px;color:var(--text-muted);line-height:1.7;font-weight:300;}
 .approach-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--gray2);margin-top:44px;}
 .approach-step-new{background:#fff;padding:32px 24px;position:relative;overflow:hidden;}
-.approach-num{font-family:'Poppins',sans-serif;font-size:56px;color:rgba(39,99,165,0.18);position:absolute;top:10px;right:16px;}
+.approach-num{font-family:'Poppins',sans-serif;font-size:56px;color:rgba(39,99,165,0.32);position:absolute;top:10px;right:16px;font-weight:700;}
 .approach-icon{font-size:26px;margin-bottom:14px;}
 .approach-title{font-family:'Poppins',sans-serif;font-size:18px;color:var(--navy);margin-bottom:8px;}
 .approach-desc{font-size:12.5px;color:var(--text-muted);line-height:1.7;font-weight:300;}
@@ -509,14 +509,27 @@ nav{
 .advisors-grid-new{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px;}
 .advisor-card-new{background:var(--gray);border-radius:var(--radius-sm);padding:22px;text-align:center;}
 .advisor-avatar-new{width:56px;height:56px;border-radius:50%;background:linear-gradient(145deg,var(--blue-mid),var(--navy));margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-size:18px;color:#fff;}
-.advisor-photo-new{width:80px;height:80px;border-radius:50%;object-fit:cover;object-position:center top;margin:0 auto 12px;display:block;border:2px solid var(--gray2);}
+.advisor-photo-new{width:110px;height:110px;border-radius:50%;object-fit:cover;object-position:center top;margin:0 auto 14px;display:block;border:3px solid var(--gray2);}
 .advisor-name-new{font-family:'Poppins',sans-serif;font-size:13px;color:var(--navy);margin-bottom:3px;}
 .advisor-area-new{font-size:10px;color:var(--blue);text-transform:uppercase;letter-spacing:0.5px;}
+/* Team photo gallery — 3-column masonry */
+.team-gallery-wrap{margin-top:60px;}
+.team-gallery-header{margin-bottom:32px;}
+.media-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start;}
+.media-col{display:flex;flex-direction:column;gap:16px;}
+.media-item{border-radius:var(--radius-sm);overflow:hidden;opacity:0;transform:translateY(24px);transition:opacity 0.75s ease,transform 0.75s ease;}
+.media-item.mg-visible{opacity:1;transform:translateY(0);}
+.media-item img{width:100%;height:auto;display:block;object-fit:cover;transition:transform 0.5s ease;}
+.media-item:hover img{transform:scale(1.04);}
+.media-item.ratio-portrait{aspect-ratio:9/16;}
+.media-item.ratio-portrait img{height:100%;object-fit:cover;object-position:center top;}
+.media-item.ratio-landscape{aspect-ratio:16/9;}
+.media-item.ratio-landscape img{height:100%;object-fit:cover;}
 /* partner pills replaced by logo grid - see .partners-logo-grid */
 
 /* ── INSIGHTS PAGE ── */
 .insights-filter-new{display:flex;gap:8px;flex-wrap:wrap;padding:32px 48px;border-bottom:1px solid var(--gray2);max-width:1280px;margin:0 auto;}
-.filter-btn-new{background:var(--gray);border:none;border-radius:var(--radius-pill);padding:9px 22px;font-family:'Poppins',sans-serif;font-size:11px;letter-spacing:1.2px;color:var(--text-muted);cursor:pointer;transition:all 0.2s;text-transform:uppercase;}
+.filter-btn-new{background:var(--gray);border:none;border-radius:var(--radius-pill);padding:9px 22px;font-family:'Poppins',sans-serif;font-size:11px;letter-spacing:1.2px;color:var(--text-muted);cursor:pointer;transition:all 0.22s ease;text-transform:uppercase;transform:translateY(0);box-shadow:0 1px 3px rgba(0,0,0,0.06);}.filter-btn-new:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.13);}
 .filter-btn-new.active,.filter-btn-new:hover{color:#fff;}
 /* Default pastel tints per category */
 .filter-btn-new[data-fcat="all"]{background:#DDE4EE;color:#1B3A5C;}
@@ -947,6 +960,7 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
   <symbol id="ico-cross-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></symbol>
   <symbol id="ico-book2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></symbol>
   <symbol id="ico-leaf" viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 22h3.45c.48-2.25 1.47-4.5 3.73-6 4 1.3 6-1 6-1s.05 5-6 5c0 0 2 3 6 0 2.5-1.9 3-5 3-9s-3-11-3-11z"/></symbol>
+  <symbol id="ico-camera" viewBox="0 0 24 24"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></symbol>
   <symbol id="ico-wind" viewBox="0 0 24 24"><path d="M9.59 4.59A2 2 0 1111 8H2m10.59 11.41A2 2 0 1014 16H2m15.73-8.27A2.5 2.5 0 1119.5 12H2"/></symbol>
   <symbol id="ico-person" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M12 13c-5 0-8 2.5-8 4v1h16v-1c0-1.5-3-4-8-4z"/></symbol>
   <symbol id="ico-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></symbol>
@@ -2079,6 +2093,31 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
           <div class="advisor-card-new"><img class="advisor-photo-new" src="Team/advisors/Victoria San Juan - Quantitative Research &amp; Evaluation Specialist.jpg" alt="Victoria San Juan"><div class="advisor-name-new">Victoria San Juan</div><div class="advisor-area-new">Quantitative Research &amp; Evaluation Specialist</div></div>
         </div>
       </div>
+
+      <!-- TEAM PHOTO GALLERY -->
+      <div class="team-gallery-wrap">
+        <div class="team-gallery-header">
+          <div class="badge"><div class="badge-icon"><svg class="icon-svg"><use href="#ico-camera"/></svg></div><span class="badge-text">Our Team at Work</span></div>
+          <h3 style="font-family:'Poppins',sans-serif;font-size:28px;color:var(--navy);margin-bottom:6px;">In the Field</h3>
+          <p style="font-size:14px;color:var(--text-muted);font-weight:300;">A glimpse into how we work — across communities, boardrooms, and field sites throughout the region.</p>
+        </div>
+        <div class="media-gallery">
+          <!-- Column 1 -->
+          <div class="media-col">
+            <div class="media-item ratio-portrait"><img src="images/1.JPG" alt="Deep Insights team at work" loading="lazy"></div>
+          </div>
+          <!-- Column 2 -->
+          <div class="media-col">
+            <div class="media-item ratio-landscape"><img src="images/2.JPG" alt="Deep Insights field work" loading="lazy"></div>
+            <div class="media-item ratio-landscape"><img src="images/4.JPG" alt="Deep Insights team session" loading="lazy"></div>
+          </div>
+          <!-- Column 3 -->
+          <div class="media-col">
+            <div class="media-item ratio-portrait"><img src="images/3.JPG" alt="Deep Insights workshop" loading="lazy"></div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -2572,8 +2611,6 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
     </div><!-- /news-grid -->
   </div><!-- /insights-section news -->
 
-  </div><!-- /about-section partners -->
-
   <section class="cta-section"><h2>Let's Work Together</h2><p>We produce analytical products, evidence reviews, and bespoke research to support strategic planning and programming.</p><div class="cta-btns"><button class="btn-pill btn-pill-primary" onclick="showPage('contact')">Get in Touch <span class="pill-arrow">→</span></button></div></section>
 </div>
 
@@ -2698,7 +2735,7 @@ function showPage(id){
   setTimeout(observeFadeUps,100);
   // Re-init interactive components on page switch
   if(id==='services'){setTimeout(()=>{observeDashboard();},200);}
-  if(id==='about'){setTimeout(()=>{initTeamShowcase();},100);}
+  if(id==='about'){setTimeout(()=>{initTeamShowcase();initMediaGallery();},100);}
 }
 
 function showSvc(id){
@@ -2928,6 +2965,25 @@ function initMealDash(dash){
       segs[2].style.strokeDashoffset=-(s1+s2);
     }
   },600);
+}
+
+// ── MEDIA GALLERY SCROLL FADE ──
+function initMediaGallery(){
+  const items=document.querySelectorAll('.media-item');
+  if(!items.length)return;
+  const obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        // stagger delay based on column position
+        const col=e.target.closest('.media-col');
+        const colIdx=col?Array.from(col.parentElement.children).indexOf(col):0;
+        e.target.style.transitionDelay=(colIdx*120)+'ms';
+        e.target.classList.add('mg-visible');
+        obs.unobserve(e.target);
+      }
+    });
+  },{threshold:0.12});
+  items.forEach(function(item){obs.observe(item);});
 }
 
 // ── TEAM SHOWCASE HOVER ──
