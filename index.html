@@ -509,7 +509,7 @@ nav{
 .advisors-grid-new{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px;}
 .advisor-card-new{background:var(--gray);border-radius:var(--radius-sm);padding:22px;text-align:center;}
 .advisor-avatar-new{width:56px;height:56px;border-radius:50%;background:linear-gradient(145deg,var(--blue-mid),var(--navy));margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-size:18px;color:#fff;}
-.advisor-photo-new{width:110px;height:110px;border-radius:50%;object-fit:cover;object-position:center top;margin:0 auto 14px;display:block;border:3px solid var(--gray2);}
+.advisor-photo-new{width:140px;height:140px;border-radius:50%;object-fit:cover;object-position:center top;margin:0 auto 14px;display:block;border:3px solid var(--gray2);}
 .advisor-name-new{font-family:'Poppins',sans-serif;font-size:13px;color:var(--navy);margin-bottom:3px;}
 .advisor-area-new{font-size:10px;color:var(--blue);text-transform:uppercase;letter-spacing:0.5px;}
 /* Team photo gallery — 3-column masonry */
@@ -550,6 +550,8 @@ nav{
 .filter-btn-new[data-acat="firm"].active,.filter-btn-new[data-acat="firm"]:hover{background:#1A7B8A;color:#fff;}
 .filter-btn-new[data-acat="team"].active,.filter-btn-new[data-acat="team"]:hover{background:#B07328;color:#fff;}
 .filter-btn-new[data-acat="partners"].active,.filter-btn-new[data-acat="partners"]:hover{background:#2B5E3A;color:#fff;}
+.filter-btn-new[data-acat="media"]{background:#F0E8F5;color:#5A1A7A;}
+.filter-btn-new[data-acat="media"].active,.filter-btn-new[data-acat="media"]:hover{background:#7B2D9E;color:#fff;}
 .articles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:52px 48px;max-width:1280px;margin:0 auto;}
 .article-card-new{background:#fff;border-radius:var(--radius);overflow:hidden;border:1.5px solid var(--gray2);transition:all 0.25s;cursor:pointer;}
 .article-card-new:hover{box-shadow:0 8px 32px rgba(27,58,92,0.08);transform:translateY(-3px);}
@@ -1982,6 +1984,7 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
     <button class="filter-btn-new" data-acat="firm" onclick="filterAbout(this,'firm')">Our Firm</button>
     <button class="filter-btn-new" data-acat="team" onclick="filterAbout(this,'team')">Team</button>
     <button class="filter-btn-new" data-acat="partners" onclick="filterAbout(this,'partners')">Partners &amp; Clients</button>
+    <button class="filter-btn-new" data-acat="media" onclick="filterAbout(this,'media')">Media</button>
   </div>
 
   <!-- ① OUR FIRM + HOW WE WORK -->
@@ -2091,30 +2094,6 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
           <div class="advisor-card-new"><img class="advisor-photo-new" src="Team/advisors/Suad Abu Daya - Gender &amp; Protection Specialist.gif" alt="Suad Abu Daya"><div class="advisor-name-new">Suad Abu Daya</div><div class="advisor-area-new">Gender &amp; Protection Specialist</div></div>
           <div class="advisor-card-new"><img class="advisor-photo-new" src="Team/advisors/Valentina Rangel Parra - Resource Mobilization Expert.jpg" alt="Valentina Rangel Parra"><div class="advisor-name-new">Valentina Rangel Parra</div><div class="advisor-area-new">Resource Mobilization Specialist</div></div>
           <div class="advisor-card-new"><img class="advisor-photo-new" src="Team/advisors/Victoria San Juan - Quantitative Research &amp; Evaluation Specialist.jpg" alt="Victoria San Juan"><div class="advisor-name-new">Victoria San Juan</div><div class="advisor-area-new">Quantitative Research &amp; Evaluation Specialist</div></div>
-        </div>
-      </div>
-
-      <!-- TEAM PHOTO GALLERY -->
-      <div class="team-gallery-wrap">
-        <div class="team-gallery-header">
-          <div class="badge"><div class="badge-icon"><svg class="icon-svg"><use href="#ico-camera"/></svg></div><span class="badge-text">Our Team at Work</span></div>
-          <h3 style="font-family:'Poppins',sans-serif;font-size:28px;color:var(--navy);margin-bottom:6px;">In the Field</h3>
-          <p style="font-size:14px;color:var(--text-muted);font-weight:300;">A glimpse into how we work — across communities, boardrooms, and field sites throughout the region.</p>
-        </div>
-        <div class="media-gallery">
-          <!-- Column 1 -->
-          <div class="media-col">
-            <div class="media-item ratio-portrait"><img src="images/1.JPG" alt="Deep Insights team at work" loading="lazy"></div>
-          </div>
-          <!-- Column 2 -->
-          <div class="media-col">
-            <div class="media-item ratio-landscape"><img src="images/2.JPG" alt="Deep Insights field work" loading="lazy"></div>
-            <div class="media-item ratio-landscape"><img src="images/4.JPG" alt="Deep Insights team session" loading="lazy"></div>
-          </div>
-          <!-- Column 3 -->
-          <div class="media-col">
-            <div class="media-item ratio-portrait"><img src="images/3.JPG" alt="Deep Insights workshop" loading="lazy"></div>
-          </div>
         </div>
       </div>
 
@@ -2287,7 +2266,37 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
         </div>
     </div>
   </section>
-</div>
+</div><!-- /about-section partners -->
+
+  <!-- ④ MEDIA -->
+  <div class="about-section" data-acat="media">
+  <section class="section" style="background:#fff;">
+    <div class="section-inner" style="max-width:1300px;">
+      <div style="margin-bottom:36px;">
+        <div class="badge"><div class="badge-icon"><svg class="icon-svg"><use href="#ico-camera"/></svg></div><span class="badge-text">Media</span></div>
+        <h2 class="section-title" style="margin-bottom:8px;">In the Field</h2>
+        <p style="font-size:15px;color:var(--text-muted);font-weight:300;line-height:1.75;max-width:580px;">A glimpse into how we work — across communities, boardrooms, and field sites throughout the region.</p>
+      </div>
+      <div class="media-gallery">
+        <!-- Column 1 -->
+        <div class="media-col">
+          <div class="media-item ratio-portrait"><img src="images/1.JPG" alt="Deep Insights team at work" loading="lazy"></div>
+        </div>
+        <!-- Column 2 -->
+        <div class="media-col">
+          <div class="media-item ratio-landscape"><img src="images/2.JPG" alt="Deep Insights field work" loading="lazy"></div>
+          <div class="media-item ratio-landscape"><img src="images/4.JPG" alt="Deep Insights team session" loading="lazy"></div>
+        </div>
+        <!-- Column 3 -->
+        <div class="media-col">
+          <div class="media-item ratio-portrait"><img src="images/3.JPG" alt="Deep Insights workshop" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div><!-- /about-section media -->
+
+</div><!-- /page-about -->
 
 
 <!-- ══════════ INSIGHTS PAGE ══════════ -->
@@ -2736,6 +2745,11 @@ function showPage(id){
   // Re-init interactive components on page switch
   if(id==='services'){setTimeout(()=>{observeDashboard();},200);}
   if(id==='about'){setTimeout(()=>{initTeamShowcase();initMediaGallery();},100);}
+  // Restart background videos on pages that start hidden
+  setTimeout(()=>{
+    var pg=document.getElementById('page-'+id);
+    if(pg){pg.querySelectorAll('video.svc-hero-video').forEach(function(v){v.load();v.play().catch(function(){});});}
+  },50);
 }
 
 function showSvc(id){
