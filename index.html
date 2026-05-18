@@ -618,30 +618,26 @@ nav{
 .insights-section-label{font-family:'Poppins',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;}
 .insights-section-title{font-family:'Poppins',sans-serif;font-size:26px;font-weight:800;color:var(--navy);margin-bottom:0;}
 
-/* ── PROJECT BRIEFS BENTO ── */
-.briefs-bento{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-flow:dense;gap:14px;padding:20px 48px 52px;max-width:1280px;margin:0 auto;}
-.bb-card{background:#fff;border-radius:16px;border:1.5px solid #E5EDF6;padding:26px 24px;transition:box-shadow 0.25s,transform 0.25s;display:flex;flex-direction:column;position:relative;overflow:hidden;}
-.bb-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--btc,#2763A5);border-radius:0;}
-.bb-card:hover{box-shadow:0 12px 40px rgba(27,58,92,0.11);transform:translateY(-3px);}
-.bb-wide{grid-column:span 2;}
-.bb-featured{background:var(--navy);border-color:var(--navy);}
-.bb-featured::before{background:rgba(255,255,255,0.25);}
-.bb-pill{display:inline-flex;padding:3px 11px;border-radius:100px;font-size:9px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;font-family:'Poppins',sans-serif;margin-bottom:12px;background:#F0F4FA;color:var(--btc,#2763A5);width:fit-content;flex-shrink:0;}
-.bb-featured .bb-pill{background:rgba(255,255,255,0.13);color:rgba(255,255,255,0.88);}
-.bb-org{font-size:10.5px;font-weight:600;color:var(--blue);font-family:'Poppins',sans-serif;margin-bottom:6px;letter-spacing:0.1px;}
-.bb-featured .bb-org{color:rgba(255,255,255,0.55);}
-.bb-title{font-family:'Poppins',sans-serif;font-size:13.5px;font-weight:700;color:var(--navy);line-height:1.38;margin-bottom:10px;}
-.bb-wide .bb-title{font-size:15px;}
-.bb-featured .bb-title{color:#fff;}
-.bb-desc{font-size:12px;color:var(--text-muted);line-height:1.78;font-weight:300;margin-bottom:12px;flex:1;}
-.bb-featured .bb-desc{color:rgba(255,255,255,0.65);}
-.bb-funder{font-size:10px;color:var(--text-muted);font-weight:300;padding-top:10px;border-top:1px solid #EEF3F9;margin-top:auto;}
-.bb-funder strong{color:var(--navy);font-weight:700;font-family:'Poppins',sans-serif;font-size:9.5px;display:block;margin-top:2px;}
-.bb-featured .bb-funder{border-top-color:rgba(255,255,255,0.12);color:rgba(255,255,255,0.45);}
-.bb-featured .bb-funder strong{color:rgba(255,255,255,0.82);}
+/* ── PROJECT BRIEFS MINIMAL LIST ── */
+.briefs-list{padding:0 48px 60px;max-width:1160px;margin:0 auto;}
+.bl-item{display:grid;grid-template-columns:48px 1fr auto;align-items:start;gap:0 28px;padding:26px 0;border-bottom:1px solid #EEF3F9;position:relative;transition:background 0.2s;}
+.bl-item:first-child{border-top:1px solid #EEF3F9;}
+.bl-item:hover .bl-title{color:var(--blue);}
+.bl-num{font-family:'Poppins',sans-serif;font-size:11px;font-weight:700;color:#C8D8EA;letter-spacing:1px;padding-top:3px;text-align:right;}
+.bl-body{display:flex;flex-direction:column;gap:5px;}
+.bl-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:4px;}
+.bl-pill{display:inline-flex;padding:2px 10px;border-radius:100px;font-size:8.5px;font-weight:700;letter-spacing:0.6px;text-transform:uppercase;font-family:'Poppins',sans-serif;background:#F0F4FA;color:var(--btc,#2763A5);}
+.bl-org{font-size:10.5px;font-weight:600;color:var(--text-muted);font-family:'Poppins',sans-serif;letter-spacing:0.1px;}
+.bl-title{font-family:'Poppins',sans-serif;font-size:14.5px;font-weight:700;color:var(--navy);line-height:1.35;transition:color 0.2s;}
+.bl-desc{font-size:12px;color:var(--text-muted);line-height:1.78;font-weight:300;max-width:680px;margin-top:2px;}
+.bl-right{display:flex;flex-direction:column;align-items:flex-end;gap:6px;padding-top:3px;min-width:180px;text-align:right;}
+.bl-funder-label{font-size:9.5px;color:#B0BEC9;font-weight:300;font-family:'Poppins',sans-serif;text-transform:uppercase;letter-spacing:0.5px;}
+.bl-funder-name{font-size:10.5px;font-weight:700;color:var(--navy);font-family:'Poppins',sans-serif;line-height:1.3;}
+.bl-dot{width:8px;height:8px;border-radius:50%;background:var(--btc,#2763A5);margin-top:4px;flex-shrink:0;}
 @media(max-width:900px){
-  .briefs-bento{grid-template-columns:1fr;padding:20px 20px 40px;}
-  .bb-wide{grid-column:span 1;}
+  .briefs-list{padding:0 20px 40px;}
+  .bl-item{grid-template-columns:32px 1fr;gap:0 16px;}
+  .bl-right{display:none;}
 }
 
 /* ── NEWS SECTION ── */
@@ -2585,230 +2581,518 @@ footer{background:var(--navy);color:#fff;padding:72px 48px 36px;}
       <div class="insights-section-label">Project Showcase</div>
       <div class="insights-section-title">Project Briefs</div>
     </div>
-            <div class="briefs-bento">
-      <div class="bb-card bb-wide bb-featured" style="--btc:#2763A5">
-        <span class="bb-pill">Strategy Development</span>
-        <div class="bb-org">Humanity &amp; Inclusion (HI) · Palestine</div>
-        <div class="bb-title">National Early Childhood Development Strategy</div>
-        <div class="bb-desc">Development of Palestine's National ECD Strategy through a multi-ministry participatory process engaging MoEHE, MoH, and MoSD. Comprehensive situational analysis, stakeholder consultations, and evidence-based strategy design across the West Bank.</div>
-        <div class="bb-funder">Implemented for<strong>Humanity &amp; Inclusion</strong></div>
+                <div class="briefs-list">
+      <div class="bl-item" style="--btc:#2B7A5B">
+        <div class="bl-num">01</div>
+        <div class="bl-body">
+          <div class="bl-top">
+            <span class="bl-pill">Strategy Development</span>
+            <span class="bl-org">Humanity &amp; Inclusion (HI) · Palestine</span>
+          </div>
+          <div class="bl-title">National Early Childhood Development Strategy</div>
+          <div class="bl-desc">Development of Palestine's National ECD Strategy through a multi-ministry participatory process engaging MoEHE, MoH, and MoSD. Comprehensive situational analysis, stakeholder consultations, and evidence-based strategy design across the West Bank.</div>
+        </div>
+        <div class="bl-right">
+          <div class="bl-dot"></div>
+          <span class="bl-funder-label">Funded by</span>
+          <span class="bl-funder-name">Humanity &amp; Inclusion</span>
+        </div>
       </div>
-      <div class="bb-card" style="--btc:#6B52A8">
-        <span class="bb-pill">Research</span>
-        <div class="bb-org">British Council Palestine</div>
-        <div class="bb-title">Impact Research Study — HESPAL Programme</div>
-        <div class="bb-desc">Multi-cohort impact study examining career trajectories and professional outcomes of HESPAL scholarship alumni, combining large-scale alumni surveys with qualitative follow-up interviews.</div>
-        <div class="bb-funder">Funded by<strong>British Council</strong></div>
+      <div class="bl-item" style="--btc:#6B52A8">
+        <div class="bl-num">02</div>
+        <div class="bl-body">
+          <div class="bl-top">
+            <span class="bl-pill">Research</span>
+            <span class="bl-org">British Council Palestine</span>
+          </div>
+          <div class="bl-title">Impact Research Study — HESPAL Programme (Higher Education Scholarships Palestine)</div>
+          <div class="bl-desc">Multi-cohort impact study examining career trajectories, professional outcomes, and contributions to Palestinian society among HESPAL scholarship alumni, combining large-scale alumni surveys with qualitative follow-up interviews.</div>
+        </div>
+        <div class="bl-right">
+          <div class="bl-dot"></div>
+          <span class="bl-funder-label">Funded by</span>
+          <span class="bl-funder-name">British Council</span>
+        </div>
       </div>
-      <div class="bb-card" style="--btc:#2763A5">
-        <span class="bb-pill">Evaluation</span>
-        <div class="bb-org">Save the Children International · oPt</div>
-        <div class="bb-title">Final Evaluation — Creating Circles of Protection and Care for Children Affected by Conflict</div>
-        <div class="bb-desc">Final evaluation of a programme protecting children from conflict, violence, and rights violations in West Bank and Gaza using a rights-based methodology.</div>
-        <div class="bb-funder">Funded by<strong>Världens Barn — Sweden</strong></div>
+      <div class="bl-item" style="--btc:#2763A5">
+        <div class="bl-num">03</div>
+        <div class="bl-body">
+          <div class="bl-top">
+            <span class="bl-pill">Evaluation</span>
+            <span class="bl-org">Save the Children International · oPt</span>
+          </div>
+          <div class="bl-title">Final Evaluation — Creating Circles of Protection and Care for Children Affected by Conflict</div>
+          <div class="bl-desc">Final evaluation of a programme protecting children and families from conflict, violence, and rights violations in West Bank and Gaza, applying a rights-based methodology with rigorous ethical protocols.</div>
+        </div>
+        <div class="bl-right">
+          <div class="bl-dot"></div>
+          <span class="bl-funder-label">Funded by</span>
+          <span class="bl-funder-name">Världens Barn — Sweden</span>
+        </div>
       </div>
-      <div class="bb-card" style="--btc:#2B7A5B">
-        <span class="bb-pill">Strategy</span>
-        <div class="bb-org">Palestinian Working Woman Society for Development (PWWSD)</div>
-        <div class="bb-title">Youth Engagement Strategy and Action Plan</div>
-        <div class="bb-desc">Participatory strategy and action plan for a leading Palestinian feminist organisation, integrating youth voices, disability inclusion, and feminist movement-building under FemPawer.</div>
-        <div class="bb-funder">Funded by<strong>Dutch Ministry of Foreign Affairs — FemPawer</strong></div>
+      <div class="bl-item" style="--btc:#2B7A5B">
+        <div class="bl-num">04</div>
+        <div class="bl-body">
+          <div class="bl-top">
+            <span class="bl-pill">Strategy</span>
+            <span class="bl-org">Palestinian Working Woman Society for Development (PWWSD)</span>
+          </div>
+          <div class="bl-title">Youth Engagement Strategy and Action Plan</div>
+          <div class="bl-desc">Participatory strategy and action plan for a leading Palestinian feminist organisation, integrating youth voices, disability inclusion, and feminist movement-building principles under the Dutch-funded FemPawer Project.</div>
+        </div>
+        <div class="bl-right">
+          <div class="bl-dot"></div>
+          <span class="bl-funder-label">Funded by</span>
+          <span class="bl-funder-name">Dutch Ministry of Foreign Affairs — FemPawer</span>
+        </div>
       </div>
-      <div class="bb-card" style="--btc:#1B3A5C">
-        <span class="bb-pill">Organisational Development</span>
-        <div class="bb-org">ANAR for Empowerment &amp; Psychosocial Support · Beit Sahour</div>
-        <div class="bb-title">Governance, Finance, HR and Procurement Manuals Development</div>
-        <div class="bb-desc">Four institutional policy manuals for a UNICEF-funded MHPSS organisation, fully aligned with Palestinian labour law and international donor compliance standards.</div>
-        <div class="bb-funder">Funded by<strong>UNICEF</strong></div>
+      <div class="bl-item" style="--btc:#1B3A5C">
+        <div class="bl-num">05</div>
+        <div class="bl-body">
+          <div class="bl-top">
+            <span class="bl-pill">Organisational Development</span>
+            <span class="bl-org">ANAR for Empowerment &amp; Psychosocial Support · Beit Sahour</span>
+          </div>
+          <div class="bl-title">Governance, Finance, HR and Procurement Manuals Development</div>
+          <div class="bl-desc">Four institutional policy manuals for a UNICEF-funded MHPSS organisation — governance, finance, procurement, and HR — fully aligned with Palestinian labour law and international donor compliance standards.</div>
+        </div>
+        <div class="bl-right">
+          <div class="bl-dot"></div>
+          <span class="bl-funder-label">Funded by</span>
+          <span class="bl-funder-name">UNICEF</span>
+        </div>
       </div>
-      <div class="bb-card bb-wide" style="--btc:#6B52A8">
-        <span class="bb-pill">Research &amp; Assessment</span>
-        <div class="bb-org">SOS Children's Villages Palestine</div>
-        <div class="bb-title">Institutional Needs Assessment</div>
-        <div class="bb-desc">Comprehensive needs assessment covering programmatic, organisational, and community-level dimensions. Included primary data collection, stakeholder consultations, and evidence-based recommendations for programme development.</div>
-        <div class="bb-funder">Implemented for<strong>SOS Children's Villages International</strong></div>
+      <div class="bl-item" style="--btc:#6B52A8">
+        <div class="bl-num">06</div>
+        <div class="bl-body">
+          <div class="bl-top">
+            <span class="bl-pill">Research &amp; Assessment</span>
+            <span class="bl-org">SOS Children's Villages Palestine</span>
+          </div>
+          <div class="bl-title">Institutional Needs Assessment</div>
+          <div class="bl-desc">Comprehensive needs assessment covering programmatic, organisational, and community-level dimensions, including primary data collection, stakeholder consultations, and evidence-based programme recommendations.</div>
+        </div>
+        <div class="bl-right">
+          <div class="bl-dot"></div>
+          <span class="bl-funder-label">Funded by</span>
+          <span class="bl-funder-name">SOS Children's Villages International</span>
+        </div>
       </div>
-      <div class="bb-card" style="--btc:#1B3A5C">
-        <span class="bb-pill">Programme Guidelines</span>
-        <div class="bb-org">We Effect Palestine · Sida</div>
-        <div class="bb-title">Update of Implementation Guidelines — LIFT Programme</div>
-        <div class="bb-desc">Updated implementation guidelines for a Sida-funded livelihoods and climate resilience programme (2025–2029) across four geographic clusters in the West Bank.</div>
-        <div class="bb-funder">Funded by<strong>Sida — Swedish International Development Cooperation Agency</strong></div>
+      <div class="bl-item" style="--btc:#1B3A5C">
+        <div class="bl-num">07</div>
+        <div class="bl-body">
+          <div class="bl-top">
+            <span class="bl-pill">Programme Guidelines</span>
+            <span class="bl-org">We Effect Palestine · Sida</span>
+          </div>
+          <div class="bl-title">Update of Implementation Guidelines — LIFT Programme (Livelihoods, Infrastructure and Food Systems Transformation)</div>
+          <div class="bl-desc">Updated implementation guidelines for a Sida-funded livelihoods and climate resilience programme (2025–2029) across four geographic clusters in the West Bank, covering climate-smart agriculture and food systems.</div>
+        </div>
+        <div class="bl-right">
+          <div class="bl-dot"></div>
+          <span class="bl-funder-label">Funded by</span>
+          <span class="bl-funder-name">Sida — Swedish International Development Cooperation Agency</span>
+        </div>
       </div>
-      <div class="bb-card" style="--btc:#6B52A8">
-        <span class="bb-pill">Research</span>
-        <div class="bb-org">Agricultural Development Association (PARC) · Palestine</div>
-        <div class="bb-title">Entrepreneurship Opportunities Study — Transformative Resilience</div>
-        <div class="bb-desc">Research mapping entrepreneurship opportunities to support post-war economic recovery in Palestine, with focus on displaced communities in Gaza.</div>
-        <div class="bb-funder">Funded by<strong>AECID — Spanish Agency for International Development Cooperation</strong></div>
+      <div class="bl-item" style="--btc:#6B52A8">
+        <div class="bl-num">08</div>
+        <div class="bl-body">
+          <div class="bl-top">
+            <span class="bl-pill">Research</span>
+            <span class="bl-org">Agricultural Development Association (PARC) · Palestine</span>
+          </div>
+          <div class="bl-title">Entrepreneurship Opportunities Study — Transformative Resilience</div>
+          <div class="bl-desc">Research mapping entrepreneurship opportunities to support post-war economic recovery in Palestine, with particular focus on displaced communities in Gaza. Combined economic analysis with pilot project design.</div>
+        </div>
+        <div class="bl-right">
+          <div class="bl-dot"></div>
+          <span class="bl-funder-label">Funded by</span>
+          <span class="bl-funder-name">AECID — Spanish Agency for International Development Cooperation</span>
+        </div>
       </div>
-      <div class="bb-card bb-wide bb-featured" style="--btc:#2763A5">
-        <span class="bb-pill">Evaluation</span>
-        <div class="bb-org">Médicos del Mundo España · Gaza &amp; East Jerusalem</div>
-        <div class="bb-title">Final Evaluation — Access to Quality MHPSS Services for Conflict-Affected Populations</div>
-        <div class="bb-desc">Final evaluation of a €3.9M, 36-month BMZ-funded programme improving mental health and psychosocial support services in Gaza Strip and East Jerusalem. Assessed all OECD-DAC criteria with a trauma-informed approach across complex humanitarian settings.</div>
-        <div class="bb-funder">Funded by<strong>BMZ — German Federal Ministry for Economic Cooperation and Development</strong></div>
+      <div class="bl-item" style="--btc:#B85530">
+        <div class="bl-num">09</div>
+        <div class="bl-body">
+          <div class="bl-top">
+            <span class="bl-pill">Capitalization &amp; Learning</span>
+            <span class="bl-org">Enabel — Belgian Development Agency · Palestine</span>
+          </div>
+          <div class="bl-title">Capitalization Study and International Seminar on Youth Mental Health in Palestine</div>
+          <div class="bl-desc">Documenting youth mental health approaches in Palestine under the "Youth Protection &amp; Civic Engagement" project (2022–2026), culminating in an international seminar with MoH, MoSD, and the Ministry of Women's Affairs.</div>
+        </div>
+        <div class="bl-right">
+          <div class="bl-dot"></div>
+          <span class="bl-funder-label">Funded by</span>
+          <span class="bl-funder-name">Enabel — Belgian Development Agency</span>
+        </div>
       </div>
-      <div class="bb-card" style="--btc:#B85530">
-        <span class="bb-pill">Capitalization &amp; Learning</span>
-        <div class="bb-org">Enabel — Belgian Development Agency · Palestine</div>
-        <div class="bb-title">Capitalization Study and International Seminar on Youth Mental Health</div>
-        <div class="bb-desc">Documenting youth mental health approaches in Palestine under the "Youth Protection &amp; Civic Engagement" project (2022–2026), culminating in an international seminar with MoH, MoSD, and the Ministry of Women's Affairs.</div>
-        <div class="bb-funder">Funded by<strong>Enabel — Belgian Development Agency</strong></div>
+      <div class="bl-item" style="--btc:#6B52A8">
+        <div class="bl-num">10</div>
+        <div class="bl-body">
+          <div class="bl-top">
+            <span class="bl-pill">Research &amp; Programme Design</span>
+            <span class="bl-org">Caritas Jerusalem &amp; Caritas Española · Bethlehem</span>
+          </div>
+          <div class="bl-title">Needs Assessment and New Programme Conceptualization — Bethlehem</div>
+          <div class="bl-desc">Needs identification and programme conceptualization in Bethlehem aligned with the Palestine-Spain Country Partnership Framework, spanning livelihoods, food security, and women's empowerment.</div>
+        </div>
+        <div class="bl-right">
+          <div class="bl-dot"></div>
+          <span class="bl-funder-label">Funded by</span>
+          <span class="bl-funder-name">AECID — Spanish Agency for International Development Cooperation</span>
+        </div>
       </div>
-      <div class="bb-card" style="--btc:#6B52A8">
-        <span class="bb-pill">Research &amp; Programme Design</span>
-        <div class="bb-org">Caritas Jerusalem &amp; Caritas Española · Bethlehem</div>
-        <div class="bb-title">Needs Assessment and New Programme Conceptualization — Bethlehem</div>
-        <div class="bb-desc">Needs identification and programme conceptualization in Bethlehem, aligned with the Palestine-Spain Country Partnership Framework, across livelihoods, food security, and women's empowerment.</div>
-        <div class="bb-funder">Funded by<strong>AECID — Spanish Agency for International Development Cooperation</strong></div>
+      <div class="bl-item" style="--btc:#B85530">
+        <div class="bl-num">11</div>
+        <div class="bl-body">
+          <div class="bl-top">
+            <span class="bl-pill">Capacity Building</span>
+            <span class="bl-org">Caritas Jerusalem · Palestine</span>
+          </div>
+          <div class="bl-title">Marketing Capacity Building Training Programme</div>
+          <div class="bl-desc">Structured marketing training programme with pre and post assessments measuring participant knowledge gains, producing a descriptive analysis report on training outcomes.</div>
+        </div>
+        <div class="bl-right">
+          <div class="bl-dot"></div>
+          <span class="bl-funder-label">Funded by</span>
+          <span class="bl-funder-name">Caritas Jerusalem</span>
+        </div>
       </div>
-      <div class="bb-card" style="--btc:#B85530">
-        <span class="bb-pill">Capacity Building</span>
-        <div class="bb-org">Caritas Jerusalem · Palestine</div>
-        <div class="bb-title">Marketing Capacity Building Training Programme</div>
-        <div class="bb-desc">Structured marketing training programme with pre/post assessments and a descriptive analysis report on training outcomes to inform future capacity building.</div>
-        <div class="bb-funder">Implemented for<strong>Caritas Jerusalem</strong></div>
+      <div class="bl-item" style="--btc:#6B52A8">
+        <div class="bl-num">12</div>
+        <div class="bl-body">
+          <div class="bl-top">
+            <span class="bl-pill">Research &amp; Mapping</span>
+            <span class="bl-org">Terre des Hommes (TDH) Palestine</span>
+          </div>
+          <div class="bl-title">Mapping and Analysis of Child Protection Services — West Bank and Gaza</div>
+          <div class="bl-desc">Comprehensive mapping and analysis of child protection networks across West Bank and Gaza, engaging MoSD, UNICEF, and community-based protection actors using a mixed-methods approach.</div>
+        </div>
+        <div class="bl-right">
+          <div class="bl-dot"></div>
+          <span class="bl-funder-label">Funded by</span>
+          <span class="bl-funder-name">Terre des Hommes (TDH)</span>
+        </div>
       </div>
-      <div class="bb-card" style="--btc:#6B52A8">
-        <span class="bb-pill">Research &amp; Mapping</span>
-        <div class="bb-org">Terre des Hommes (TDH) Palestine</div>
-        <div class="bb-title">Mapping and Analysis of Child Protection Services — West Bank and Gaza</div>
-        <div class="bb-desc">Mapping and analysis of child protection networks across West Bank and Gaza, engaging MoSD, UNICEF, and community-based protection actors.</div>
-        <div class="bb-funder">Implemented for<strong>Terre des Hommes (TDH)</strong></div>
+      <div class="bl-item" style="--btc:#2763A5">
+        <div class="bl-num">13</div>
+        <div class="bl-body">
+          <div class="bl-top">
+            <span class="bl-pill">Evaluation</span>
+            <span class="bl-org">Médicos del Mundo España · Gaza &amp; East Jerusalem</span>
+          </div>
+          <div class="bl-title">Final Evaluation — Access to Quality MHPSS Services for Conflict-Affected Populations</div>
+          <div class="bl-desc">Final evaluation of a €3.9M, 36-month BMZ-funded programme improving mental health and psychosocial support services in Gaza Strip and East Jerusalem, assessed across all OECD-DAC criteria.</div>
+        </div>
+        <div class="bl-right">
+          <div class="bl-dot"></div>
+          <span class="bl-funder-label">Funded by</span>
+          <span class="bl-funder-name">BMZ — German Federal Ministry for Economic Cooperation and Development</span>
+        </div>
       </div>
-      <div class="bb-card bb-wide" style="--btc:#1B3A5C">
-        <span class="bb-pill">Facilitation &amp; OD</span>
-        <div class="bb-org">Amnesty International Palestine</div>
-        <div class="bb-title">Facilitation of Annual Team Strategic Retreat</div>
-        <div class="bb-desc">Design and facilitation of a two-day strategic retreat combining a year-in-review reflection session with structured planning, team development, and ways-of-working activities.</div>
-        <div class="bb-funder">Implemented for<strong>Amnesty International</strong></div>
+      <div class="bl-item" style="--btc:#1B3A5C">
+        <div class="bl-num">14</div>
+        <div class="bl-body">
+          <div class="bl-top">
+            <span class="bl-pill">Facilitation &amp; OD</span>
+            <span class="bl-org">Amnesty International Palestine</span>
+          </div>
+          <div class="bl-title">Facilitation of Annual Team Strategic Retreat</div>
+          <div class="bl-desc">Design and facilitation of a two-day strategic retreat combining a year-in-review reflection session with structured planning, team development, and ways-of-working activities.</div>
+        </div>
+        <div class="bl-right">
+          <div class="bl-dot"></div>
+          <span class="bl-funder-label">Funded by</span>
+          <span class="bl-funder-name">Amnesty International</span>
+        </div>
       </div>
-      <div class="bb-card" style="--btc:#B85530">
-        <span class="bb-pill">Capacity Building</span>
-        <div class="bb-org">Save the Children · PCBS · MoSD · Palestine</div>
-        <div class="bb-title">Capacity Development on Child Rights Indicators through Administrative Data Systems</div>
-        <div class="bb-desc">Multi-workshop programme strengthening government and NGO staff ability to track child rights indicators through administrative data systems with PCBS and MoSD.</div>
-        <div class="bb-funder">Funded by<strong>Save the Children International</strong></div>
+      <div class="bl-item" style="--btc:#B85530">
+        <div class="bl-num">15</div>
+        <div class="bl-body">
+          <div class="bl-top">
+            <span class="bl-pill">Capacity Building</span>
+            <span class="bl-org">Save the Children · PCBS · MoSD · Palestine</span>
+          </div>
+          <div class="bl-title">Capacity Development on Child Rights Indicators through Administrative Data Systems</div>
+          <div class="bl-desc">Multi-workshop programme strengthening government and NGO staff ability to track child rights indicators through administrative data systems, facilitated with PCBS and the Ministry of Social Development.</div>
+        </div>
+        <div class="bl-right">
+          <div class="bl-dot"></div>
+          <span class="bl-funder-label">Funded by</span>
+          <span class="bl-funder-name">Save the Children International</span>
+        </div>
       </div>
-      <div class="bb-card" style="--btc:#6B52A8">
-        <span class="bb-pill">Research &amp; Policy</span>
-        <div class="bb-org">Save the Children · Ministry of Social Development · Palestine</div>
-        <div class="bb-title">Situation Analysis and National Action Plan — Children with Disabilities</div>
-        <div class="bb-desc">Comprehensive situation analysis, gap analysis, and National Action Plan development for children with disabilities, with extensive KIIs, FGDs, and multi-stakeholder consultations.</div>
-        <div class="bb-funder">Funded by<strong>Save the Children International</strong></div>
+      <div class="bl-item" style="--btc:#6B52A8">
+        <div class="bl-num">16</div>
+        <div class="bl-body">
+          <div class="bl-top">
+            <span class="bl-pill">Research &amp; Policy</span>
+            <span class="bl-org">Save the Children · Ministry of Social Development · Palestine</span>
+          </div>
+          <div class="bl-title">Situation Analysis and National Action Plan — Children with Disabilities in Palestine</div>
+          <div class="bl-desc">Comprehensive situation analysis, gap analysis, and National Action Plan development for children with disabilities in Palestine, through extensive KIIs, FGDs, and multi-stakeholder consultations.</div>
+        </div>
+        <div class="bl-right">
+          <div class="bl-dot"></div>
+          <span class="bl-funder-label">Funded by</span>
+          <span class="bl-funder-name">Save the Children International</span>
+        </div>
       </div>
-      <div class="bb-card bb-wide bb-featured" style="--btc:#2763A5">
-        <span class="bb-pill">Evaluation</span>
-        <div class="bb-org">Medical Aid for Palestinians (MAP UK) · Gaza Strip</div>
-        <div class="bb-title">End of Project Evaluation — Integrated Lifesaving SRH Services for Women and Girls in Gaza</div>
-        <div class="bb-desc">Final evaluation of a UNFPA-funded project delivering integrated lifesaving sexual and reproductive health services to conflict-affected women and girls in Gaza City and Deir Al Balah. Assessed relevance, effectiveness, efficiency, and sustainability under active conflict conditions.</div>
-        <div class="bb-funder">Funded by<strong>UNFPA — United Nations Population Fund</strong></div>
+      <div class="bl-item" style="--btc:#2763A5">
+        <div class="bl-num">17</div>
+        <div class="bl-body">
+          <div class="bl-top">
+            <span class="bl-pill">Evaluation</span>
+            <span class="bl-org">Caritas Jerusalem · Gaza &amp; West Bank</span>
+          </div>
+          <div class="bl-title">Final Evaluation — Health, MHPSS and Emergency Humanitarian Assistance in Gaza and West Bank</div>
+          <div class="bl-desc">Final evaluation of Caritas Jerusalem's integrated health, mental health, and emergency humanitarian assistance programme across Gaza and the West Bank, applying OECD-DAC criteria.</div>
+        </div>
+        <div class="bl-right">
+          <div class="bl-dot"></div>
+          <span class="bl-funder-label">Funded by</span>
+          <span class="bl-funder-name">Caritas Jerusalem</span>
+        </div>
       </div>
-      <div class="bb-card" style="--btc:#2763A5">
-        <span class="bb-pill">Evaluation</span>
-        <div class="bb-org">Caritas Jerusalem · Gaza &amp; West Bank</div>
-        <div class="bb-title">Final Evaluation — Health, MHPSS and Emergency Humanitarian Assistance</div>
-        <div class="bb-desc">Final evaluation of Caritas Jerusalem's integrated health, mental health, and emergency humanitarian assistance programme, applying OECD-DAC criteria across restricted operating environments.</div>
-        <div class="bb-funder">Implemented for<strong>Caritas Jerusalem</strong></div>
+      <div class="bl-item" style="--btc:#2763A5">
+        <div class="bl-num">18</div>
+        <div class="bl-body">
+          <div class="bl-top">
+            <span class="bl-pill">Evaluation</span>
+            <span class="bl-org">Medical Aid for Palestinians (MAP UK) · Gaza Strip</span>
+          </div>
+          <div class="bl-title">End of Project Evaluation — Integrated Lifesaving SRH Services for Women and Girls in Gaza</div>
+          <div class="bl-desc">Final evaluation of a UNFPA-funded project delivering integrated lifesaving sexual and reproductive health services to conflict-affected women and girls in Gaza City and Deir Al Balah.</div>
+        </div>
+        <div class="bl-right">
+          <div class="bl-dot"></div>
+          <span class="bl-funder-label">Funded by</span>
+          <span class="bl-funder-name">UNFPA — United Nations Population Fund</span>
+        </div>
       </div>
-      <div class="bb-card" style="--btc:#6B52A8">
-        <span class="bb-pill">Research &amp; Assessment</span>
-        <div class="bb-org">Agricultural Development Association (PARC) · Gaza Strip</div>
-        <div class="bb-title">Market Assessment — Food Security, WASH and Cash Assistance for Conflict-Affected Communities</div>
-        <div class="bb-desc">Market assessment in Gaza examining food security, WASH, protection, and cash assistance dynamics to inform PARC's emergency recovery programming.</div>
-        <div class="bb-funder">Implemented for<strong>Agricultural Development Association (PARC)</strong></div>
+      <div class="bl-item" style="--btc:#6B52A8">
+        <div class="bl-num">19</div>
+        <div class="bl-body">
+          <div class="bl-top">
+            <span class="bl-pill">Research &amp; Assessment</span>
+            <span class="bl-org">Agricultural Development Association (PARC) · Gaza Strip</span>
+          </div>
+          <div class="bl-title">Market Assessment — Food Security, WASH and Cash Assistance for Conflict-Affected Communities</div>
+          <div class="bl-desc">Market assessment in Gaza examining food security, WASH, protection, and cash assistance dynamics to inform PARC's emergency recovery programming and cash transfer modality design.</div>
+        </div>
+        <div class="bl-right">
+          <div class="bl-dot"></div>
+          <span class="bl-funder-label">Funded by</span>
+          <span class="bl-funder-name">Agricultural Development Association (PARC)</span>
+        </div>
       </div>
-      <div class="bb-card" style="--btc:#2763A5">
-        <span class="bb-pill">Evaluation</span>
-        <div class="bb-org">Teacher Creativity Centre (TCC) · Palestine</div>
-        <div class="bb-title">Final Evaluation — Teachers' Voices Matter to Advance the Right to Education</div>
-        <div class="bb-desc">Final evaluation of an EU-funded project promoting Palestinian teachers' freedoms of association and expression, and their role in shaping public education policies.</div>
-        <div class="bb-funder">Funded by<strong>European Union</strong></div>
+      <div class="bl-item" style="--btc:#2763A5">
+        <div class="bl-num">20</div>
+        <div class="bl-body">
+          <div class="bl-top">
+            <span class="bl-pill">Evaluation</span>
+            <span class="bl-org">Teacher Creativity Centre (TCC) · Palestine</span>
+          </div>
+          <div class="bl-title">Final Evaluation — Teachers' Voices Matter to Advance the Right to Education</div>
+          <div class="bl-desc">Final evaluation of an EU-funded project promoting Palestinian teachers' freedoms of association and expression, and their role in shaping and monitoring public education policies.</div>
+        </div>
+        <div class="bl-right">
+          <div class="bl-dot"></div>
+          <span class="bl-funder-label">Funded by</span>
+          <span class="bl-funder-name">European Union</span>
+        </div>
       </div>
-      <div class="bb-card" style="--btc:#2763A5">
-        <span class="bb-pill">Evaluation</span>
-        <div class="bb-org">Palestinian Counseling Center (PCC) · West Bank &amp; East Jerusalem</div>
-        <div class="bb-title">External Evaluation — Psycho-Social Health for Palestinian Families</div>
-        <div class="bb-desc">Evaluation of a three-year BftW-funded programme enhancing mental health and psychosocial support for 41,000+ Palestinian families through PCC's five-office network.</div>
-        <div class="bb-funder">Funded by<strong>Bread for the World</strong></div>
+      <div class="bl-item" style="--btc:#2763A5">
+        <div class="bl-num">21</div>
+        <div class="bl-body">
+          <div class="bl-top">
+            <span class="bl-pill">Evaluation</span>
+            <span class="bl-org">Palestinian Counseling Center (PCC) · West Bank &amp; East Jerusalem</span>
+          </div>
+          <div class="bl-title">External Evaluation — Psycho-Social Health for Palestinian Families in West Bank and East Jerusalem</div>
+          <div class="bl-desc">Evaluation of a three-year BftW-funded programme enhancing mental health and psychosocial support for 41,000+ Palestinian families through PCC's five-office network during an unprecedented period of crisis.</div>
+        </div>
+        <div class="bl-right">
+          <div class="bl-dot"></div>
+          <span class="bl-funder-label">Funded by</span>
+          <span class="bl-funder-name">Bread for the World</span>
+        </div>
       </div>
-      <div class="bb-card bb-wide" style="--btc:#2763A5">
-        <span class="bb-pill">Evaluation</span>
-        <div class="bb-org">Alianza por la Solidaridad — ActionAid Spain · Gaza Strip</div>
-        <div class="bb-title">Final Evaluation — Strengthening Community-Based and Women-Led Protection Mechanisms for SGBV Survivors</div>
-        <div class="bb-desc">Final evaluation of a programme supporting survivor-centred GBV response, women-led safe spaces, and economic empowerment of SGBV survivors in Northern Gaza, with rigorous ethical protocols.</div>
-        <div class="bb-funder">Funded by<strong>AACID — Andalusian Agency for International Development Cooperation</strong></div>
+      <div class="bl-item" style="--btc:#2763A5">
+        <div class="bl-num">22</div>
+        <div class="bl-body">
+          <div class="bl-top">
+            <span class="bl-pill">Evaluation</span>
+            <span class="bl-org">Alianza por la Solidaridad — ActionAid Spain · Gaza Strip</span>
+          </div>
+          <div class="bl-title">Final Evaluation — Strengthening Community-Based and Women-Led Protection Mechanisms for SGBV Survivors</div>
+          <div class="bl-desc">Final evaluation of a programme supporting survivor-centred GBV response, women-led safe spaces, and economic empowerment of SGBV survivors in Northern Gaza, with rigorous ethical protocols throughout.</div>
+        </div>
+        <div class="bl-right">
+          <div class="bl-dot"></div>
+          <span class="bl-funder-label">Funded by</span>
+          <span class="bl-funder-name">AACID — Andalusian Agency for International Development Cooperation</span>
+        </div>
       </div>
-      <div class="bb-card" style="--btc:#2763A5">
-        <span class="bb-pill">Evaluation</span>
-        <div class="bb-org">Bethlehem Arab Society for Rehabilitation (BASR) · APEFE</div>
-        <div class="bb-title">Final Evaluation — Promoting Inclusive Development for People with Disabilities</div>
-        <div class="bb-desc">Final evaluation of a four-year Belgian-funded programme covering rehabilitation, disability-inclusive education, and economic empowerment across the West Bank.</div>
-        <div class="bb-funder">Funded by<strong>DGD — Belgian Development Cooperation</strong></div>
+      <div class="bl-item" style="--btc:#2763A5">
+        <div class="bl-num">23</div>
+        <div class="bl-body">
+          <div class="bl-top">
+            <span class="bl-pill">Evaluation</span>
+            <span class="bl-org">Bethlehem Arab Society for Rehabilitation (BASR) · APEFE</span>
+          </div>
+          <div class="bl-title">Final Evaluation — Promoting Inclusive Development for People with Disabilities in the West Bank</div>
+          <div class="bl-desc">Final evaluation of a four-year Belgian-funded programme covering rehabilitation, disability-inclusive education, and economic empowerment, engaging government counterparts and disability rights organisations.</div>
+        </div>
+        <div class="bl-right">
+          <div class="bl-dot"></div>
+          <span class="bl-funder-label">Funded by</span>
+          <span class="bl-funder-name">DGD — Belgian Development Cooperation</span>
+        </div>
       </div>
-      <div class="bb-card" style="--btc:#2B7A5B">
-        <span class="bb-pill">Policy Development</span>
-        <div class="bb-org">MA'AN Development Center · World Vision International</div>
-        <div class="bb-title">Development of Safety and Security Policy — Green Palestine Project</div>
-        <div class="bb-desc">Comprehensive safety and security policy for MA'AN under World Vision's BMZ-funded project promoting a sustainable environment for children in Areas B and C of the West Bank.</div>
-        <div class="bb-funder">Funded by<strong>BMZ — German Federal Ministry for Economic Cooperation and Development</strong></div>
+      <div class="bl-item" style="--btc:#2B7A5B">
+        <div class="bl-num">24</div>
+        <div class="bl-body">
+          <div class="bl-top">
+            <span class="bl-pill">Policy Development</span>
+            <span class="bl-org">MA'AN Development Center · World Vision International</span>
+          </div>
+          <div class="bl-title">Development of Safety and Security Policy — Green Palestine Project</div>
+          <div class="bl-desc">Comprehensive safety and security policy for MA'AN under World Vision's BMZ-funded "Green Palestine" project, promoting a sustainable environment for children and communities in Areas B and C of the West Bank.</div>
+        </div>
+        <div class="bl-right">
+          <div class="bl-dot"></div>
+          <span class="bl-funder-label">Funded by</span>
+          <span class="bl-funder-name">BMZ — German Federal Ministry for Economic Cooperation and Development</span>
+        </div>
       </div>
-      <div class="bb-card" style="--btc:#1B3A5C">
-        <span class="bb-pill">Organisational Development</span>
-        <div class="bb-org">Guidance and Training Centre (GTC) · Bethlehem</div>
-        <div class="bb-title">Fundraising Consultancy and Resource Mobilization Services</div>
-        <div class="bb-desc">Sprint-based fundraising consultancy supporting GTC in donor mapping, funding strategy, and proposal writing as part of the organisation's 2026–2030 strategic development phase.</div>
-        <div class="bb-funder">Implemented for<strong>Guidance and Training Centre (GTC)</strong></div>
+      <div class="bl-item" style="--btc:#1B3A5C">
+        <div class="bl-num">25</div>
+        <div class="bl-body">
+          <div class="bl-top">
+            <span class="bl-pill">Organisational Development</span>
+            <span class="bl-org">Guidance and Training Centre (GTC) · Bethlehem</span>
+          </div>
+          <div class="bl-title">Fundraising Consultancy and Resource Mobilization Services</div>
+          <div class="bl-desc">Sprint-based fundraising consultancy supporting GTC in donor mapping, funding strategy development, and proposal writing as part of the organisation's 2026–2030 strategic development phase.</div>
+        </div>
+        <div class="bl-right">
+          <div class="bl-dot"></div>
+          <span class="bl-funder-label">Funded by</span>
+          <span class="bl-funder-name">Guidance and Training Centre (GTC)</span>
+        </div>
       </div>
-      <div class="bb-card" style="--btc:#6B52A8">
-        <span class="bb-pill">Research &amp; Assessment</span>
-        <div class="bb-org">Palestinian Food and Agriculture Industries Union (PFAIU)</div>
-        <div class="bb-title">MSME Selection, Diagnostics and Needs Assessment — Palestinian Food Industry</div>
-        <div class="bb-desc">Sector-wide MSME diagnostic and needs assessment for food processing enterprises in the West Bank, establishing a structured database under the UNDP Economic Resilience Programme.</div>
-        <div class="bb-funder">Funded by<strong>UNDP/PAPP — Economic Resilience Programme</strong></div>
+      <div class="bl-item" style="--btc:#6B52A8">
+        <div class="bl-num">26</div>
+        <div class="bl-body">
+          <div class="bl-top">
+            <span class="bl-pill">Research &amp; Assessment</span>
+            <span class="bl-org">Palestinian Food and Agriculture Industries Union (PFAIU)</span>
+          </div>
+          <div class="bl-title">MSME Selection, Diagnostics and Needs Assessment — Palestinian Food Industry</div>
+          <div class="bl-desc">Sector-wide MSME diagnostic and needs assessment for food processing enterprises in the West Bank, establishing a structured database and benchmark system under the UNDP Economic Resilience Programme.</div>
+        </div>
+        <div class="bl-right">
+          <div class="bl-dot"></div>
+          <span class="bl-funder-label">Funded by</span>
+          <span class="bl-funder-name">UNDP/PAPP — Economic Resilience Programme</span>
+        </div>
       </div>
-      <div class="bb-card bb-wide bb-featured" style="--btc:#1B3A5C">
-        <span class="bb-pill">Evaluation</span>
-        <div class="bb-org">Humanity &amp; Inclusion (HI) · Palestine</div>
-        <div class="bb-title">Mid-Term Evaluation — Towards Inclusive ECD: Support to Children with Developmental Delays and Disabilities (AC6)</div>
-        <div class="bb-desc">Mid-term evaluation of a five-year Luxembourg-funded programme providing comprehensive support to children with developmental delays and disabilities across oPt. Applied mixed-methods evaluation methodology across diverse stakeholder groups and geographic locations.</div>
-        <div class="bb-funder">Funded by<strong>Ministry of Foreign Affairs of Luxembourg</strong></div>
+      <div class="bl-item" style="--btc:#1B3A5C">
+        <div class="bl-num">27</div>
+        <div class="bl-body">
+          <div class="bl-top">
+            <span class="bl-pill">Organisational Development</span>
+            <span class="bl-org">Anera — American Near East Refugee Aid · Palestine</span>
+          </div>
+          <div class="bl-title">Update of Job Descriptions and Internal HR Bylaws</div>
+          <div class="bl-desc">Review and updating of Anera Palestine's job descriptions and HR bylaws across West Bank and Gaza operations, aligned with current organisational structure and Palestinian labour law requirements.</div>
+        </div>
+        <div class="bl-right">
+          <div class="bl-dot"></div>
+          <span class="bl-funder-label">Funded by</span>
+          <span class="bl-funder-name">Anera — American Near East Refugee Aid</span>
+        </div>
       </div>
-      <div class="bb-card" style="--btc:#1B3A5C">
-        <span class="bb-pill">Organisational Development</span>
-        <div class="bb-org">Anera — American Near East Refugee Aid · Palestine</div>
-        <div class="bb-title">Update of Job Descriptions and Internal HR Bylaws</div>
-        <div class="bb-desc">Review and updating of Anera Palestine's job descriptions and HR bylaws across West Bank and Gaza operations, aligned with organisational structure and Palestinian labour law.</div>
-        <div class="bb-funder">Implemented for<strong>Anera — American Near East Refugee Aid</strong></div>
+      <div class="bl-item" style="--btc:#2763A5">
+        <div class="bl-num">28</div>
+        <div class="bl-body">
+          <div class="bl-top">
+            <span class="bl-pill">Evaluation</span>
+            <span class="bl-org">Humanity &amp; Inclusion (HI) · Palestine</span>
+          </div>
+          <div class="bl-title">Mid-Term Evaluation — Towards Inclusive ECD: Support to Children with Developmental Delays and Disabilities (AC6)</div>
+          <div class="bl-desc">Mid-term evaluation of a five-year Luxembourg-funded programme providing comprehensive support to children with developmental delays and disabilities across oPt, using mixed-methods methodology.</div>
+        </div>
+        <div class="bl-right">
+          <div class="bl-dot"></div>
+          <span class="bl-funder-label">Funded by</span>
+          <span class="bl-funder-name">Ministry of Foreign Affairs of Luxembourg</span>
+        </div>
       </div>
-      <div class="bb-card" style="--btc:#2B7A5B">
-        <span class="bb-pill">Policy &amp; SOP Development</span>
-        <div class="bb-org">Alianza por la Solidaridad — ActionAid Spain · oPt</div>
-        <div class="bb-title">Upgrading SOPs for Integrating Cash and Voucher Assistance (CVA) into GBV Protection Services</div>
-        <div class="bb-desc">Updated SOPs integrating Cash and Voucher Assistance into GBV case management across West Bank and Gaza, followed by practical staff training on implementation.</div>
-        <div class="bb-funder">Funded by<strong>AECID / Generalitat Valenciana</strong></div>
+      <div class="bl-item" style="--btc:#2B7A5B">
+        <div class="bl-num">29</div>
+        <div class="bl-body">
+          <div class="bl-top">
+            <span class="bl-pill">Policy &amp; SOP Development</span>
+            <span class="bl-org">Alianza por la Solidaridad — ActionAid Spain · oPt</span>
+          </div>
+          <div class="bl-title">Upgrading SOPs for Integrating Cash and Voucher Assistance (CVA) into GBV Protection Services</div>
+          <div class="bl-desc">Updated standard operating procedures integrating Cash and Voucher Assistance into GBV case management across West Bank and Gaza, with practical staff training on implementation.</div>
+        </div>
+        <div class="bl-right">
+          <div class="bl-dot"></div>
+          <span class="bl-funder-label">Funded by</span>
+          <span class="bl-funder-name">AECID / Generalitat Valenciana</span>
+        </div>
       </div>
-      <div class="bb-card" style="--btc:#6B52A8">
-        <span class="bb-pill">Research &amp; Market Analysis</span>
-        <div class="bb-org">VIS — Volontariato Internazionale per lo Sviluppo · Bethlehem</div>
-        <div class="bb-title">Supply Chain and Market Analysis — Circular Economy Products in Bethlehem Governorate</div>
-        <div class="bb-desc">Market potential and supply chain analysis for circular economy products (cardboard, plastic, e-waste) in Bethlehem Governorate, supporting the Italian-funded TADWEER project.</div>
-        <div class="bb-funder">Funded by<strong>AICS — Italian Agency for Development Cooperation</strong></div>
+      <div class="bl-item" style="--btc:#6B52A8">
+        <div class="bl-num">30</div>
+        <div class="bl-body">
+          <div class="bl-top">
+            <span class="bl-pill">Research &amp; Market Analysis</span>
+            <span class="bl-org">VIS — Volontariato Internazionale per lo Sviluppo · Bethlehem</span>
+          </div>
+          <div class="bl-title">Supply Chain and Market Analysis — Circular Economy Products in Bethlehem Governorate</div>
+          <div class="bl-desc">Market potential and supply chain analysis for circular economy products (cardboard, plastic, e-waste) in Bethlehem Governorate, supporting the Italian-funded TADWEER project.</div>
+        </div>
+        <div class="bl-right">
+          <div class="bl-dot"></div>
+          <span class="bl-funder-label">Funded by</span>
+          <span class="bl-funder-name">AICS — Italian Agency for Development Cooperation</span>
+        </div>
       </div>
-      <div class="bb-card bb-wide" style="--btc:#2763A5">
-        <span class="bb-pill">Evaluation</span>
-        <div class="bb-org">Agricultural Development Association (PARC) · Palestine</div>
-        <div class="bb-title">External Evaluation — Enhancing Sustainable Livelihoods and Inclusive Economic Opportunities (ARDI II)</div>
-        <div class="bb-desc">External evaluation of a four-year Luxembourg-funded rural development programme promoting sustainable livelihoods, job creation, market readiness, and climate-smart agricultural resilience in rural communities across oPt.</div>
-        <div class="bb-funder">Funded by<strong>Ministry of Foreign Affairs of Luxembourg</strong></div>
+      <div class="bl-item" style="--btc:#2763A5">
+        <div class="bl-num">31</div>
+        <div class="bl-body">
+          <div class="bl-top">
+            <span class="bl-pill">Evaluation</span>
+            <span class="bl-org">Agricultural Development Association (PARC) · Palestine</span>
+          </div>
+          <div class="bl-title">External Evaluation — Enhancing Sustainable Livelihoods and Inclusive Economic Opportunities (ARDI II)</div>
+          <div class="bl-desc">External evaluation of a four-year Luxembourg-funded rural development programme promoting sustainable livelihoods, job creation, market readiness, and climate-smart agricultural resilience across oPt.</div>
+        </div>
+        <div class="bl-right">
+          <div class="bl-dot"></div>
+          <span class="bl-funder-label">Funded by</span>
+          <span class="bl-funder-name">Ministry of Foreign Affairs of Luxembourg</span>
+        </div>
       </div>
-      <div class="bb-card" style="--btc:#2763A5">
-        <span class="bb-pill">Evaluation</span>
-        <div class="bb-org">Secours Islamique France (SIF) · Northern West Bank</div>
-        <div class="bb-title">Final External Evaluation — Building Community Resilience through Palestinian Good Agricultural Practices (PALGAP)</div>
-        <div class="bb-desc">Final evaluation of a three-year AFD-funded programme building community resilience through Palestinian Good Agricultural Practices standards, targeting 400 farmers with a focus on women's economic empowerment.</div>
-        <div class="bb-funder">Funded by<strong>AFD — Agence Française de Développement</strong></div>
+      <div class="bl-item" style="--btc:#2763A5">
+        <div class="bl-num">32</div>
+        <div class="bl-body">
+          <div class="bl-top">
+            <span class="bl-pill">Evaluation</span>
+            <span class="bl-org">Secours Islamique France (SIF) · Northern West Bank</span>
+          </div>
+          <div class="bl-title">Final External Evaluation — Building Community Resilience through Palestinian Good Agricultural Practices (PALGAP)</div>
+          <div class="bl-desc">Final evaluation of a three-year AFD-funded programme building community resilience through Palestinian Good Agricultural Practices standards, targeting 400 farmers with a focus on women's economic empowerment.</div>
+        </div>
+        <div class="bl-right">
+          <div class="bl-dot"></div>
+          <span class="bl-funder-label">Funded by</span>
+          <span class="bl-funder-name">AFD — Agence Française de Développement</span>
+        </div>
       </div>
 
     </div><!-- /briefs-grid -->
